@@ -1,0 +1,23 @@
+{
+  "name": "inventory",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backend/inventory/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/backend/inventory",
+        "main": "libs/backend/inventory/src/index.ts",
+        "tsConfig": "libs/backend/inventory/tsconfig.lib.json",
+        "assets": [
+          "libs/backend/inventory/*.md"
+        ]
+      }
+    }
+  }
+}
