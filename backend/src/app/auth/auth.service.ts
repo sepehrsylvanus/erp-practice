@@ -3,7 +3,7 @@ import {
   Injectable,
   UnauthorizedException,
 } from "@nestjs/common";
-import { PrismaClient } from "../../../../libs/backend/database/src/generated/client/client";
+import { PrismaService } from "@erp/backend-database";
 import { JwtService } from "@nestjs/jwt";
 import { LoginDto } from "./dto/login.dto";
 import { verify } from "argon2";
@@ -32,7 +32,7 @@ type UserForAuth = {
 @Injectable()
 export class AuthService {
   constructor(
-    private readonly prisma: PrismaClient,
+    private readonly prisma: PrismaService,
     private readonly jwt: JwtService,
   ) {}
 
