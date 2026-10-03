@@ -2871,7 +2871,7 @@ export type CompanyScalarFieldEnum = (typeof CompanyScalarFieldEnum)[keyof typeo
 export const UserScalarFieldEnum = {
   id: 'id',
   email: 'email',
-  passwordHad: 'passwordHad',
+  passwordHash: 'passwordHash',
   displayName: 'displayName',
   isActive: 'isActive',
   createdAt: 'createdAt',
@@ -2887,7 +2887,7 @@ export const RefreshSessionScalarFieldEnum = {
   tokenHash: 'tokenHash',
   expiresAt: 'expiresAt',
   revokedAt: 'revokedAt',
-  created: 'created'
+  createdAt: 'createdAt'
 } as const
 
 export type RefreshSessionScalarFieldEnum = (typeof RefreshSessionScalarFieldEnum)[keyof typeof RefreshSessionScalarFieldEnum]
@@ -2970,7 +2970,7 @@ export const ProductScalarFieldEnum = {
   trackStock: 'trackStock',
   isActive: 'isActive',
   purchasePrice: 'purchasePrice',
-  salesPrice: 'salesPrice',
+  salePrice: 'salePrice',
   reorderPoint: 'reorderPoint'
 } as const
 
@@ -3042,7 +3042,7 @@ export const InventoryMovementScalarFieldEnum = {
   createdById: 'createdById',
   type: 'type',
   quantityDelta: 'quantityDelta',
-  unitConst: 'unitConst',
+  unitCost: 'unitCost',
   sourceType: 'sourceType',
   sourceId: 'sourceId',
   idempotencyKey: 'idempotencyKey',
@@ -3063,7 +3063,7 @@ export const SalesOrderScalarFieldEnum = {
   number: 'number',
   status: 'status',
   currency: 'currency',
-  netAmoint: 'netAmoint',
+  netAmount: 'netAmount',
   taxAmount: 'taxAmount',
   totalAmount: 'totalAmount',
   orderDate: 'orderDate',
@@ -3121,8 +3121,8 @@ export const PurchaseOrderScalarFieldEnum = {
   companyId: 'companyId',
   branchId: 'branchId',
   warehouseId: 'warehouseId',
-  supplierid: 'supplierid',
-  createById: 'createById',
+  supplierId: 'supplierId',
+  createdById: 'createdById',
   number: 'number',
   status: 'status',
   currency: 'currency',
@@ -3142,7 +3142,7 @@ export const PurchaseOrderLineScalarFieldEnum = {
   purchaseOrderId: 'purchaseOrderId',
   productId: 'productId',
   description: 'description',
-  wuantity: 'wuantity',
+  quantity: 'quantity',
   receivedQuantity: 'receivedQuantity',
   unitCost: 'unitCost',
   taxRate: 'taxRate',
@@ -3159,7 +3159,7 @@ export const GoodsReceiptScalarFieldEnum = {
   companyId: 'companyId',
   purchaseOrderId: 'purchaseOrderId',
   warehouseId: 'warehouseId',
-  createdbyId: 'createdbyId',
+  createdById: 'createdById',
   number: 'number',
   receivedAt: 'receivedAt'
 } as const
@@ -3223,7 +3223,7 @@ export const PaymentScalarFieldEnum = {
   companyId: 'companyId',
   customerId: 'customerId',
   supplierId: 'supplierId',
-  createdbyId: 'createdbyId',
+  createdById: 'createdById',
   direction: 'direction',
   method: 'method',
   reference: 'reference',
@@ -3249,7 +3249,8 @@ export const AccountScalarFieldEnum = {
   companyId: 'companyId',
   code: 'code',
   name: 'name',
-  type: 'type'
+  type: 'type',
+  isActive: 'isActive'
 } as const
 
 export type AccountScalarFieldEnum = (typeof AccountScalarFieldEnum)[keyof typeof AccountScalarFieldEnum]

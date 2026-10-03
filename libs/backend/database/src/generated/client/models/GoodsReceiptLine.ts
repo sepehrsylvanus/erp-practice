@@ -229,7 +229,7 @@ export type GoodsReceiptLineWhereInput = {
   quantity?: Prisma.DecimalFilter<"GoodsReceiptLine"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   unitCost?: Prisma.DecimalFilter<"GoodsReceiptLine"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   goodsReceipt?: Prisma.XOR<Prisma.GoodsReceiptScalarRelationFilter, Prisma.GoodsReceiptWhereInput>
-  ourchaseOrderLine?: Prisma.XOR<Prisma.PurchaseOrderLineScalarRelationFilter, Prisma.PurchaseOrderLineWhereInput>
+  purchaseOrderLine?: Prisma.XOR<Prisma.PurchaseOrderLineScalarRelationFilter, Prisma.PurchaseOrderLineWhereInput>
   product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
 }
 
@@ -241,7 +241,7 @@ export type GoodsReceiptLineOrderByWithRelationInput = {
   quantity?: Prisma.SortOrder
   unitCost?: Prisma.SortOrder
   goodsReceipt?: Prisma.GoodsReceiptOrderByWithRelationInput
-  ourchaseOrderLine?: Prisma.PurchaseOrderLineOrderByWithRelationInput
+  purchaseOrderLine?: Prisma.PurchaseOrderLineOrderByWithRelationInput
   product?: Prisma.ProductOrderByWithRelationInput
 }
 
@@ -256,7 +256,7 @@ export type GoodsReceiptLineWhereUniqueInput = Prisma.AtLeast<{
   quantity?: Prisma.DecimalFilter<"GoodsReceiptLine"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   unitCost?: Prisma.DecimalFilter<"GoodsReceiptLine"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   goodsReceipt?: Prisma.XOR<Prisma.GoodsReceiptScalarRelationFilter, Prisma.GoodsReceiptWhereInput>
-  ourchaseOrderLine?: Prisma.XOR<Prisma.PurchaseOrderLineScalarRelationFilter, Prisma.PurchaseOrderLineWhereInput>
+  purchaseOrderLine?: Prisma.XOR<Prisma.PurchaseOrderLineScalarRelationFilter, Prisma.PurchaseOrderLineWhereInput>
   product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
 }, "id">
 
@@ -291,7 +291,7 @@ export type GoodsReceiptLineCreateInput = {
   quantity: runtime.Decimal | runtime.DecimalJsLike | number | string
   unitCost: runtime.Decimal | runtime.DecimalJsLike | number | string
   goodsReceipt: Prisma.GoodsReceiptCreateNestedOneWithoutLinesInput
-  ourchaseOrderLine: Prisma.PurchaseOrderLineCreateNestedOneWithoutReceiptLinesInput
+  purchaseOrderLine: Prisma.PurchaseOrderLineCreateNestedOneWithoutReceiptLinesInput
   product: Prisma.ProductCreateNestedOneWithoutReceiptLinesInput
 }
 
@@ -309,7 +309,7 @@ export type GoodsReceiptLineUpdateInput = {
   quantity?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   unitCost?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   goodsReceipt?: Prisma.GoodsReceiptUpdateOneRequiredWithoutLinesNestedInput
-  ourchaseOrderLine?: Prisma.PurchaseOrderLineUpdateOneRequiredWithoutReceiptLinesNestedInput
+  purchaseOrderLine?: Prisma.PurchaseOrderLineUpdateOneRequiredWithoutReceiptLinesNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutReceiptLinesNestedInput
 }
 
@@ -435,45 +435,45 @@ export type GoodsReceiptLineUncheckedUpdateManyWithoutProductNestedInput = {
   deleteMany?: Prisma.GoodsReceiptLineScalarWhereInput | Prisma.GoodsReceiptLineScalarWhereInput[]
 }
 
-export type GoodsReceiptLineCreateNestedManyWithoutOurchaseOrderLineInput = {
-  create?: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutOurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput> | Prisma.GoodsReceiptLineCreateWithoutOurchaseOrderLineInput[] | Prisma.GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput[]
-  connectOrCreate?: Prisma.GoodsReceiptLineCreateOrConnectWithoutOurchaseOrderLineInput | Prisma.GoodsReceiptLineCreateOrConnectWithoutOurchaseOrderLineInput[]
-  createMany?: Prisma.GoodsReceiptLineCreateManyOurchaseOrderLineInputEnvelope
+export type GoodsReceiptLineCreateNestedManyWithoutPurchaseOrderLineInput = {
+  create?: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutPurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutPurchaseOrderLineInput> | Prisma.GoodsReceiptLineCreateWithoutPurchaseOrderLineInput[] | Prisma.GoodsReceiptLineUncheckedCreateWithoutPurchaseOrderLineInput[]
+  connectOrCreate?: Prisma.GoodsReceiptLineCreateOrConnectWithoutPurchaseOrderLineInput | Prisma.GoodsReceiptLineCreateOrConnectWithoutPurchaseOrderLineInput[]
+  createMany?: Prisma.GoodsReceiptLineCreateManyPurchaseOrderLineInputEnvelope
   connect?: Prisma.GoodsReceiptLineWhereUniqueInput | Prisma.GoodsReceiptLineWhereUniqueInput[]
 }
 
-export type GoodsReceiptLineUncheckedCreateNestedManyWithoutOurchaseOrderLineInput = {
-  create?: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutOurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput> | Prisma.GoodsReceiptLineCreateWithoutOurchaseOrderLineInput[] | Prisma.GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput[]
-  connectOrCreate?: Prisma.GoodsReceiptLineCreateOrConnectWithoutOurchaseOrderLineInput | Prisma.GoodsReceiptLineCreateOrConnectWithoutOurchaseOrderLineInput[]
-  createMany?: Prisma.GoodsReceiptLineCreateManyOurchaseOrderLineInputEnvelope
+export type GoodsReceiptLineUncheckedCreateNestedManyWithoutPurchaseOrderLineInput = {
+  create?: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutPurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutPurchaseOrderLineInput> | Prisma.GoodsReceiptLineCreateWithoutPurchaseOrderLineInput[] | Prisma.GoodsReceiptLineUncheckedCreateWithoutPurchaseOrderLineInput[]
+  connectOrCreate?: Prisma.GoodsReceiptLineCreateOrConnectWithoutPurchaseOrderLineInput | Prisma.GoodsReceiptLineCreateOrConnectWithoutPurchaseOrderLineInput[]
+  createMany?: Prisma.GoodsReceiptLineCreateManyPurchaseOrderLineInputEnvelope
   connect?: Prisma.GoodsReceiptLineWhereUniqueInput | Prisma.GoodsReceiptLineWhereUniqueInput[]
 }
 
-export type GoodsReceiptLineUpdateManyWithoutOurchaseOrderLineNestedInput = {
-  create?: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutOurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput> | Prisma.GoodsReceiptLineCreateWithoutOurchaseOrderLineInput[] | Prisma.GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput[]
-  connectOrCreate?: Prisma.GoodsReceiptLineCreateOrConnectWithoutOurchaseOrderLineInput | Prisma.GoodsReceiptLineCreateOrConnectWithoutOurchaseOrderLineInput[]
-  upsert?: Prisma.GoodsReceiptLineUpsertWithWhereUniqueWithoutOurchaseOrderLineInput | Prisma.GoodsReceiptLineUpsertWithWhereUniqueWithoutOurchaseOrderLineInput[]
-  createMany?: Prisma.GoodsReceiptLineCreateManyOurchaseOrderLineInputEnvelope
+export type GoodsReceiptLineUpdateManyWithoutPurchaseOrderLineNestedInput = {
+  create?: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutPurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutPurchaseOrderLineInput> | Prisma.GoodsReceiptLineCreateWithoutPurchaseOrderLineInput[] | Prisma.GoodsReceiptLineUncheckedCreateWithoutPurchaseOrderLineInput[]
+  connectOrCreate?: Prisma.GoodsReceiptLineCreateOrConnectWithoutPurchaseOrderLineInput | Prisma.GoodsReceiptLineCreateOrConnectWithoutPurchaseOrderLineInput[]
+  upsert?: Prisma.GoodsReceiptLineUpsertWithWhereUniqueWithoutPurchaseOrderLineInput | Prisma.GoodsReceiptLineUpsertWithWhereUniqueWithoutPurchaseOrderLineInput[]
+  createMany?: Prisma.GoodsReceiptLineCreateManyPurchaseOrderLineInputEnvelope
   set?: Prisma.GoodsReceiptLineWhereUniqueInput | Prisma.GoodsReceiptLineWhereUniqueInput[]
   disconnect?: Prisma.GoodsReceiptLineWhereUniqueInput | Prisma.GoodsReceiptLineWhereUniqueInput[]
   delete?: Prisma.GoodsReceiptLineWhereUniqueInput | Prisma.GoodsReceiptLineWhereUniqueInput[]
   connect?: Prisma.GoodsReceiptLineWhereUniqueInput | Prisma.GoodsReceiptLineWhereUniqueInput[]
-  update?: Prisma.GoodsReceiptLineUpdateWithWhereUniqueWithoutOurchaseOrderLineInput | Prisma.GoodsReceiptLineUpdateWithWhereUniqueWithoutOurchaseOrderLineInput[]
-  updateMany?: Prisma.GoodsReceiptLineUpdateManyWithWhereWithoutOurchaseOrderLineInput | Prisma.GoodsReceiptLineUpdateManyWithWhereWithoutOurchaseOrderLineInput[]
+  update?: Prisma.GoodsReceiptLineUpdateWithWhereUniqueWithoutPurchaseOrderLineInput | Prisma.GoodsReceiptLineUpdateWithWhereUniqueWithoutPurchaseOrderLineInput[]
+  updateMany?: Prisma.GoodsReceiptLineUpdateManyWithWhereWithoutPurchaseOrderLineInput | Prisma.GoodsReceiptLineUpdateManyWithWhereWithoutPurchaseOrderLineInput[]
   deleteMany?: Prisma.GoodsReceiptLineScalarWhereInput | Prisma.GoodsReceiptLineScalarWhereInput[]
 }
 
-export type GoodsReceiptLineUncheckedUpdateManyWithoutOurchaseOrderLineNestedInput = {
-  create?: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutOurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput> | Prisma.GoodsReceiptLineCreateWithoutOurchaseOrderLineInput[] | Prisma.GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput[]
-  connectOrCreate?: Prisma.GoodsReceiptLineCreateOrConnectWithoutOurchaseOrderLineInput | Prisma.GoodsReceiptLineCreateOrConnectWithoutOurchaseOrderLineInput[]
-  upsert?: Prisma.GoodsReceiptLineUpsertWithWhereUniqueWithoutOurchaseOrderLineInput | Prisma.GoodsReceiptLineUpsertWithWhereUniqueWithoutOurchaseOrderLineInput[]
-  createMany?: Prisma.GoodsReceiptLineCreateManyOurchaseOrderLineInputEnvelope
+export type GoodsReceiptLineUncheckedUpdateManyWithoutPurchaseOrderLineNestedInput = {
+  create?: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutPurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutPurchaseOrderLineInput> | Prisma.GoodsReceiptLineCreateWithoutPurchaseOrderLineInput[] | Prisma.GoodsReceiptLineUncheckedCreateWithoutPurchaseOrderLineInput[]
+  connectOrCreate?: Prisma.GoodsReceiptLineCreateOrConnectWithoutPurchaseOrderLineInput | Prisma.GoodsReceiptLineCreateOrConnectWithoutPurchaseOrderLineInput[]
+  upsert?: Prisma.GoodsReceiptLineUpsertWithWhereUniqueWithoutPurchaseOrderLineInput | Prisma.GoodsReceiptLineUpsertWithWhereUniqueWithoutPurchaseOrderLineInput[]
+  createMany?: Prisma.GoodsReceiptLineCreateManyPurchaseOrderLineInputEnvelope
   set?: Prisma.GoodsReceiptLineWhereUniqueInput | Prisma.GoodsReceiptLineWhereUniqueInput[]
   disconnect?: Prisma.GoodsReceiptLineWhereUniqueInput | Prisma.GoodsReceiptLineWhereUniqueInput[]
   delete?: Prisma.GoodsReceiptLineWhereUniqueInput | Prisma.GoodsReceiptLineWhereUniqueInput[]
   connect?: Prisma.GoodsReceiptLineWhereUniqueInput | Prisma.GoodsReceiptLineWhereUniqueInput[]
-  update?: Prisma.GoodsReceiptLineUpdateWithWhereUniqueWithoutOurchaseOrderLineInput | Prisma.GoodsReceiptLineUpdateWithWhereUniqueWithoutOurchaseOrderLineInput[]
-  updateMany?: Prisma.GoodsReceiptLineUpdateManyWithWhereWithoutOurchaseOrderLineInput | Prisma.GoodsReceiptLineUpdateManyWithWhereWithoutOurchaseOrderLineInput[]
+  update?: Prisma.GoodsReceiptLineUpdateWithWhereUniqueWithoutPurchaseOrderLineInput | Prisma.GoodsReceiptLineUpdateWithWhereUniqueWithoutPurchaseOrderLineInput[]
+  updateMany?: Prisma.GoodsReceiptLineUpdateManyWithWhereWithoutPurchaseOrderLineInput | Prisma.GoodsReceiptLineUpdateManyWithWhereWithoutPurchaseOrderLineInput[]
   deleteMany?: Prisma.GoodsReceiptLineScalarWhereInput | Prisma.GoodsReceiptLineScalarWhereInput[]
 }
 
@@ -524,7 +524,7 @@ export type GoodsReceiptLineCreateWithoutProductInput = {
   quantity: runtime.Decimal | runtime.DecimalJsLike | number | string
   unitCost: runtime.Decimal | runtime.DecimalJsLike | number | string
   goodsReceipt: Prisma.GoodsReceiptCreateNestedOneWithoutLinesInput
-  ourchaseOrderLine: Prisma.PurchaseOrderLineCreateNestedOneWithoutReceiptLinesInput
+  purchaseOrderLine: Prisma.PurchaseOrderLineCreateNestedOneWithoutReceiptLinesInput
 }
 
 export type GoodsReceiptLineUncheckedCreateWithoutProductInput = {
@@ -573,7 +573,7 @@ export type GoodsReceiptLineScalarWhereInput = {
   unitCost?: Prisma.DecimalFilter<"GoodsReceiptLine"> | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
-export type GoodsReceiptLineCreateWithoutOurchaseOrderLineInput = {
+export type GoodsReceiptLineCreateWithoutPurchaseOrderLineInput = {
   id?: string
   quantity: runtime.Decimal | runtime.DecimalJsLike | number | string
   unitCost: runtime.Decimal | runtime.DecimalJsLike | number | string
@@ -581,7 +581,7 @@ export type GoodsReceiptLineCreateWithoutOurchaseOrderLineInput = {
   product: Prisma.ProductCreateNestedOneWithoutReceiptLinesInput
 }
 
-export type GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput = {
+export type GoodsReceiptLineUncheckedCreateWithoutPurchaseOrderLineInput = {
   id?: string
   goodsReceiptId: string
   productId: string
@@ -589,37 +589,37 @@ export type GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput = {
   unitCost: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
-export type GoodsReceiptLineCreateOrConnectWithoutOurchaseOrderLineInput = {
+export type GoodsReceiptLineCreateOrConnectWithoutPurchaseOrderLineInput = {
   where: Prisma.GoodsReceiptLineWhereUniqueInput
-  create: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutOurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput>
+  create: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutPurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutPurchaseOrderLineInput>
 }
 
-export type GoodsReceiptLineCreateManyOurchaseOrderLineInputEnvelope = {
-  data: Prisma.GoodsReceiptLineCreateManyOurchaseOrderLineInput | Prisma.GoodsReceiptLineCreateManyOurchaseOrderLineInput[]
+export type GoodsReceiptLineCreateManyPurchaseOrderLineInputEnvelope = {
+  data: Prisma.GoodsReceiptLineCreateManyPurchaseOrderLineInput | Prisma.GoodsReceiptLineCreateManyPurchaseOrderLineInput[]
   skipDuplicates?: boolean
 }
 
-export type GoodsReceiptLineUpsertWithWhereUniqueWithoutOurchaseOrderLineInput = {
+export type GoodsReceiptLineUpsertWithWhereUniqueWithoutPurchaseOrderLineInput = {
   where: Prisma.GoodsReceiptLineWhereUniqueInput
-  update: Prisma.XOR<Prisma.GoodsReceiptLineUpdateWithoutOurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedUpdateWithoutOurchaseOrderLineInput>
-  create: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutOurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutOurchaseOrderLineInput>
+  update: Prisma.XOR<Prisma.GoodsReceiptLineUpdateWithoutPurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedUpdateWithoutPurchaseOrderLineInput>
+  create: Prisma.XOR<Prisma.GoodsReceiptLineCreateWithoutPurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedCreateWithoutPurchaseOrderLineInput>
 }
 
-export type GoodsReceiptLineUpdateWithWhereUniqueWithoutOurchaseOrderLineInput = {
+export type GoodsReceiptLineUpdateWithWhereUniqueWithoutPurchaseOrderLineInput = {
   where: Prisma.GoodsReceiptLineWhereUniqueInput
-  data: Prisma.XOR<Prisma.GoodsReceiptLineUpdateWithoutOurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedUpdateWithoutOurchaseOrderLineInput>
+  data: Prisma.XOR<Prisma.GoodsReceiptLineUpdateWithoutPurchaseOrderLineInput, Prisma.GoodsReceiptLineUncheckedUpdateWithoutPurchaseOrderLineInput>
 }
 
-export type GoodsReceiptLineUpdateManyWithWhereWithoutOurchaseOrderLineInput = {
+export type GoodsReceiptLineUpdateManyWithWhereWithoutPurchaseOrderLineInput = {
   where: Prisma.GoodsReceiptLineScalarWhereInput
-  data: Prisma.XOR<Prisma.GoodsReceiptLineUpdateManyMutationInput, Prisma.GoodsReceiptLineUncheckedUpdateManyWithoutOurchaseOrderLineInput>
+  data: Prisma.XOR<Prisma.GoodsReceiptLineUpdateManyMutationInput, Prisma.GoodsReceiptLineUncheckedUpdateManyWithoutPurchaseOrderLineInput>
 }
 
 export type GoodsReceiptLineCreateWithoutGoodsReceiptInput = {
   id?: string
   quantity: runtime.Decimal | runtime.DecimalJsLike | number | string
   unitCost: runtime.Decimal | runtime.DecimalJsLike | number | string
-  ourchaseOrderLine: Prisma.PurchaseOrderLineCreateNestedOneWithoutReceiptLinesInput
+  purchaseOrderLine: Prisma.PurchaseOrderLineCreateNestedOneWithoutReceiptLinesInput
   product: Prisma.ProductCreateNestedOneWithoutReceiptLinesInput
 }
 
@@ -670,7 +670,7 @@ export type GoodsReceiptLineUpdateWithoutProductInput = {
   quantity?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   unitCost?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   goodsReceipt?: Prisma.GoodsReceiptUpdateOneRequiredWithoutLinesNestedInput
-  ourchaseOrderLine?: Prisma.PurchaseOrderLineUpdateOneRequiredWithoutReceiptLinesNestedInput
+  purchaseOrderLine?: Prisma.PurchaseOrderLineUpdateOneRequiredWithoutReceiptLinesNestedInput
 }
 
 export type GoodsReceiptLineUncheckedUpdateWithoutProductInput = {
@@ -689,7 +689,7 @@ export type GoodsReceiptLineUncheckedUpdateManyWithoutProductInput = {
   unitCost?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
-export type GoodsReceiptLineCreateManyOurchaseOrderLineInput = {
+export type GoodsReceiptLineCreateManyPurchaseOrderLineInput = {
   id?: string
   goodsReceiptId: string
   productId: string
@@ -697,7 +697,7 @@ export type GoodsReceiptLineCreateManyOurchaseOrderLineInput = {
   unitCost: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
-export type GoodsReceiptLineUpdateWithoutOurchaseOrderLineInput = {
+export type GoodsReceiptLineUpdateWithoutPurchaseOrderLineInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   quantity?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   unitCost?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
@@ -705,7 +705,7 @@ export type GoodsReceiptLineUpdateWithoutOurchaseOrderLineInput = {
   product?: Prisma.ProductUpdateOneRequiredWithoutReceiptLinesNestedInput
 }
 
-export type GoodsReceiptLineUncheckedUpdateWithoutOurchaseOrderLineInput = {
+export type GoodsReceiptLineUncheckedUpdateWithoutPurchaseOrderLineInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   goodsReceiptId?: Prisma.StringFieldUpdateOperationsInput | string
   productId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -713,7 +713,7 @@ export type GoodsReceiptLineUncheckedUpdateWithoutOurchaseOrderLineInput = {
   unitCost?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
-export type GoodsReceiptLineUncheckedUpdateManyWithoutOurchaseOrderLineInput = {
+export type GoodsReceiptLineUncheckedUpdateManyWithoutPurchaseOrderLineInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   goodsReceiptId?: Prisma.StringFieldUpdateOperationsInput | string
   productId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -733,7 +733,7 @@ export type GoodsReceiptLineUpdateWithoutGoodsReceiptInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   quantity?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   unitCost?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  ourchaseOrderLine?: Prisma.PurchaseOrderLineUpdateOneRequiredWithoutReceiptLinesNestedInput
+  purchaseOrderLine?: Prisma.PurchaseOrderLineUpdateOneRequiredWithoutReceiptLinesNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutReceiptLinesNestedInput
 }
 
@@ -763,7 +763,7 @@ export type GoodsReceiptLineSelect<ExtArgs extends runtime.Types.Extensions.Inte
   quantity?: boolean
   unitCost?: boolean
   goodsReceipt?: boolean | Prisma.GoodsReceiptDefaultArgs<ExtArgs>
-  ourchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
+  purchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["goodsReceiptLine"]>
 
@@ -775,7 +775,7 @@ export type GoodsReceiptLineSelectCreateManyAndReturn<ExtArgs extends runtime.Ty
   quantity?: boolean
   unitCost?: boolean
   goodsReceipt?: boolean | Prisma.GoodsReceiptDefaultArgs<ExtArgs>
-  ourchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
+  purchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["goodsReceiptLine"]>
 
@@ -787,7 +787,7 @@ export type GoodsReceiptLineSelectUpdateManyAndReturn<ExtArgs extends runtime.Ty
   quantity?: boolean
   unitCost?: boolean
   goodsReceipt?: boolean | Prisma.GoodsReceiptDefaultArgs<ExtArgs>
-  ourchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
+  purchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["goodsReceiptLine"]>
 
@@ -803,17 +803,17 @@ export type GoodsReceiptLineSelectScalar = {
 export type GoodsReceiptLineOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "goodsReceiptId" | "purchaseOrderLineId" | "productId" | "quantity" | "unitCost", ExtArgs["result"]["goodsReceiptLine"]>
 export type GoodsReceiptLineInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   goodsReceipt?: boolean | Prisma.GoodsReceiptDefaultArgs<ExtArgs>
-  ourchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
+  purchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }
 export type GoodsReceiptLineIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   goodsReceipt?: boolean | Prisma.GoodsReceiptDefaultArgs<ExtArgs>
-  ourchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
+  purchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }
 export type GoodsReceiptLineIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   goodsReceipt?: boolean | Prisma.GoodsReceiptDefaultArgs<ExtArgs>
-  ourchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
+  purchaseOrderLine?: boolean | Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }
 
@@ -821,7 +821,7 @@ export type $GoodsReceiptLinePayload<ExtArgs extends runtime.Types.Extensions.In
   name: "GoodsReceiptLine"
   objects: {
     goodsReceipt: Prisma.$GoodsReceiptPayload<ExtArgs>
-    ourchaseOrderLine: Prisma.$PurchaseOrderLinePayload<ExtArgs>
+    purchaseOrderLine: Prisma.$PurchaseOrderLinePayload<ExtArgs>
     product: Prisma.$ProductPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1226,7 +1226,7 @@ readonly fields: GoodsReceiptLineFieldRefs;
 export interface Prisma__GoodsReceiptLineClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   goodsReceipt<T extends Prisma.GoodsReceiptDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.GoodsReceiptDefaultArgs<ExtArgs>>): Prisma.Prisma__GoodsReceiptClient<runtime.Types.Result.GetResult<Prisma.$GoodsReceiptPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  ourchaseOrderLine<T extends Prisma.PurchaseOrderLineDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>>): Prisma.Prisma__PurchaseOrderLineClient<runtime.Types.Result.GetResult<Prisma.$PurchaseOrderLinePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  purchaseOrderLine<T extends Prisma.PurchaseOrderLineDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PurchaseOrderLineDefaultArgs<ExtArgs>>): Prisma.Prisma__PurchaseOrderLineClient<runtime.Types.Result.GetResult<Prisma.$PurchaseOrderLinePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   product<T extends Prisma.ProductDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductDefaultArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.

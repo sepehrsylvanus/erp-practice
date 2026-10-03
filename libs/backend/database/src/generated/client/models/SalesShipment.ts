@@ -269,7 +269,7 @@ export type SalesShipmentCreateInput = {
   id?: string
   number: string
   shippedAt?: Date | string
-  company: Prisma.CompanyCreateNestedOneWithoutSalesShipmentsInput
+  company: Prisma.CompanyCreateNestedOneWithoutShipmentsInput
   salesOrder: Prisma.SalesOrderCreateNestedOneWithoutShipmentsInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutShipmentsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedShipmentsInput
@@ -291,7 +291,7 @@ export type SalesShipmentUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   shippedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  company?: Prisma.CompanyUpdateOneRequiredWithoutSalesShipmentsNestedInput
+  company?: Prisma.CompanyUpdateOneRequiredWithoutShipmentsNestedInput
   salesOrder?: Prisma.SalesOrderUpdateOneRequiredWithoutShipmentsNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutShipmentsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedShipmentsNestedInput
@@ -630,7 +630,7 @@ export type SalesShipmentCreateWithoutCreatedByInput = {
   id?: string
   number: string
   shippedAt?: Date | string
-  company: Prisma.CompanyCreateNestedOneWithoutSalesShipmentsInput
+  company: Prisma.CompanyCreateNestedOneWithoutShipmentsInput
   salesOrder: Prisma.SalesOrderCreateNestedOneWithoutShipmentsInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutShipmentsInput
   lines?: Prisma.SalesShipmentLineCreateNestedManyWithoutShipmentInput
@@ -676,7 +676,7 @@ export type SalesShipmentCreateWithoutWarehouseInput = {
   id?: string
   number: string
   shippedAt?: Date | string
-  company: Prisma.CompanyCreateNestedOneWithoutSalesShipmentsInput
+  company: Prisma.CompanyCreateNestedOneWithoutShipmentsInput
   salesOrder: Prisma.SalesOrderCreateNestedOneWithoutShipmentsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedShipmentsInput
   lines?: Prisma.SalesShipmentLineCreateNestedManyWithoutShipmentInput
@@ -722,7 +722,7 @@ export type SalesShipmentCreateWithoutSalesOrderInput = {
   id?: string
   number: string
   shippedAt?: Date | string
-  company: Prisma.CompanyCreateNestedOneWithoutSalesShipmentsInput
+  company: Prisma.CompanyCreateNestedOneWithoutShipmentsInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutShipmentsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedShipmentsInput
   lines?: Prisma.SalesShipmentLineCreateNestedManyWithoutShipmentInput
@@ -768,7 +768,7 @@ export type SalesShipmentCreateWithoutLinesInput = {
   id?: string
   number: string
   shippedAt?: Date | string
-  company: Prisma.CompanyCreateNestedOneWithoutSalesShipmentsInput
+  company: Prisma.CompanyCreateNestedOneWithoutShipmentsInput
   salesOrder: Prisma.SalesOrderCreateNestedOneWithoutShipmentsInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutShipmentsInput
   createdBy: Prisma.UserCreateNestedOneWithoutCreatedShipmentsInput
@@ -804,7 +804,7 @@ export type SalesShipmentUpdateWithoutLinesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   shippedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  company?: Prisma.CompanyUpdateOneRequiredWithoutSalesShipmentsNestedInput
+  company?: Prisma.CompanyUpdateOneRequiredWithoutShipmentsNestedInput
   salesOrder?: Prisma.SalesOrderUpdateOneRequiredWithoutShipmentsNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutShipmentsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedShipmentsNestedInput
@@ -871,7 +871,7 @@ export type SalesShipmentUpdateWithoutCreatedByInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   shippedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  company?: Prisma.CompanyUpdateOneRequiredWithoutSalesShipmentsNestedInput
+  company?: Prisma.CompanyUpdateOneRequiredWithoutShipmentsNestedInput
   salesOrder?: Prisma.SalesOrderUpdateOneRequiredWithoutShipmentsNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutShipmentsNestedInput
   lines?: Prisma.SalesShipmentLineUpdateManyWithoutShipmentNestedInput
@@ -909,7 +909,7 @@ export type SalesShipmentUpdateWithoutWarehouseInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   shippedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  company?: Prisma.CompanyUpdateOneRequiredWithoutSalesShipmentsNestedInput
+  company?: Prisma.CompanyUpdateOneRequiredWithoutShipmentsNestedInput
   salesOrder?: Prisma.SalesOrderUpdateOneRequiredWithoutShipmentsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedShipmentsNestedInput
   lines?: Prisma.SalesShipmentLineUpdateManyWithoutShipmentNestedInput
@@ -947,7 +947,7 @@ export type SalesShipmentUpdateWithoutSalesOrderInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   shippedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  company?: Prisma.CompanyUpdateOneRequiredWithoutSalesShipmentsNestedInput
+  company?: Prisma.CompanyUpdateOneRequiredWithoutShipmentsNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutShipmentsNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedShipmentsNestedInput
   lines?: Prisma.SalesShipmentLineUpdateManyWithoutShipmentNestedInput

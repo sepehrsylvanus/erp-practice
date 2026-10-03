@@ -39,7 +39,7 @@ export type PaymentMinAggregateOutputType = {
   companyId: string | null
   customerId: string | null
   supplierId: string | null
-  createdbyId: string | null
+  createdById: string | null
   direction: $Enums.PaymentDirection | null
   method: string | null
   reference: string | null
@@ -53,7 +53,7 @@ export type PaymentMaxAggregateOutputType = {
   companyId: string | null
   customerId: string | null
   supplierId: string | null
-  createdbyId: string | null
+  createdById: string | null
   direction: $Enums.PaymentDirection | null
   method: string | null
   reference: string | null
@@ -67,7 +67,7 @@ export type PaymentCountAggregateOutputType = {
   companyId: number
   customerId: number
   supplierId: number
-  createdbyId: number
+  createdById: number
   direction: number
   method: number
   reference: number
@@ -91,7 +91,7 @@ export type PaymentMinAggregateInputType = {
   companyId?: true
   customerId?: true
   supplierId?: true
-  createdbyId?: true
+  createdById?: true
   direction?: true
   method?: true
   reference?: true
@@ -105,7 +105,7 @@ export type PaymentMaxAggregateInputType = {
   companyId?: true
   customerId?: true
   supplierId?: true
-  createdbyId?: true
+  createdById?: true
   direction?: true
   method?: true
   reference?: true
@@ -119,7 +119,7 @@ export type PaymentCountAggregateInputType = {
   companyId?: true
   customerId?: true
   supplierId?: true
-  createdbyId?: true
+  createdById?: true
   direction?: true
   method?: true
   reference?: true
@@ -220,7 +220,7 @@ export type PaymentGroupByOutputType = {
   companyId: string
   customerId: string | null
   supplierId: string | null
-  createdbyId: string
+  createdById: string
   direction: $Enums.PaymentDirection
   method: string
   reference: string | null
@@ -257,7 +257,7 @@ export type PaymentWhereInput = {
   companyId?: Prisma.StringFilter<"Payment"> | string
   customerId?: Prisma.StringNullableFilter<"Payment"> | string | null
   supplierId?: Prisma.StringNullableFilter<"Payment"> | string | null
-  createdbyId?: Prisma.StringFilter<"Payment"> | string
+  createdById?: Prisma.StringFilter<"Payment"> | string
   direction?: Prisma.EnumPaymentDirectionFilter<"Payment"> | $Enums.PaymentDirection
   method?: Prisma.StringFilter<"Payment"> | string
   reference?: Prisma.StringNullableFilter<"Payment"> | string | null
@@ -276,7 +276,7 @@ export type PaymentOrderByWithRelationInput = {
   companyId?: Prisma.SortOrder
   customerId?: Prisma.SortOrderInput | Prisma.SortOrder
   supplierId?: Prisma.SortOrderInput | Prisma.SortOrder
-  createdbyId?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
   direction?: Prisma.SortOrder
   method?: Prisma.SortOrder
   reference?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -298,7 +298,7 @@ export type PaymentWhereUniqueInput = Prisma.AtLeast<{
   companyId?: Prisma.StringFilter<"Payment"> | string
   customerId?: Prisma.StringNullableFilter<"Payment"> | string | null
   supplierId?: Prisma.StringNullableFilter<"Payment"> | string | null
-  createdbyId?: Prisma.StringFilter<"Payment"> | string
+  createdById?: Prisma.StringFilter<"Payment"> | string
   direction?: Prisma.EnumPaymentDirectionFilter<"Payment"> | $Enums.PaymentDirection
   method?: Prisma.StringFilter<"Payment"> | string
   reference?: Prisma.StringNullableFilter<"Payment"> | string | null
@@ -317,7 +317,7 @@ export type PaymentOrderByWithAggregationInput = {
   companyId?: Prisma.SortOrder
   customerId?: Prisma.SortOrderInput | Prisma.SortOrder
   supplierId?: Prisma.SortOrderInput | Prisma.SortOrder
-  createdbyId?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
   direction?: Prisma.SortOrder
   method?: Prisma.SortOrder
   reference?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -339,7 +339,7 @@ export type PaymentScalarWhereWithAggregatesInput = {
   companyId?: Prisma.StringWithAggregatesFilter<"Payment"> | string
   customerId?: Prisma.StringNullableWithAggregatesFilter<"Payment"> | string | null
   supplierId?: Prisma.StringNullableWithAggregatesFilter<"Payment"> | string | null
-  createdbyId?: Prisma.StringWithAggregatesFilter<"Payment"> | string
+  createdById?: Prisma.StringWithAggregatesFilter<"Payment"> | string
   direction?: Prisma.EnumPaymentDirectionWithAggregatesFilter<"Payment"> | $Enums.PaymentDirection
   method?: Prisma.StringWithAggregatesFilter<"Payment"> | string
   reference?: Prisma.StringNullableWithAggregatesFilter<"Payment"> | string | null
@@ -368,7 +368,7 @@ export type PaymentUncheckedCreateInput = {
   companyId: string
   customerId?: string | null
   supplierId?: string | null
-  createdbyId: string
+  createdById: string
   direction: $Enums.PaymentDirection
   method: string
   reference?: string | null
@@ -398,7 +398,7 @@ export type PaymentUncheckedUpdateInput = {
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   customerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   supplierId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   direction?: Prisma.EnumPaymentDirectionFieldUpdateOperationsInput | $Enums.PaymentDirection
   method?: Prisma.StringFieldUpdateOperationsInput | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -413,7 +413,7 @@ export type PaymentCreateManyInput = {
   companyId: string
   customerId?: string | null
   supplierId?: string | null
-  createdbyId: string
+  createdById: string
   direction: $Enums.PaymentDirection
   method: string
   reference?: string | null
@@ -437,7 +437,7 @@ export type PaymentUncheckedUpdateManyInput = {
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   customerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   supplierId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   direction?: Prisma.EnumPaymentDirectionFieldUpdateOperationsInput | $Enums.PaymentDirection
   method?: Prisma.StringFieldUpdateOperationsInput | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -461,7 +461,7 @@ export type PaymentCountOrderByAggregateInput = {
   companyId?: Prisma.SortOrder
   customerId?: Prisma.SortOrder
   supplierId?: Prisma.SortOrder
-  createdbyId?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
   direction?: Prisma.SortOrder
   method?: Prisma.SortOrder
   reference?: Prisma.SortOrder
@@ -479,7 +479,7 @@ export type PaymentMaxOrderByAggregateInput = {
   companyId?: Prisma.SortOrder
   customerId?: Prisma.SortOrder
   supplierId?: Prisma.SortOrder
-  createdbyId?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
   direction?: Prisma.SortOrder
   method?: Prisma.SortOrder
   reference?: Prisma.SortOrder
@@ -493,7 +493,7 @@ export type PaymentMinOrderByAggregateInput = {
   companyId?: Prisma.SortOrder
   customerId?: Prisma.SortOrder
   supplierId?: Prisma.SortOrder
-  createdbyId?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
   direction?: Prisma.SortOrder
   method?: Prisma.SortOrder
   reference?: Prisma.SortOrder
@@ -715,7 +715,7 @@ export type PaymentUncheckedCreateWithoutCompanyInput = {
   id?: string
   customerId?: string | null
   supplierId?: string | null
-  createdbyId: string
+  createdById: string
   direction: $Enums.PaymentDirection
   method: string
   reference?: string | null
@@ -759,7 +759,7 @@ export type PaymentScalarWhereInput = {
   companyId?: Prisma.StringFilter<"Payment"> | string
   customerId?: Prisma.StringNullableFilter<"Payment"> | string | null
   supplierId?: Prisma.StringNullableFilter<"Payment"> | string | null
-  createdbyId?: Prisma.StringFilter<"Payment"> | string
+  createdById?: Prisma.StringFilter<"Payment"> | string
   direction?: Prisma.EnumPaymentDirectionFilter<"Payment"> | $Enums.PaymentDirection
   method?: Prisma.StringFilter<"Payment"> | string
   reference?: Prisma.StringNullableFilter<"Payment"> | string | null
@@ -840,7 +840,7 @@ export type PaymentUncheckedCreateWithoutCustomerInput = {
   id?: string
   companyId: string
   supplierId?: string | null
-  createdbyId: string
+  createdById: string
   direction: $Enums.PaymentDirection
   method: string
   reference?: string | null
@@ -894,7 +894,7 @@ export type PaymentUncheckedCreateWithoutSupplierInput = {
   id?: string
   companyId: string
   customerId?: string | null
-  createdbyId: string
+  createdById: string
   direction: $Enums.PaymentDirection
   method: string
   reference?: string | null
@@ -949,7 +949,7 @@ export type PaymentUncheckedCreateWithoutAllocationsInput = {
   companyId: string
   customerId?: string | null
   supplierId?: string | null
-  createdbyId: string
+  createdById: string
   direction: $Enums.PaymentDirection
   method: string
   reference?: string | null
@@ -993,7 +993,7 @@ export type PaymentUncheckedUpdateWithoutAllocationsInput = {
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   customerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   supplierId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   direction?: Prisma.EnumPaymentDirectionFieldUpdateOperationsInput | $Enums.PaymentDirection
   method?: Prisma.StringFieldUpdateOperationsInput | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1006,7 +1006,7 @@ export type PaymentCreateManyCompanyInput = {
   id?: string
   customerId?: string | null
   supplierId?: string | null
-  createdbyId: string
+  createdById: string
   direction: $Enums.PaymentDirection
   method: string
   reference?: string | null
@@ -1033,7 +1033,7 @@ export type PaymentUncheckedUpdateWithoutCompanyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   customerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   supplierId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   direction?: Prisma.EnumPaymentDirectionFieldUpdateOperationsInput | $Enums.PaymentDirection
   method?: Prisma.StringFieldUpdateOperationsInput | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1047,7 +1047,7 @@ export type PaymentUncheckedUpdateManyWithoutCompanyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   customerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   supplierId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   direction?: Prisma.EnumPaymentDirectionFieldUpdateOperationsInput | $Enums.PaymentDirection
   method?: Prisma.StringFieldUpdateOperationsInput | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1114,7 +1114,7 @@ export type PaymentCreateManyCustomerInput = {
   id?: string
   companyId: string
   supplierId?: string | null
-  createdbyId: string
+  createdById: string
   direction: $Enums.PaymentDirection
   method: string
   reference?: string | null
@@ -1141,7 +1141,7 @@ export type PaymentUncheckedUpdateWithoutCustomerInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   supplierId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   direction?: Prisma.EnumPaymentDirectionFieldUpdateOperationsInput | $Enums.PaymentDirection
   method?: Prisma.StringFieldUpdateOperationsInput | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1155,7 +1155,7 @@ export type PaymentUncheckedUpdateManyWithoutCustomerInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   supplierId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   direction?: Prisma.EnumPaymentDirectionFieldUpdateOperationsInput | $Enums.PaymentDirection
   method?: Prisma.StringFieldUpdateOperationsInput | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1168,7 +1168,7 @@ export type PaymentCreateManySupplierInput = {
   id?: string
   companyId: string
   customerId?: string | null
-  createdbyId: string
+  createdById: string
   direction: $Enums.PaymentDirection
   method: string
   reference?: string | null
@@ -1195,7 +1195,7 @@ export type PaymentUncheckedUpdateWithoutSupplierInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   customerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   direction?: Prisma.EnumPaymentDirectionFieldUpdateOperationsInput | $Enums.PaymentDirection
   method?: Prisma.StringFieldUpdateOperationsInput | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1209,7 +1209,7 @@ export type PaymentUncheckedUpdateManyWithoutSupplierInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   customerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   direction?: Prisma.EnumPaymentDirectionFieldUpdateOperationsInput | $Enums.PaymentDirection
   method?: Prisma.StringFieldUpdateOperationsInput | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1254,7 +1254,7 @@ export type PaymentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   companyId?: boolean
   customerId?: boolean
   supplierId?: boolean
-  createdbyId?: boolean
+  createdById?: boolean
   direction?: boolean
   method?: boolean
   reference?: boolean
@@ -1274,7 +1274,7 @@ export type PaymentSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   companyId?: boolean
   customerId?: boolean
   supplierId?: boolean
-  createdbyId?: boolean
+  createdById?: boolean
   direction?: boolean
   method?: boolean
   reference?: boolean
@@ -1292,7 +1292,7 @@ export type PaymentSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   companyId?: boolean
   customerId?: boolean
   supplierId?: boolean
-  createdbyId?: boolean
+  createdById?: boolean
   direction?: boolean
   method?: boolean
   reference?: boolean
@@ -1310,7 +1310,7 @@ export type PaymentSelectScalar = {
   companyId?: boolean
   customerId?: boolean
   supplierId?: boolean
-  createdbyId?: boolean
+  createdById?: boolean
   direction?: boolean
   method?: boolean
   reference?: boolean
@@ -1319,7 +1319,7 @@ export type PaymentSelectScalar = {
   paidAt?: boolean
 }
 
-export type PaymentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "companyId" | "customerId" | "supplierId" | "createdbyId" | "direction" | "method" | "reference" | "amount" | "currency" | "paidAt", ExtArgs["result"]["payment"]>
+export type PaymentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "companyId" | "customerId" | "supplierId" | "createdById" | "direction" | "method" | "reference" | "amount" | "currency" | "paidAt", ExtArgs["result"]["payment"]>
 export type PaymentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.Payment$customerArgs<ExtArgs>
@@ -1355,7 +1355,7 @@ export type $PaymentPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     companyId: string
     customerId: string | null
     supplierId: string | null
-    createdbyId: string
+    createdById: string
     direction: $Enums.PaymentDirection
     method: string
     reference: string | null
@@ -1794,7 +1794,7 @@ export interface PaymentFieldRefs {
   readonly companyId: Prisma.FieldRef<"Payment", 'String'>
   readonly customerId: Prisma.FieldRef<"Payment", 'String'>
   readonly supplierId: Prisma.FieldRef<"Payment", 'String'>
-  readonly createdbyId: Prisma.FieldRef<"Payment", 'String'>
+  readonly createdById: Prisma.FieldRef<"Payment", 'String'>
   readonly direction: Prisma.FieldRef<"Payment", 'PaymentDirection'>
   readonly method: Prisma.FieldRef<"Payment", 'String'>
   readonly reference: Prisma.FieldRef<"Payment", 'String'>

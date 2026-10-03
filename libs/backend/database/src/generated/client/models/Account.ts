@@ -30,6 +30,7 @@ export type AccountMinAggregateOutputType = {
   code: string | null
   name: string | null
   type: $Enums.AccountType | null
+  isActive: boolean | null
 }
 
 export type AccountMaxAggregateOutputType = {
@@ -38,6 +39,7 @@ export type AccountMaxAggregateOutputType = {
   code: string | null
   name: string | null
   type: $Enums.AccountType | null
+  isActive: boolean | null
 }
 
 export type AccountCountAggregateOutputType = {
@@ -46,6 +48,7 @@ export type AccountCountAggregateOutputType = {
   code: number
   name: number
   type: number
+  isActive: number
   _all: number
 }
 
@@ -56,6 +59,7 @@ export type AccountMinAggregateInputType = {
   code?: true
   name?: true
   type?: true
+  isActive?: true
 }
 
 export type AccountMaxAggregateInputType = {
@@ -64,6 +68,7 @@ export type AccountMaxAggregateInputType = {
   code?: true
   name?: true
   type?: true
+  isActive?: true
 }
 
 export type AccountCountAggregateInputType = {
@@ -72,6 +77,7 @@ export type AccountCountAggregateInputType = {
   code?: true
   name?: true
   type?: true
+  isActive?: true
   _all?: true
 }
 
@@ -153,6 +159,7 @@ export type AccountGroupByOutputType = {
   code: string
   name: string
   type: $Enums.AccountType
+  isActive: boolean
   _count: AccountCountAggregateOutputType | null
   _min: AccountMinAggregateOutputType | null
   _max: AccountMaxAggregateOutputType | null
@@ -182,7 +189,8 @@ export type AccountWhereInput = {
   code?: Prisma.StringFilter<"Account"> | string
   name?: Prisma.StringFilter<"Account"> | string
   type?: Prisma.EnumAccountTypeFilter<"Account"> | $Enums.AccountType
-  isActvie?: Prisma.XOR<Prisma.CompanyScalarRelationFilter, Prisma.CompanyWhereInput>
+  isActive?: Prisma.BoolFilter<"Account"> | boolean
+  company?: Prisma.XOR<Prisma.CompanyScalarRelationFilter, Prisma.CompanyWhereInput>
   journalLines?: Prisma.JournalLineListRelationFilter
 }
 
@@ -192,7 +200,8 @@ export type AccountOrderByWithRelationInput = {
   code?: Prisma.SortOrder
   name?: Prisma.SortOrder
   type?: Prisma.SortOrder
-  isActvie?: Prisma.CompanyOrderByWithRelationInput
+  isActive?: Prisma.SortOrder
+  company?: Prisma.CompanyOrderByWithRelationInput
   journalLines?: Prisma.JournalLineOrderByRelationAggregateInput
 }
 
@@ -206,7 +215,8 @@ export type AccountWhereUniqueInput = Prisma.AtLeast<{
   code?: Prisma.StringFilter<"Account"> | string
   name?: Prisma.StringFilter<"Account"> | string
   type?: Prisma.EnumAccountTypeFilter<"Account"> | $Enums.AccountType
-  isActvie?: Prisma.XOR<Prisma.CompanyScalarRelationFilter, Prisma.CompanyWhereInput>
+  isActive?: Prisma.BoolFilter<"Account"> | boolean
+  company?: Prisma.XOR<Prisma.CompanyScalarRelationFilter, Prisma.CompanyWhereInput>
   journalLines?: Prisma.JournalLineListRelationFilter
 }, "id" | "companyId_code">
 
@@ -216,6 +226,7 @@ export type AccountOrderByWithAggregationInput = {
   code?: Prisma.SortOrder
   name?: Prisma.SortOrder
   type?: Prisma.SortOrder
+  isActive?: Prisma.SortOrder
   _count?: Prisma.AccountCountOrderByAggregateInput
   _max?: Prisma.AccountMaxOrderByAggregateInput
   _min?: Prisma.AccountMinOrderByAggregateInput
@@ -230,6 +241,7 @@ export type AccountScalarWhereWithAggregatesInput = {
   code?: Prisma.StringWithAggregatesFilter<"Account"> | string
   name?: Prisma.StringWithAggregatesFilter<"Account"> | string
   type?: Prisma.EnumAccountTypeWithAggregatesFilter<"Account"> | $Enums.AccountType
+  isActive?: Prisma.BoolWithAggregatesFilter<"Account"> | boolean
 }
 
 export type AccountCreateInput = {
@@ -237,7 +249,8 @@ export type AccountCreateInput = {
   code: string
   name: string
   type: $Enums.AccountType
-  isActvie: Prisma.CompanyCreateNestedOneWithoutAccountsInput
+  isActive?: boolean
+  company: Prisma.CompanyCreateNestedOneWithoutAccountsInput
   journalLines?: Prisma.JournalLineCreateNestedManyWithoutAccountInput
 }
 
@@ -247,6 +260,7 @@ export type AccountUncheckedCreateInput = {
   code: string
   name: string
   type: $Enums.AccountType
+  isActive?: boolean
   journalLines?: Prisma.JournalLineUncheckedCreateNestedManyWithoutAccountInput
 }
 
@@ -255,7 +269,8 @@ export type AccountUpdateInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
-  isActvie?: Prisma.CompanyUpdateOneRequiredWithoutAccountsNestedInput
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  company?: Prisma.CompanyUpdateOneRequiredWithoutAccountsNestedInput
   journalLines?: Prisma.JournalLineUpdateManyWithoutAccountNestedInput
 }
 
@@ -265,6 +280,7 @@ export type AccountUncheckedUpdateInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   journalLines?: Prisma.JournalLineUncheckedUpdateManyWithoutAccountNestedInput
 }
 
@@ -274,6 +290,7 @@ export type AccountCreateManyInput = {
   code: string
   name: string
   type: $Enums.AccountType
+  isActive?: boolean
 }
 
 export type AccountUpdateManyMutationInput = {
@@ -281,6 +298,7 @@ export type AccountUpdateManyMutationInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type AccountUncheckedUpdateManyInput = {
@@ -289,6 +307,7 @@ export type AccountUncheckedUpdateManyInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type AccountListRelationFilter = {
@@ -312,6 +331,7 @@ export type AccountCountOrderByAggregateInput = {
   code?: Prisma.SortOrder
   name?: Prisma.SortOrder
   type?: Prisma.SortOrder
+  isActive?: Prisma.SortOrder
 }
 
 export type AccountMaxOrderByAggregateInput = {
@@ -320,6 +340,7 @@ export type AccountMaxOrderByAggregateInput = {
   code?: Prisma.SortOrder
   name?: Prisma.SortOrder
   type?: Prisma.SortOrder
+  isActive?: Prisma.SortOrder
 }
 
 export type AccountMinOrderByAggregateInput = {
@@ -328,6 +349,7 @@ export type AccountMinOrderByAggregateInput = {
   code?: Prisma.SortOrder
   name?: Prisma.SortOrder
   type?: Prisma.SortOrder
+  isActive?: Prisma.SortOrder
 }
 
 export type AccountScalarRelationFilter = {
@@ -335,45 +357,45 @@ export type AccountScalarRelationFilter = {
   isNot?: Prisma.AccountWhereInput
 }
 
-export type AccountCreateNestedManyWithoutIsActvieInput = {
-  create?: Prisma.XOR<Prisma.AccountCreateWithoutIsActvieInput, Prisma.AccountUncheckedCreateWithoutIsActvieInput> | Prisma.AccountCreateWithoutIsActvieInput[] | Prisma.AccountUncheckedCreateWithoutIsActvieInput[]
-  connectOrCreate?: Prisma.AccountCreateOrConnectWithoutIsActvieInput | Prisma.AccountCreateOrConnectWithoutIsActvieInput[]
-  createMany?: Prisma.AccountCreateManyIsActvieInputEnvelope
+export type AccountCreateNestedManyWithoutCompanyInput = {
+  create?: Prisma.XOR<Prisma.AccountCreateWithoutCompanyInput, Prisma.AccountUncheckedCreateWithoutCompanyInput> | Prisma.AccountCreateWithoutCompanyInput[] | Prisma.AccountUncheckedCreateWithoutCompanyInput[]
+  connectOrCreate?: Prisma.AccountCreateOrConnectWithoutCompanyInput | Prisma.AccountCreateOrConnectWithoutCompanyInput[]
+  createMany?: Prisma.AccountCreateManyCompanyInputEnvelope
   connect?: Prisma.AccountWhereUniqueInput | Prisma.AccountWhereUniqueInput[]
 }
 
-export type AccountUncheckedCreateNestedManyWithoutIsActvieInput = {
-  create?: Prisma.XOR<Prisma.AccountCreateWithoutIsActvieInput, Prisma.AccountUncheckedCreateWithoutIsActvieInput> | Prisma.AccountCreateWithoutIsActvieInput[] | Prisma.AccountUncheckedCreateWithoutIsActvieInput[]
-  connectOrCreate?: Prisma.AccountCreateOrConnectWithoutIsActvieInput | Prisma.AccountCreateOrConnectWithoutIsActvieInput[]
-  createMany?: Prisma.AccountCreateManyIsActvieInputEnvelope
+export type AccountUncheckedCreateNestedManyWithoutCompanyInput = {
+  create?: Prisma.XOR<Prisma.AccountCreateWithoutCompanyInput, Prisma.AccountUncheckedCreateWithoutCompanyInput> | Prisma.AccountCreateWithoutCompanyInput[] | Prisma.AccountUncheckedCreateWithoutCompanyInput[]
+  connectOrCreate?: Prisma.AccountCreateOrConnectWithoutCompanyInput | Prisma.AccountCreateOrConnectWithoutCompanyInput[]
+  createMany?: Prisma.AccountCreateManyCompanyInputEnvelope
   connect?: Prisma.AccountWhereUniqueInput | Prisma.AccountWhereUniqueInput[]
 }
 
-export type AccountUpdateManyWithoutIsActvieNestedInput = {
-  create?: Prisma.XOR<Prisma.AccountCreateWithoutIsActvieInput, Prisma.AccountUncheckedCreateWithoutIsActvieInput> | Prisma.AccountCreateWithoutIsActvieInput[] | Prisma.AccountUncheckedCreateWithoutIsActvieInput[]
-  connectOrCreate?: Prisma.AccountCreateOrConnectWithoutIsActvieInput | Prisma.AccountCreateOrConnectWithoutIsActvieInput[]
-  upsert?: Prisma.AccountUpsertWithWhereUniqueWithoutIsActvieInput | Prisma.AccountUpsertWithWhereUniqueWithoutIsActvieInput[]
-  createMany?: Prisma.AccountCreateManyIsActvieInputEnvelope
+export type AccountUpdateManyWithoutCompanyNestedInput = {
+  create?: Prisma.XOR<Prisma.AccountCreateWithoutCompanyInput, Prisma.AccountUncheckedCreateWithoutCompanyInput> | Prisma.AccountCreateWithoutCompanyInput[] | Prisma.AccountUncheckedCreateWithoutCompanyInput[]
+  connectOrCreate?: Prisma.AccountCreateOrConnectWithoutCompanyInput | Prisma.AccountCreateOrConnectWithoutCompanyInput[]
+  upsert?: Prisma.AccountUpsertWithWhereUniqueWithoutCompanyInput | Prisma.AccountUpsertWithWhereUniqueWithoutCompanyInput[]
+  createMany?: Prisma.AccountCreateManyCompanyInputEnvelope
   set?: Prisma.AccountWhereUniqueInput | Prisma.AccountWhereUniqueInput[]
   disconnect?: Prisma.AccountWhereUniqueInput | Prisma.AccountWhereUniqueInput[]
   delete?: Prisma.AccountWhereUniqueInput | Prisma.AccountWhereUniqueInput[]
   connect?: Prisma.AccountWhereUniqueInput | Prisma.AccountWhereUniqueInput[]
-  update?: Prisma.AccountUpdateWithWhereUniqueWithoutIsActvieInput | Prisma.AccountUpdateWithWhereUniqueWithoutIsActvieInput[]
-  updateMany?: Prisma.AccountUpdateManyWithWhereWithoutIsActvieInput | Prisma.AccountUpdateManyWithWhereWithoutIsActvieInput[]
+  update?: Prisma.AccountUpdateWithWhereUniqueWithoutCompanyInput | Prisma.AccountUpdateWithWhereUniqueWithoutCompanyInput[]
+  updateMany?: Prisma.AccountUpdateManyWithWhereWithoutCompanyInput | Prisma.AccountUpdateManyWithWhereWithoutCompanyInput[]
   deleteMany?: Prisma.AccountScalarWhereInput | Prisma.AccountScalarWhereInput[]
 }
 
-export type AccountUncheckedUpdateManyWithoutIsActvieNestedInput = {
-  create?: Prisma.XOR<Prisma.AccountCreateWithoutIsActvieInput, Prisma.AccountUncheckedCreateWithoutIsActvieInput> | Prisma.AccountCreateWithoutIsActvieInput[] | Prisma.AccountUncheckedCreateWithoutIsActvieInput[]
-  connectOrCreate?: Prisma.AccountCreateOrConnectWithoutIsActvieInput | Prisma.AccountCreateOrConnectWithoutIsActvieInput[]
-  upsert?: Prisma.AccountUpsertWithWhereUniqueWithoutIsActvieInput | Prisma.AccountUpsertWithWhereUniqueWithoutIsActvieInput[]
-  createMany?: Prisma.AccountCreateManyIsActvieInputEnvelope
+export type AccountUncheckedUpdateManyWithoutCompanyNestedInput = {
+  create?: Prisma.XOR<Prisma.AccountCreateWithoutCompanyInput, Prisma.AccountUncheckedCreateWithoutCompanyInput> | Prisma.AccountCreateWithoutCompanyInput[] | Prisma.AccountUncheckedCreateWithoutCompanyInput[]
+  connectOrCreate?: Prisma.AccountCreateOrConnectWithoutCompanyInput | Prisma.AccountCreateOrConnectWithoutCompanyInput[]
+  upsert?: Prisma.AccountUpsertWithWhereUniqueWithoutCompanyInput | Prisma.AccountUpsertWithWhereUniqueWithoutCompanyInput[]
+  createMany?: Prisma.AccountCreateManyCompanyInputEnvelope
   set?: Prisma.AccountWhereUniqueInput | Prisma.AccountWhereUniqueInput[]
   disconnect?: Prisma.AccountWhereUniqueInput | Prisma.AccountWhereUniqueInput[]
   delete?: Prisma.AccountWhereUniqueInput | Prisma.AccountWhereUniqueInput[]
   connect?: Prisma.AccountWhereUniqueInput | Prisma.AccountWhereUniqueInput[]
-  update?: Prisma.AccountUpdateWithWhereUniqueWithoutIsActvieInput | Prisma.AccountUpdateWithWhereUniqueWithoutIsActvieInput[]
-  updateMany?: Prisma.AccountUpdateManyWithWhereWithoutIsActvieInput | Prisma.AccountUpdateManyWithWhereWithoutIsActvieInput[]
+  update?: Prisma.AccountUpdateWithWhereUniqueWithoutCompanyInput | Prisma.AccountUpdateWithWhereUniqueWithoutCompanyInput[]
+  updateMany?: Prisma.AccountUpdateManyWithWhereWithoutCompanyInput | Prisma.AccountUpdateManyWithWhereWithoutCompanyInput[]
   deleteMany?: Prisma.AccountScalarWhereInput | Prisma.AccountScalarWhereInput[]
 }
 
@@ -395,46 +417,48 @@ export type AccountUpdateOneRequiredWithoutJournalLinesNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.AccountUpdateToOneWithWhereWithoutJournalLinesInput, Prisma.AccountUpdateWithoutJournalLinesInput>, Prisma.AccountUncheckedUpdateWithoutJournalLinesInput>
 }
 
-export type AccountCreateWithoutIsActvieInput = {
+export type AccountCreateWithoutCompanyInput = {
   id?: string
   code: string
   name: string
   type: $Enums.AccountType
+  isActive?: boolean
   journalLines?: Prisma.JournalLineCreateNestedManyWithoutAccountInput
 }
 
-export type AccountUncheckedCreateWithoutIsActvieInput = {
+export type AccountUncheckedCreateWithoutCompanyInput = {
   id?: string
   code: string
   name: string
   type: $Enums.AccountType
+  isActive?: boolean
   journalLines?: Prisma.JournalLineUncheckedCreateNestedManyWithoutAccountInput
 }
 
-export type AccountCreateOrConnectWithoutIsActvieInput = {
+export type AccountCreateOrConnectWithoutCompanyInput = {
   where: Prisma.AccountWhereUniqueInput
-  create: Prisma.XOR<Prisma.AccountCreateWithoutIsActvieInput, Prisma.AccountUncheckedCreateWithoutIsActvieInput>
+  create: Prisma.XOR<Prisma.AccountCreateWithoutCompanyInput, Prisma.AccountUncheckedCreateWithoutCompanyInput>
 }
 
-export type AccountCreateManyIsActvieInputEnvelope = {
-  data: Prisma.AccountCreateManyIsActvieInput | Prisma.AccountCreateManyIsActvieInput[]
+export type AccountCreateManyCompanyInputEnvelope = {
+  data: Prisma.AccountCreateManyCompanyInput | Prisma.AccountCreateManyCompanyInput[]
   skipDuplicates?: boolean
 }
 
-export type AccountUpsertWithWhereUniqueWithoutIsActvieInput = {
+export type AccountUpsertWithWhereUniqueWithoutCompanyInput = {
   where: Prisma.AccountWhereUniqueInput
-  update: Prisma.XOR<Prisma.AccountUpdateWithoutIsActvieInput, Prisma.AccountUncheckedUpdateWithoutIsActvieInput>
-  create: Prisma.XOR<Prisma.AccountCreateWithoutIsActvieInput, Prisma.AccountUncheckedCreateWithoutIsActvieInput>
+  update: Prisma.XOR<Prisma.AccountUpdateWithoutCompanyInput, Prisma.AccountUncheckedUpdateWithoutCompanyInput>
+  create: Prisma.XOR<Prisma.AccountCreateWithoutCompanyInput, Prisma.AccountUncheckedCreateWithoutCompanyInput>
 }
 
-export type AccountUpdateWithWhereUniqueWithoutIsActvieInput = {
+export type AccountUpdateWithWhereUniqueWithoutCompanyInput = {
   where: Prisma.AccountWhereUniqueInput
-  data: Prisma.XOR<Prisma.AccountUpdateWithoutIsActvieInput, Prisma.AccountUncheckedUpdateWithoutIsActvieInput>
+  data: Prisma.XOR<Prisma.AccountUpdateWithoutCompanyInput, Prisma.AccountUncheckedUpdateWithoutCompanyInput>
 }
 
-export type AccountUpdateManyWithWhereWithoutIsActvieInput = {
+export type AccountUpdateManyWithWhereWithoutCompanyInput = {
   where: Prisma.AccountScalarWhereInput
-  data: Prisma.XOR<Prisma.AccountUpdateManyMutationInput, Prisma.AccountUncheckedUpdateManyWithoutIsActvieInput>
+  data: Prisma.XOR<Prisma.AccountUpdateManyMutationInput, Prisma.AccountUncheckedUpdateManyWithoutCompanyInput>
 }
 
 export type AccountScalarWhereInput = {
@@ -446,6 +470,7 @@ export type AccountScalarWhereInput = {
   code?: Prisma.StringFilter<"Account"> | string
   name?: Prisma.StringFilter<"Account"> | string
   type?: Prisma.EnumAccountTypeFilter<"Account"> | $Enums.AccountType
+  isActive?: Prisma.BoolFilter<"Account"> | boolean
 }
 
 export type AccountCreateWithoutJournalLinesInput = {
@@ -453,7 +478,8 @@ export type AccountCreateWithoutJournalLinesInput = {
   code: string
   name: string
   type: $Enums.AccountType
-  isActvie: Prisma.CompanyCreateNestedOneWithoutAccountsInput
+  isActive?: boolean
+  company: Prisma.CompanyCreateNestedOneWithoutAccountsInput
 }
 
 export type AccountUncheckedCreateWithoutJournalLinesInput = {
@@ -462,6 +488,7 @@ export type AccountUncheckedCreateWithoutJournalLinesInput = {
   code: string
   name: string
   type: $Enums.AccountType
+  isActive?: boolean
 }
 
 export type AccountCreateOrConnectWithoutJournalLinesInput = {
@@ -485,7 +512,8 @@ export type AccountUpdateWithoutJournalLinesInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
-  isActvie?: Prisma.CompanyUpdateOneRequiredWithoutAccountsNestedInput
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  company?: Prisma.CompanyUpdateOneRequiredWithoutAccountsNestedInput
 }
 
 export type AccountUncheckedUpdateWithoutJournalLinesInput = {
@@ -494,36 +522,41 @@ export type AccountUncheckedUpdateWithoutJournalLinesInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
-export type AccountCreateManyIsActvieInput = {
+export type AccountCreateManyCompanyInput = {
   id?: string
   code: string
   name: string
   type: $Enums.AccountType
+  isActive?: boolean
 }
 
-export type AccountUpdateWithoutIsActvieInput = {
+export type AccountUpdateWithoutCompanyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   journalLines?: Prisma.JournalLineUpdateManyWithoutAccountNestedInput
 }
 
-export type AccountUncheckedUpdateWithoutIsActvieInput = {
+export type AccountUncheckedUpdateWithoutCompanyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   journalLines?: Prisma.JournalLineUncheckedUpdateManyWithoutAccountNestedInput
 }
 
-export type AccountUncheckedUpdateManyWithoutIsActvieInput = {
+export type AccountUncheckedUpdateManyWithoutCompanyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.EnumAccountTypeFieldUpdateOperationsInput | $Enums.AccountType
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 
@@ -563,7 +596,8 @@ export type AccountSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   code?: boolean
   name?: boolean
   type?: boolean
-  isActvie?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
+  isActive?: boolean
+  company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
   journalLines?: boolean | Prisma.Account$journalLinesArgs<ExtArgs>
   _count?: boolean | Prisma.AccountCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["account"]>
@@ -574,7 +608,8 @@ export type AccountSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   code?: boolean
   name?: boolean
   type?: boolean
-  isActvie?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
+  isActive?: boolean
+  company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["account"]>
 
 export type AccountSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -583,7 +618,8 @@ export type AccountSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   code?: boolean
   name?: boolean
   type?: boolean
-  isActvie?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
+  isActive?: boolean
+  company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["account"]>
 
 export type AccountSelectScalar = {
@@ -592,25 +628,26 @@ export type AccountSelectScalar = {
   code?: boolean
   name?: boolean
   type?: boolean
+  isActive?: boolean
 }
 
-export type AccountOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "companyId" | "code" | "name" | "type", ExtArgs["result"]["account"]>
+export type AccountOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "companyId" | "code" | "name" | "type" | "isActive", ExtArgs["result"]["account"]>
 export type AccountInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  isActvie?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
+  company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
   journalLines?: boolean | Prisma.Account$journalLinesArgs<ExtArgs>
   _count?: boolean | Prisma.AccountCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type AccountIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  isActvie?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
+  company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
 }
 export type AccountIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  isActvie?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
+  company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
 }
 
 export type $AccountPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Account"
   objects: {
-    isActvie: Prisma.$CompanyPayload<ExtArgs>
+    company: Prisma.$CompanyPayload<ExtArgs>
     journalLines: Prisma.$JournalLinePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -619,6 +656,7 @@ export type $AccountPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     code: string
     name: string
     type: $Enums.AccountType
+    isActive: boolean
   }, ExtArgs["result"]["account"]>
   composites: {}
 }
@@ -1013,7 +1051,7 @@ readonly fields: AccountFieldRefs;
  */
 export interface Prisma__AccountClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  isActvie<T extends Prisma.CompanyDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CompanyDefaultArgs<ExtArgs>>): Prisma.Prisma__CompanyClient<runtime.Types.Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  company<T extends Prisma.CompanyDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CompanyDefaultArgs<ExtArgs>>): Prisma.Prisma__CompanyClient<runtime.Types.Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   journalLines<T extends Prisma.Account$journalLinesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Account$journalLinesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$JournalLinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1049,6 +1087,7 @@ export interface AccountFieldRefs {
   readonly code: Prisma.FieldRef<"Account", 'String'>
   readonly name: Prisma.FieldRef<"Account", 'String'>
   readonly type: Prisma.FieldRef<"Account", 'AccountType'>
+  readonly isActive: Prisma.FieldRef<"Account", 'Boolean'>
 }
     
 

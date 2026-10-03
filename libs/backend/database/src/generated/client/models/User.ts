@@ -27,7 +27,7 @@ export type AggregateUser = {
 export type UserMinAggregateOutputType = {
   id: string | null
   email: string | null
-  passwordHad: string | null
+  passwordHash: string | null
   displayName: string | null
   isActive: boolean | null
   createdAt: Date | null
@@ -37,7 +37,7 @@ export type UserMinAggregateOutputType = {
 export type UserMaxAggregateOutputType = {
   id: string | null
   email: string | null
-  passwordHad: string | null
+  passwordHash: string | null
   displayName: string | null
   isActive: boolean | null
   createdAt: Date | null
@@ -47,7 +47,7 @@ export type UserMaxAggregateOutputType = {
 export type UserCountAggregateOutputType = {
   id: number
   email: number
-  passwordHad: number
+  passwordHash: number
   displayName: number
   isActive: number
   createdAt: number
@@ -59,7 +59,7 @@ export type UserCountAggregateOutputType = {
 export type UserMinAggregateInputType = {
   id?: true
   email?: true
-  passwordHad?: true
+  passwordHash?: true
   displayName?: true
   isActive?: true
   createdAt?: true
@@ -69,7 +69,7 @@ export type UserMinAggregateInputType = {
 export type UserMaxAggregateInputType = {
   id?: true
   email?: true
-  passwordHad?: true
+  passwordHash?: true
   displayName?: true
   isActive?: true
   createdAt?: true
@@ -79,7 +79,7 @@ export type UserMaxAggregateInputType = {
 export type UserCountAggregateInputType = {
   id?: true
   email?: true
-  passwordHad?: true
+  passwordHash?: true
   displayName?: true
   isActive?: true
   createdAt?: true
@@ -162,7 +162,7 @@ export type UserGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
 export type UserGroupByOutputType = {
   id: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive: boolean
   createdAt: Date
@@ -193,7 +193,7 @@ export type UserWhereInput = {
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   id?: Prisma.StringFilter<"User"> | string
   email?: Prisma.StringFilter<"User"> | string
-  passwordHad?: Prisma.StringFilter<"User"> | string
+  passwordHash?: Prisma.StringFilter<"User"> | string
   displayName?: Prisma.StringFilter<"User"> | string
   isActive?: Prisma.BoolFilter<"User"> | boolean
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
@@ -212,7 +212,7 @@ export type UserWhereInput = {
 export type UserOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  passwordHad?: Prisma.SortOrder
+  passwordHash?: Prisma.SortOrder
   displayName?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -234,7 +234,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
-  passwordHad?: Prisma.StringFilter<"User"> | string
+  passwordHash?: Prisma.StringFilter<"User"> | string
   displayName?: Prisma.StringFilter<"User"> | string
   isActive?: Prisma.BoolFilter<"User"> | boolean
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
@@ -253,7 +253,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
 export type UserOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  passwordHad?: Prisma.SortOrder
+  passwordHash?: Prisma.SortOrder
   displayName?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -269,7 +269,7 @@ export type UserScalarWhereWithAggregatesInput = {
   NOT?: Prisma.UserScalarWhereWithAggregatesInput | Prisma.UserScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"User"> | string
   email?: Prisma.StringWithAggregatesFilter<"User"> | string
-  passwordHad?: Prisma.StringWithAggregatesFilter<"User"> | string
+  passwordHash?: Prisma.StringWithAggregatesFilter<"User"> | string
   displayName?: Prisma.StringWithAggregatesFilter<"User"> | string
   isActive?: Prisma.BoolWithAggregatesFilter<"User"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -279,17 +279,17 @@ export type UserScalarWhereWithAggregatesInput = {
 export type UserCreateInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
@@ -298,17 +298,17 @@ export type UserCreateInput = {
 export type UserUncheckedCreateInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionUncheckedCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
@@ -317,17 +317,17 @@ export type UserUncheckedCreateInput = {
 export type UserUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
@@ -336,17 +336,17 @@ export type UserUpdateInput = {
 export type UserUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUncheckedUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUncheckedUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
@@ -355,7 +355,7 @@ export type UserUncheckedUpdateInput = {
 export type UserCreateManyInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
@@ -365,7 +365,7 @@ export type UserCreateManyInput = {
 export type UserUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -375,7 +375,7 @@ export type UserUpdateManyMutationInput = {
 export type UserUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -385,7 +385,7 @@ export type UserUncheckedUpdateManyInput = {
 export type UserCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  passwordHad?: Prisma.SortOrder
+  passwordHash?: Prisma.SortOrder
   displayName?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -395,7 +395,7 @@ export type UserCountOrderByAggregateInput = {
 export type UserMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  passwordHad?: Prisma.SortOrder
+  passwordHash?: Prisma.SortOrder
   displayName?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -405,7 +405,7 @@ export type UserMaxOrderByAggregateInput = {
 export type UserMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  passwordHad?: Prisma.SortOrder
+  passwordHash?: Prisma.SortOrder
   displayName?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -559,16 +559,16 @@ export type UserUpdateOneWithoutAuditLogsNestedInput = {
 export type UserCreateWithoutSessionsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   roleAssignments?: Prisma.UserRoleCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
@@ -577,16 +577,16 @@ export type UserCreateWithoutSessionsInput = {
 export type UserUncheckedCreateWithoutSessionsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   roleAssignments?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
@@ -611,16 +611,16 @@ export type UserUpdateToOneWithWhereWithoutSessionsInput = {
 export type UserUpdateWithoutSessionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   roleAssignments?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
@@ -629,16 +629,16 @@ export type UserUpdateWithoutSessionsInput = {
 export type UserUncheckedUpdateWithoutSessionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   roleAssignments?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUncheckedUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
@@ -647,16 +647,16 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
 export type UserCreateWithoutRoleAssignmentsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
@@ -665,16 +665,16 @@ export type UserCreateWithoutRoleAssignmentsInput = {
 export type UserUncheckedCreateWithoutRoleAssignmentsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionUncheckedCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
@@ -699,16 +699,16 @@ export type UserUpdateToOneWithWhereWithoutRoleAssignmentsInput = {
 export type UserUpdateWithoutRoleAssignmentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
@@ -717,16 +717,16 @@ export type UserUpdateWithoutRoleAssignmentsInput = {
 export type UserUncheckedUpdateWithoutRoleAssignmentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUncheckedUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUncheckedUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
@@ -735,17 +735,17 @@ export type UserUncheckedUpdateWithoutRoleAssignmentsInput = {
 export type UserCreateWithoutCreatedMovementsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
 }
@@ -753,17 +753,17 @@ export type UserCreateWithoutCreatedMovementsInput = {
 export type UserUncheckedCreateWithoutCreatedMovementsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionUncheckedCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
 }
@@ -787,17 +787,17 @@ export type UserUpdateToOneWithWhereWithoutCreatedMovementsInput = {
 export type UserUpdateWithoutCreatedMovementsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
 }
@@ -805,17 +805,17 @@ export type UserUpdateWithoutCreatedMovementsInput = {
 export type UserUncheckedUpdateWithoutCreatedMovementsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUncheckedUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUncheckedUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
 }
@@ -823,7 +823,7 @@ export type UserUncheckedUpdateWithoutCreatedMovementsInput = {
 export type UserCreateWithoutCreatedSalesOrdersInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
@@ -831,8 +831,8 @@ export type UserCreateWithoutCreatedSalesOrdersInput = {
   sessions?: Prisma.RefreshSessionCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleCreateNestedManyWithoutUserInput
   createdShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
@@ -841,7 +841,7 @@ export type UserCreateWithoutCreatedSalesOrdersInput = {
 export type UserUncheckedCreateWithoutCreatedSalesOrdersInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
@@ -849,8 +849,8 @@ export type UserUncheckedCreateWithoutCreatedSalesOrdersInput = {
   sessions?: Prisma.RefreshSessionUncheckedCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
   createdShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
@@ -875,7 +875,7 @@ export type UserUpdateToOneWithWhereWithoutCreatedSalesOrdersInput = {
 export type UserUpdateWithoutCreatedSalesOrdersInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -883,8 +883,8 @@ export type UserUpdateWithoutCreatedSalesOrdersInput = {
   sessions?: Prisma.RefreshSessionUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
   createdShipments?: Prisma.SalesShipmentUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
@@ -893,7 +893,7 @@ export type UserUpdateWithoutCreatedSalesOrdersInput = {
 export type UserUncheckedUpdateWithoutCreatedSalesOrdersInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -901,8 +901,8 @@ export type UserUncheckedUpdateWithoutCreatedSalesOrdersInput = {
   sessions?: Prisma.RefreshSessionUncheckedUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
   createdShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUncheckedUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
@@ -911,16 +911,16 @@ export type UserUncheckedUpdateWithoutCreatedSalesOrdersInput = {
 export type UserCreateWithoutCreatedShipmentsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreateByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreatedByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
@@ -929,16 +929,16 @@ export type UserCreateWithoutCreatedShipmentsInput = {
 export type UserUncheckedCreateWithoutCreatedShipmentsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionUncheckedCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreateByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreatedByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
@@ -963,16 +963,16 @@ export type UserUpdateToOneWithWhereWithoutCreatedShipmentsInput = {
 export type UserUpdateWithoutCreatedShipmentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreateByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreatedByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
@@ -981,16 +981,16 @@ export type UserUpdateWithoutCreatedShipmentsInput = {
 export type UserUncheckedUpdateWithoutCreatedShipmentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUncheckedUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreateByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUncheckedUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
@@ -999,16 +999,16 @@ export type UserUncheckedUpdateWithoutCreatedShipmentsInput = {
 export type UserCreateWithoutCreatedPurchaseOrdersInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCreatedByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreateByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
@@ -1017,16 +1017,16 @@ export type UserCreateWithoutCreatedPurchaseOrdersInput = {
 export type UserUncheckedCreateWithoutCreatedPurchaseOrdersInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionUncheckedCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCreatedByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreateByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
@@ -1051,16 +1051,16 @@ export type UserUpdateToOneWithWhereWithoutCreatedPurchaseOrdersInput = {
 export type UserUpdateWithoutCreatedPurchaseOrdersInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUpdateManyWithoutCreatedByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreateByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
@@ -1069,16 +1069,16 @@ export type UserUpdateWithoutCreatedPurchaseOrdersInput = {
 export type UserUncheckedUpdateWithoutCreatedPurchaseOrdersInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUncheckedUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCreatedByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreateByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUncheckedUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
@@ -1087,16 +1087,16 @@ export type UserUncheckedUpdateWithoutCreatedPurchaseOrdersInput = {
 export type UserCreateWithoutCreatedGoodsReceiptsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
@@ -1105,16 +1105,16 @@ export type UserCreateWithoutCreatedGoodsReceiptsInput = {
 export type UserUncheckedCreateWithoutCreatedGoodsReceiptsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionUncheckedCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
@@ -1139,16 +1139,16 @@ export type UserUpdateToOneWithWhereWithoutCreatedGoodsReceiptsInput = {
 export type UserUpdateWithoutCreatedGoodsReceiptsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
@@ -1157,16 +1157,16 @@ export type UserUpdateWithoutCreatedGoodsReceiptsInput = {
 export type UserUncheckedUpdateWithoutCreatedGoodsReceiptsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUncheckedUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUncheckedUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
@@ -1175,17 +1175,17 @@ export type UserUncheckedUpdateWithoutCreatedGoodsReceiptsInput = {
 export type UserCreateWithoutCreatedPaymentsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
 }
@@ -1193,17 +1193,17 @@ export type UserCreateWithoutCreatedPaymentsInput = {
 export type UserUncheckedCreateWithoutCreatedPaymentsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionUncheckedCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
 }
@@ -1227,17 +1227,17 @@ export type UserUpdateToOneWithWhereWithoutCreatedPaymentsInput = {
 export type UserUpdateWithoutCreatedPaymentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
 }
@@ -1245,17 +1245,17 @@ export type UserUpdateWithoutCreatedPaymentsInput = {
 export type UserUncheckedUpdateWithoutCreatedPaymentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUncheckedUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
 }
@@ -1263,17 +1263,17 @@ export type UserUncheckedUpdateWithoutCreatedPaymentsInput = {
 export type UserCreateWithoutAuditLogsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentCreateNestedManyWithoutCreatedByInput
 }
@@ -1281,17 +1281,17 @@ export type UserCreateWithoutAuditLogsInput = {
 export type UserUncheckedCreateWithoutAuditLogsInput = {
   id?: string
   email: string
-  passwordHad: string
+  passwordHash: string
   displayName: string
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   sessions?: Prisma.RefreshSessionUncheckedCreateNestedManyWithoutUserInput
   roleAssignments?: Prisma.UserRoleUncheckedCreateNestedManyWithoutUserInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreateByInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCreatedByInput
   createdShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCreatedByInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreateByInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreateByInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCreatedByInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCreatedByInput
   createdMovements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCreatedByInput
   createdPayments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCreatedByInput
 }
@@ -1315,17 +1315,17 @@ export type UserUpdateToOneWithWhereWithoutAuditLogsInput = {
 export type UserUpdateWithoutAuditLogsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUpdateManyWithoutCreatedByNestedInput
 }
@@ -1333,17 +1333,17 @@ export type UserUpdateWithoutAuditLogsInput = {
 export type UserUncheckedUpdateWithoutAuditLogsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHad?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   displayName?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.RefreshSessionUncheckedUpdateManyWithoutUserNestedInput
   roleAssignments?: Prisma.UserRoleUncheckedUpdateManyWithoutUserNestedInput
-  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreateByNestedInput
+  createdSalesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCreatedByNestedInput
   createdShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCreatedByNestedInput
-  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreateByNestedInput
-  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreateByNestedInput
+  createdPurchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCreatedByNestedInput
+  createdGoodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreatedByNestedInput
   createdMovements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCreatedByNestedInput
   createdPayments?: Prisma.PaymentUncheckedUpdateManyWithoutCreatedByNestedInput
 }
@@ -1454,7 +1454,7 @@ export type UserCountOutputTypeCountAuditLogsArgs<ExtArgs extends runtime.Types.
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   email?: boolean
-  passwordHad?: boolean
+  passwordHash?: boolean
   displayName?: boolean
   isActive?: boolean
   createdAt?: boolean
@@ -1474,7 +1474,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
 export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   email?: boolean
-  passwordHad?: boolean
+  passwordHash?: boolean
   displayName?: boolean
   isActive?: boolean
   createdAt?: boolean
@@ -1484,7 +1484,7 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   email?: boolean
-  passwordHad?: boolean
+  passwordHash?: boolean
   displayName?: boolean
   isActive?: boolean
   createdAt?: boolean
@@ -1494,14 +1494,14 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
 export type UserSelectScalar = {
   id?: boolean
   email?: boolean
-  passwordHad?: boolean
+  passwordHash?: boolean
   displayName?: boolean
   isActive?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "passwordHad" | "displayName" | "isActive" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "passwordHash" | "displayName" | "isActive" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   roleAssignments?: boolean | Prisma.User$roleAssignmentsArgs<ExtArgs>
@@ -1533,7 +1533,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     email: string
-    passwordHad: string
+    passwordHash: string
     displayName: string
     isActive: boolean
     createdAt: Date
@@ -1972,7 +1972,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
 export interface UserFieldRefs {
   readonly id: Prisma.FieldRef<"User", 'String'>
   readonly email: Prisma.FieldRef<"User", 'String'>
-  readonly passwordHad: Prisma.FieldRef<"User", 'String'>
+  readonly passwordHash: Prisma.FieldRef<"User", 'String'>
   readonly displayName: Prisma.FieldRef<"User", 'String'>
   readonly isActive: Prisma.FieldRef<"User", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>

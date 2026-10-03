@@ -209,14 +209,14 @@ export type CompanyWhereInput = {
   reservations?: Prisma.StockReservationListRelationFilter
   movements?: Prisma.InventoryMovementListRelationFilter
   salesOrders?: Prisma.SalesOrderListRelationFilter
+  shipments?: Prisma.SalesShipmentListRelationFilter
+  purchaseOrders?: Prisma.PurchaseOrderListRelationFilter
   goodsReceipts?: Prisma.GoodsReceiptListRelationFilter
   invoices?: Prisma.InvoiceListRelationFilter
   payments?: Prisma.PaymentListRelationFilter
   accounts?: Prisma.AccountListRelationFilter
   journalEntries?: Prisma.JournalEntryListRelationFilter
   auditLogs?: Prisma.AuditLogListRelationFilter
-  salesShipments?: Prisma.SalesShipmentListRelationFilter
-  purchaseOrders?: Prisma.PurchaseOrderListRelationFilter
 }
 
 export type CompanyOrderByWithRelationInput = {
@@ -238,14 +238,14 @@ export type CompanyOrderByWithRelationInput = {
   reservations?: Prisma.StockReservationOrderByRelationAggregateInput
   movements?: Prisma.InventoryMovementOrderByRelationAggregateInput
   salesOrders?: Prisma.SalesOrderOrderByRelationAggregateInput
+  shipments?: Prisma.SalesShipmentOrderByRelationAggregateInput
+  purchaseOrders?: Prisma.PurchaseOrderOrderByRelationAggregateInput
   goodsReceipts?: Prisma.GoodsReceiptOrderByRelationAggregateInput
   invoices?: Prisma.InvoiceOrderByRelationAggregateInput
   payments?: Prisma.PaymentOrderByRelationAggregateInput
   accounts?: Prisma.AccountOrderByRelationAggregateInput
   journalEntries?: Prisma.JournalEntryOrderByRelationAggregateInput
   auditLogs?: Prisma.AuditLogOrderByRelationAggregateInput
-  salesShipments?: Prisma.SalesShipmentOrderByRelationAggregateInput
-  purchaseOrders?: Prisma.PurchaseOrderOrderByRelationAggregateInput
 }
 
 export type CompanyWhereUniqueInput = Prisma.AtLeast<{
@@ -270,14 +270,14 @@ export type CompanyWhereUniqueInput = Prisma.AtLeast<{
   reservations?: Prisma.StockReservationListRelationFilter
   movements?: Prisma.InventoryMovementListRelationFilter
   salesOrders?: Prisma.SalesOrderListRelationFilter
+  shipments?: Prisma.SalesShipmentListRelationFilter
+  purchaseOrders?: Prisma.PurchaseOrderListRelationFilter
   goodsReceipts?: Prisma.GoodsReceiptListRelationFilter
   invoices?: Prisma.InvoiceListRelationFilter
   payments?: Prisma.PaymentListRelationFilter
   accounts?: Prisma.AccountListRelationFilter
   journalEntries?: Prisma.JournalEntryListRelationFilter
   auditLogs?: Prisma.AuditLogListRelationFilter
-  salesShipments?: Prisma.SalesShipmentListRelationFilter
-  purchaseOrders?: Prisma.PurchaseOrderListRelationFilter
 }, "id">
 
 export type CompanyOrderByWithAggregationInput = {
@@ -325,14 +325,14 @@ export type CompanyCreateInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateInput = {
@@ -354,14 +354,14 @@ export type CompanyUncheckedCreateInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUpdateInput = {
@@ -383,14 +383,14 @@ export type CompanyUpdateInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateInput = {
@@ -412,14 +412,14 @@ export type CompanyUncheckedUpdateInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateManyInput = {
@@ -653,18 +653,18 @@ export type CompanyUpdateOneRequiredWithoutSalesOrdersNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.CompanyUpdateToOneWithWhereWithoutSalesOrdersInput, Prisma.CompanyUpdateWithoutSalesOrdersInput>, Prisma.CompanyUncheckedUpdateWithoutSalesOrdersInput>
 }
 
-export type CompanyCreateNestedOneWithoutSalesShipmentsInput = {
-  create?: Prisma.XOR<Prisma.CompanyCreateWithoutSalesShipmentsInput, Prisma.CompanyUncheckedCreateWithoutSalesShipmentsInput>
-  connectOrCreate?: Prisma.CompanyCreateOrConnectWithoutSalesShipmentsInput
+export type CompanyCreateNestedOneWithoutShipmentsInput = {
+  create?: Prisma.XOR<Prisma.CompanyCreateWithoutShipmentsInput, Prisma.CompanyUncheckedCreateWithoutShipmentsInput>
+  connectOrCreate?: Prisma.CompanyCreateOrConnectWithoutShipmentsInput
   connect?: Prisma.CompanyWhereUniqueInput
 }
 
-export type CompanyUpdateOneRequiredWithoutSalesShipmentsNestedInput = {
-  create?: Prisma.XOR<Prisma.CompanyCreateWithoutSalesShipmentsInput, Prisma.CompanyUncheckedCreateWithoutSalesShipmentsInput>
-  connectOrCreate?: Prisma.CompanyCreateOrConnectWithoutSalesShipmentsInput
-  upsert?: Prisma.CompanyUpsertWithoutSalesShipmentsInput
+export type CompanyUpdateOneRequiredWithoutShipmentsNestedInput = {
+  create?: Prisma.XOR<Prisma.CompanyCreateWithoutShipmentsInput, Prisma.CompanyUncheckedCreateWithoutShipmentsInput>
+  connectOrCreate?: Prisma.CompanyCreateOrConnectWithoutShipmentsInput
+  upsert?: Prisma.CompanyUpsertWithoutShipmentsInput
   connect?: Prisma.CompanyWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.CompanyUpdateToOneWithWhereWithoutSalesShipmentsInput, Prisma.CompanyUpdateWithoutSalesShipmentsInput>, Prisma.CompanyUncheckedUpdateWithoutSalesShipmentsInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.CompanyUpdateToOneWithWhereWithoutShipmentsInput, Prisma.CompanyUpdateWithoutShipmentsInput>, Prisma.CompanyUncheckedUpdateWithoutShipmentsInput>
 }
 
 export type CompanyCreateNestedOneWithoutPurchaseOrdersInput = {
@@ -783,14 +783,14 @@ export type CompanyCreateWithoutRolesInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutRolesInput = {
@@ -811,14 +811,14 @@ export type CompanyUncheckedCreateWithoutRolesInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutRolesInput = {
@@ -855,14 +855,14 @@ export type CompanyUpdateWithoutRolesInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutRolesInput = {
@@ -883,14 +883,14 @@ export type CompanyUncheckedUpdateWithoutRolesInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutBranchesInput = {
@@ -911,14 +911,14 @@ export type CompanyCreateWithoutBranchesInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutBranchesInput = {
@@ -939,14 +939,14 @@ export type CompanyUncheckedCreateWithoutBranchesInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutBranchesInput = {
@@ -983,14 +983,14 @@ export type CompanyUpdateWithoutBranchesInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutBranchesInput = {
@@ -1011,14 +1011,14 @@ export type CompanyUncheckedUpdateWithoutBranchesInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutWarehousesInput = {
@@ -1039,14 +1039,14 @@ export type CompanyCreateWithoutWarehousesInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutWarehousesInput = {
@@ -1067,14 +1067,14 @@ export type CompanyUncheckedCreateWithoutWarehousesInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutWarehousesInput = {
@@ -1111,14 +1111,14 @@ export type CompanyUpdateWithoutWarehousesInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutWarehousesInput = {
@@ -1139,14 +1139,14 @@ export type CompanyUncheckedUpdateWithoutWarehousesInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutCategoriesInput = {
@@ -1167,14 +1167,14 @@ export type CompanyCreateWithoutCategoriesInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutCategoriesInput = {
@@ -1195,14 +1195,14 @@ export type CompanyUncheckedCreateWithoutCategoriesInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutCategoriesInput = {
@@ -1239,14 +1239,14 @@ export type CompanyUpdateWithoutCategoriesInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutCategoriesInput = {
@@ -1267,14 +1267,14 @@ export type CompanyUncheckedUpdateWithoutCategoriesInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutProductsInput = {
@@ -1295,14 +1295,14 @@ export type CompanyCreateWithoutProductsInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutProductsInput = {
@@ -1323,14 +1323,14 @@ export type CompanyUncheckedCreateWithoutProductsInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutProductsInput = {
@@ -1367,14 +1367,14 @@ export type CompanyUpdateWithoutProductsInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutProductsInput = {
@@ -1395,14 +1395,14 @@ export type CompanyUncheckedUpdateWithoutProductsInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutCustomersInput = {
@@ -1423,14 +1423,14 @@ export type CompanyCreateWithoutCustomersInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutCustomersInput = {
@@ -1451,14 +1451,14 @@ export type CompanyUncheckedCreateWithoutCustomersInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutCustomersInput = {
@@ -1495,14 +1495,14 @@ export type CompanyUpdateWithoutCustomersInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutCustomersInput = {
@@ -1523,14 +1523,14 @@ export type CompanyUncheckedUpdateWithoutCustomersInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutSuppliersInput = {
@@ -1551,14 +1551,14 @@ export type CompanyCreateWithoutSuppliersInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutSuppliersInput = {
@@ -1579,14 +1579,14 @@ export type CompanyUncheckedCreateWithoutSuppliersInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutSuppliersInput = {
@@ -1623,14 +1623,14 @@ export type CompanyUpdateWithoutSuppliersInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutSuppliersInput = {
@@ -1651,14 +1651,14 @@ export type CompanyUncheckedUpdateWithoutSuppliersInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutStockBalancesInput = {
@@ -1679,14 +1679,14 @@ export type CompanyCreateWithoutStockBalancesInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutStockBalancesInput = {
@@ -1707,14 +1707,14 @@ export type CompanyUncheckedCreateWithoutStockBalancesInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutStockBalancesInput = {
@@ -1751,14 +1751,14 @@ export type CompanyUpdateWithoutStockBalancesInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutStockBalancesInput = {
@@ -1779,14 +1779,14 @@ export type CompanyUncheckedUpdateWithoutStockBalancesInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutReservationsInput = {
@@ -1807,14 +1807,14 @@ export type CompanyCreateWithoutReservationsInput = {
   stockBalances?: Prisma.StockBalanceCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutReservationsInput = {
@@ -1835,14 +1835,14 @@ export type CompanyUncheckedCreateWithoutReservationsInput = {
   stockBalances?: Prisma.StockBalanceUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutReservationsInput = {
@@ -1879,14 +1879,14 @@ export type CompanyUpdateWithoutReservationsInput = {
   stockBalances?: Prisma.StockBalanceUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutReservationsInput = {
@@ -1907,14 +1907,14 @@ export type CompanyUncheckedUpdateWithoutReservationsInput = {
   stockBalances?: Prisma.StockBalanceUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutMovementsInput = {
@@ -1935,14 +1935,14 @@ export type CompanyCreateWithoutMovementsInput = {
   stockBalances?: Prisma.StockBalanceCreateNestedManyWithoutCompanyInput
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutMovementsInput = {
@@ -1963,14 +1963,14 @@ export type CompanyUncheckedCreateWithoutMovementsInput = {
   stockBalances?: Prisma.StockBalanceUncheckedCreateNestedManyWithoutCompanyInput
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutMovementsInput = {
@@ -2007,14 +2007,14 @@ export type CompanyUpdateWithoutMovementsInput = {
   stockBalances?: Prisma.StockBalanceUpdateManyWithoutCompanyNestedInput
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutMovementsInput = {
@@ -2035,14 +2035,14 @@ export type CompanyUncheckedUpdateWithoutMovementsInput = {
   stockBalances?: Prisma.StockBalanceUncheckedUpdateManyWithoutCompanyNestedInput
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutSalesOrdersInput = {
@@ -2063,14 +2063,14 @@ export type CompanyCreateWithoutSalesOrdersInput = {
   stockBalances?: Prisma.StockBalanceCreateNestedManyWithoutCompanyInput
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutSalesOrdersInput = {
@@ -2091,14 +2091,14 @@ export type CompanyUncheckedCreateWithoutSalesOrdersInput = {
   stockBalances?: Prisma.StockBalanceUncheckedCreateNestedManyWithoutCompanyInput
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutSalesOrdersInput = {
@@ -2135,14 +2135,14 @@ export type CompanyUpdateWithoutSalesOrdersInput = {
   stockBalances?: Prisma.StockBalanceUpdateManyWithoutCompanyNestedInput
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutSalesOrdersInput = {
@@ -2163,17 +2163,17 @@ export type CompanyUncheckedUpdateWithoutSalesOrdersInput = {
   stockBalances?: Prisma.StockBalanceUncheckedUpdateManyWithoutCompanyNestedInput
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
-export type CompanyCreateWithoutSalesShipmentsInput = {
+export type CompanyCreateWithoutShipmentsInput = {
   id?: string
   name: string
   legalName?: string | null
@@ -2192,16 +2192,16 @@ export type CompanyCreateWithoutSalesShipmentsInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
-export type CompanyUncheckedCreateWithoutSalesShipmentsInput = {
+export type CompanyUncheckedCreateWithoutShipmentsInput = {
   id?: string
   name: string
   legalName?: string | null
@@ -2220,32 +2220,32 @@ export type CompanyUncheckedCreateWithoutSalesShipmentsInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
-export type CompanyCreateOrConnectWithoutSalesShipmentsInput = {
+export type CompanyCreateOrConnectWithoutShipmentsInput = {
   where: Prisma.CompanyWhereUniqueInput
-  create: Prisma.XOR<Prisma.CompanyCreateWithoutSalesShipmentsInput, Prisma.CompanyUncheckedCreateWithoutSalesShipmentsInput>
+  create: Prisma.XOR<Prisma.CompanyCreateWithoutShipmentsInput, Prisma.CompanyUncheckedCreateWithoutShipmentsInput>
 }
 
-export type CompanyUpsertWithoutSalesShipmentsInput = {
-  update: Prisma.XOR<Prisma.CompanyUpdateWithoutSalesShipmentsInput, Prisma.CompanyUncheckedUpdateWithoutSalesShipmentsInput>
-  create: Prisma.XOR<Prisma.CompanyCreateWithoutSalesShipmentsInput, Prisma.CompanyUncheckedCreateWithoutSalesShipmentsInput>
+export type CompanyUpsertWithoutShipmentsInput = {
+  update: Prisma.XOR<Prisma.CompanyUpdateWithoutShipmentsInput, Prisma.CompanyUncheckedUpdateWithoutShipmentsInput>
+  create: Prisma.XOR<Prisma.CompanyCreateWithoutShipmentsInput, Prisma.CompanyUncheckedCreateWithoutShipmentsInput>
   where?: Prisma.CompanyWhereInput
 }
 
-export type CompanyUpdateToOneWithWhereWithoutSalesShipmentsInput = {
+export type CompanyUpdateToOneWithWhereWithoutShipmentsInput = {
   where?: Prisma.CompanyWhereInput
-  data: Prisma.XOR<Prisma.CompanyUpdateWithoutSalesShipmentsInput, Prisma.CompanyUncheckedUpdateWithoutSalesShipmentsInput>
+  data: Prisma.XOR<Prisma.CompanyUpdateWithoutShipmentsInput, Prisma.CompanyUncheckedUpdateWithoutShipmentsInput>
 }
 
-export type CompanyUpdateWithoutSalesShipmentsInput = {
+export type CompanyUpdateWithoutShipmentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   legalName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2264,16 +2264,16 @@ export type CompanyUpdateWithoutSalesShipmentsInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
-export type CompanyUncheckedUpdateWithoutSalesShipmentsInput = {
+export type CompanyUncheckedUpdateWithoutShipmentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   legalName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2292,13 +2292,13 @@ export type CompanyUncheckedUpdateWithoutSalesShipmentsInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutPurchaseOrdersInput = {
@@ -2320,13 +2320,13 @@ export type CompanyCreateWithoutPurchaseOrdersInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutPurchaseOrdersInput = {
@@ -2348,13 +2348,13 @@ export type CompanyUncheckedCreateWithoutPurchaseOrdersInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutPurchaseOrdersInput = {
@@ -2392,13 +2392,13 @@ export type CompanyUpdateWithoutPurchaseOrdersInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutPurchaseOrdersInput = {
@@ -2420,13 +2420,13 @@ export type CompanyUncheckedUpdateWithoutPurchaseOrdersInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutGoodsReceiptsInput = {
@@ -2448,13 +2448,13 @@ export type CompanyCreateWithoutGoodsReceiptsInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutGoodsReceiptsInput = {
@@ -2476,13 +2476,13 @@ export type CompanyUncheckedCreateWithoutGoodsReceiptsInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutGoodsReceiptsInput = {
@@ -2520,13 +2520,13 @@ export type CompanyUpdateWithoutGoodsReceiptsInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutGoodsReceiptsInput = {
@@ -2548,13 +2548,13 @@ export type CompanyUncheckedUpdateWithoutGoodsReceiptsInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutInvoicesInput = {
@@ -2576,13 +2576,13 @@ export type CompanyCreateWithoutInvoicesInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutInvoicesInput = {
@@ -2604,13 +2604,13 @@ export type CompanyUncheckedCreateWithoutInvoicesInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutInvoicesInput = {
@@ -2648,13 +2648,13 @@ export type CompanyUpdateWithoutInvoicesInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutInvoicesInput = {
@@ -2676,13 +2676,13 @@ export type CompanyUncheckedUpdateWithoutInvoicesInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutPaymentsInput = {
@@ -2704,13 +2704,13 @@ export type CompanyCreateWithoutPaymentsInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutPaymentsInput = {
@@ -2732,13 +2732,13 @@ export type CompanyUncheckedCreateWithoutPaymentsInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutPaymentsInput = {
@@ -2776,13 +2776,13 @@ export type CompanyUpdateWithoutPaymentsInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutPaymentsInput = {
@@ -2804,13 +2804,13 @@ export type CompanyUncheckedUpdateWithoutPaymentsInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutAccountsInput = {
@@ -2832,13 +2832,13 @@ export type CompanyCreateWithoutAccountsInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutAccountsInput = {
@@ -2860,13 +2860,13 @@ export type CompanyUncheckedCreateWithoutAccountsInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutAccountsInput = {
@@ -2904,13 +2904,13 @@ export type CompanyUpdateWithoutAccountsInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutAccountsInput = {
@@ -2932,13 +2932,13 @@ export type CompanyUncheckedUpdateWithoutAccountsInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutJournalEntriesInput = {
@@ -2960,13 +2960,13 @@ export type CompanyCreateWithoutJournalEntriesInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutJournalEntriesInput = {
@@ -2988,13 +2988,13 @@ export type CompanyUncheckedCreateWithoutJournalEntriesInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutJournalEntriesInput = {
@@ -3032,13 +3032,13 @@ export type CompanyUpdateWithoutJournalEntriesInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutJournalEntriesInput = {
@@ -3060,13 +3060,13 @@ export type CompanyUncheckedUpdateWithoutJournalEntriesInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutAuditLogsInput = {
@@ -3088,13 +3088,13 @@ export type CompanyCreateWithoutAuditLogsInput = {
   reservations?: Prisma.StockReservationCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutAuditLogsInput = {
@@ -3116,13 +3116,13 @@ export type CompanyUncheckedCreateWithoutAuditLogsInput = {
   reservations?: Prisma.StockReservationUncheckedCreateNestedManyWithoutCompanyInput
   movements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCompanyInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutCompanyInput
+  shipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedCreateNestedManyWithoutCompanyInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCompanyInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutCompanyInput
-  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutIsActvieInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutCompanyInput
   journalEntries?: Prisma.JournalEntryUncheckedCreateNestedManyWithoutCompanyInput
-  salesShipments?: Prisma.SalesShipmentUncheckedCreateNestedManyWithoutCompanyInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutAuditLogsInput = {
@@ -3160,13 +3160,13 @@ export type CompanyUpdateWithoutAuditLogsInput = {
   reservations?: Prisma.StockReservationUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutAuditLogsInput = {
@@ -3188,13 +3188,13 @@ export type CompanyUncheckedUpdateWithoutAuditLogsInput = {
   reservations?: Prisma.StockReservationUncheckedUpdateManyWithoutCompanyNestedInput
   movements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCompanyNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput
+  shipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
+  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
   goodsReceipts?: Prisma.GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCompanyNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutCompanyNestedInput
-  accounts?: Prisma.AccountUncheckedUpdateManyWithoutIsActvieNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutCompanyNestedInput
   journalEntries?: Prisma.JournalEntryUncheckedUpdateManyWithoutCompanyNestedInput
-  salesShipments?: Prisma.SalesShipmentUncheckedUpdateManyWithoutCompanyNestedInput
-  purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 
@@ -3214,14 +3214,14 @@ export type CompanyCountOutputType = {
   reservations: number
   movements: number
   salesOrders: number
+  shipments: number
+  purchaseOrders: number
   goodsReceipts: number
   invoices: number
   payments: number
   accounts: number
   journalEntries: number
   auditLogs: number
-  salesShipments: number
-  purchaseOrders: number
 }
 
 export type CompanyCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -3236,14 +3236,14 @@ export type CompanyCountOutputTypeSelect<ExtArgs extends runtime.Types.Extension
   reservations?: boolean | CompanyCountOutputTypeCountReservationsArgs
   movements?: boolean | CompanyCountOutputTypeCountMovementsArgs
   salesOrders?: boolean | CompanyCountOutputTypeCountSalesOrdersArgs
+  shipments?: boolean | CompanyCountOutputTypeCountShipmentsArgs
+  purchaseOrders?: boolean | CompanyCountOutputTypeCountPurchaseOrdersArgs
   goodsReceipts?: boolean | CompanyCountOutputTypeCountGoodsReceiptsArgs
   invoices?: boolean | CompanyCountOutputTypeCountInvoicesArgs
   payments?: boolean | CompanyCountOutputTypeCountPaymentsArgs
   accounts?: boolean | CompanyCountOutputTypeCountAccountsArgs
   journalEntries?: boolean | CompanyCountOutputTypeCountJournalEntriesArgs
   auditLogs?: boolean | CompanyCountOutputTypeCountAuditLogsArgs
-  salesShipments?: boolean | CompanyCountOutputTypeCountSalesShipmentsArgs
-  purchaseOrders?: boolean | CompanyCountOutputTypeCountPurchaseOrdersArgs
 }
 
 /**
@@ -3336,6 +3336,20 @@ export type CompanyCountOutputTypeCountSalesOrdersArgs<ExtArgs extends runtime.T
 /**
  * CompanyCountOutputType without action
  */
+export type CompanyCountOutputTypeCountShipmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SalesShipmentWhereInput
+}
+
+/**
+ * CompanyCountOutputType without action
+ */
+export type CompanyCountOutputTypeCountPurchaseOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PurchaseOrderWhereInput
+}
+
+/**
+ * CompanyCountOutputType without action
+ */
 export type CompanyCountOutputTypeCountGoodsReceiptsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.GoodsReceiptWhereInput
 }
@@ -3375,20 +3389,6 @@ export type CompanyCountOutputTypeCountAuditLogsArgs<ExtArgs extends runtime.Typ
   where?: Prisma.AuditLogWhereInput
 }
 
-/**
- * CompanyCountOutputType without action
- */
-export type CompanyCountOutputTypeCountSalesShipmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SalesShipmentWhereInput
-}
-
-/**
- * CompanyCountOutputType without action
- */
-export type CompanyCountOutputTypeCountPurchaseOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PurchaseOrderWhereInput
-}
-
 
 export type CompanySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -3409,14 +3409,14 @@ export type CompanySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   reservations?: boolean | Prisma.Company$reservationsArgs<ExtArgs>
   movements?: boolean | Prisma.Company$movementsArgs<ExtArgs>
   salesOrders?: boolean | Prisma.Company$salesOrdersArgs<ExtArgs>
+  shipments?: boolean | Prisma.Company$shipmentsArgs<ExtArgs>
+  purchaseOrders?: boolean | Prisma.Company$purchaseOrdersArgs<ExtArgs>
   goodsReceipts?: boolean | Prisma.Company$goodsReceiptsArgs<ExtArgs>
   invoices?: boolean | Prisma.Company$invoicesArgs<ExtArgs>
   payments?: boolean | Prisma.Company$paymentsArgs<ExtArgs>
   accounts?: boolean | Prisma.Company$accountsArgs<ExtArgs>
   journalEntries?: boolean | Prisma.Company$journalEntriesArgs<ExtArgs>
   auditLogs?: boolean | Prisma.Company$auditLogsArgs<ExtArgs>
-  salesShipments?: boolean | Prisma.Company$salesShipmentsArgs<ExtArgs>
-  purchaseOrders?: boolean | Prisma.Company$purchaseOrdersArgs<ExtArgs>
   _count?: boolean | Prisma.CompanyCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["company"]>
 
@@ -3463,14 +3463,14 @@ export type CompanyInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs
   reservations?: boolean | Prisma.Company$reservationsArgs<ExtArgs>
   movements?: boolean | Prisma.Company$movementsArgs<ExtArgs>
   salesOrders?: boolean | Prisma.Company$salesOrdersArgs<ExtArgs>
+  shipments?: boolean | Prisma.Company$shipmentsArgs<ExtArgs>
+  purchaseOrders?: boolean | Prisma.Company$purchaseOrdersArgs<ExtArgs>
   goodsReceipts?: boolean | Prisma.Company$goodsReceiptsArgs<ExtArgs>
   invoices?: boolean | Prisma.Company$invoicesArgs<ExtArgs>
   payments?: boolean | Prisma.Company$paymentsArgs<ExtArgs>
   accounts?: boolean | Prisma.Company$accountsArgs<ExtArgs>
   journalEntries?: boolean | Prisma.Company$journalEntriesArgs<ExtArgs>
   auditLogs?: boolean | Prisma.Company$auditLogsArgs<ExtArgs>
-  salesShipments?: boolean | Prisma.Company$salesShipmentsArgs<ExtArgs>
-  purchaseOrders?: boolean | Prisma.Company$purchaseOrdersArgs<ExtArgs>
   _count?: boolean | Prisma.CompanyCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type CompanyIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -3490,14 +3490,14 @@ export type $CompanyPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     reservations: Prisma.$StockReservationPayload<ExtArgs>[]
     movements: Prisma.$InventoryMovementPayload<ExtArgs>[]
     salesOrders: Prisma.$SalesOrderPayload<ExtArgs>[]
+    shipments: Prisma.$SalesShipmentPayload<ExtArgs>[]
+    purchaseOrders: Prisma.$PurchaseOrderPayload<ExtArgs>[]
     goodsReceipts: Prisma.$GoodsReceiptPayload<ExtArgs>[]
     invoices: Prisma.$InvoicePayload<ExtArgs>[]
     payments: Prisma.$PaymentPayload<ExtArgs>[]
     accounts: Prisma.$AccountPayload<ExtArgs>[]
     journalEntries: Prisma.$JournalEntryPayload<ExtArgs>[]
     auditLogs: Prisma.$AuditLogPayload<ExtArgs>[]
-    salesShipments: Prisma.$SalesShipmentPayload<ExtArgs>[]
-    purchaseOrders: Prisma.$PurchaseOrderPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -3912,14 +3912,14 @@ export interface Prisma__CompanyClient<T, Null = never, ExtArgs extends runtime.
   reservations<T extends Prisma.Company$reservationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$reservationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StockReservationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   movements<T extends Prisma.Company$movementsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$movementsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InventoryMovementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   salesOrders<T extends Prisma.Company$salesOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$salesOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SalesOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  shipments<T extends Prisma.Company$shipmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$shipmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SalesShipmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  purchaseOrders<T extends Prisma.Company$purchaseOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$purchaseOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PurchaseOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   goodsReceipts<T extends Prisma.Company$goodsReceiptsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$goodsReceiptsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GoodsReceiptPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   invoices<T extends Prisma.Company$invoicesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$invoicesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   payments<T extends Prisma.Company$paymentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$paymentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   accounts<T extends Prisma.Company$accountsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$accountsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   journalEntries<T extends Prisma.Company$journalEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$journalEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$JournalEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   auditLogs<T extends Prisma.Company$auditLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$auditLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AuditLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  salesShipments<T extends Prisma.Company$salesShipmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$salesShipmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SalesShipmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  purchaseOrders<T extends Prisma.Company$purchaseOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$purchaseOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PurchaseOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4613,6 +4613,54 @@ export type Company$salesOrdersArgs<ExtArgs extends runtime.Types.Extensions.Int
 }
 
 /**
+ * Company.shipments
+ */
+export type Company$shipmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SalesShipment
+   */
+  select?: Prisma.SalesShipmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SalesShipment
+   */
+  omit?: Prisma.SalesShipmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SalesShipmentInclude<ExtArgs> | null
+  where?: Prisma.SalesShipmentWhereInput
+  orderBy?: Prisma.SalesShipmentOrderByWithRelationInput | Prisma.SalesShipmentOrderByWithRelationInput[]
+  cursor?: Prisma.SalesShipmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SalesShipmentScalarFieldEnum | Prisma.SalesShipmentScalarFieldEnum[]
+}
+
+/**
+ * Company.purchaseOrders
+ */
+export type Company$purchaseOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PurchaseOrder
+   */
+  select?: Prisma.PurchaseOrderSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PurchaseOrder
+   */
+  omit?: Prisma.PurchaseOrderOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PurchaseOrderInclude<ExtArgs> | null
+  where?: Prisma.PurchaseOrderWhereInput
+  orderBy?: Prisma.PurchaseOrderOrderByWithRelationInput | Prisma.PurchaseOrderOrderByWithRelationInput[]
+  cursor?: Prisma.PurchaseOrderWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PurchaseOrderScalarFieldEnum | Prisma.PurchaseOrderScalarFieldEnum[]
+}
+
+/**
  * Company.goodsReceipts
  */
 export type Company$goodsReceiptsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -4754,54 +4802,6 @@ export type Company$auditLogsArgs<ExtArgs extends runtime.Types.Extensions.Inter
   take?: number
   skip?: number
   distinct?: Prisma.AuditLogScalarFieldEnum | Prisma.AuditLogScalarFieldEnum[]
-}
-
-/**
- * Company.salesShipments
- */
-export type Company$salesShipmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the SalesShipment
-   */
-  select?: Prisma.SalesShipmentSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the SalesShipment
-   */
-  omit?: Prisma.SalesShipmentOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.SalesShipmentInclude<ExtArgs> | null
-  where?: Prisma.SalesShipmentWhereInput
-  orderBy?: Prisma.SalesShipmentOrderByWithRelationInput | Prisma.SalesShipmentOrderByWithRelationInput[]
-  cursor?: Prisma.SalesShipmentWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.SalesShipmentScalarFieldEnum | Prisma.SalesShipmentScalarFieldEnum[]
-}
-
-/**
- * Company.purchaseOrders
- */
-export type Company$purchaseOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the PurchaseOrder
-   */
-  select?: Prisma.PurchaseOrderSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the PurchaseOrder
-   */
-  omit?: Prisma.PurchaseOrderOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PurchaseOrderInclude<ExtArgs> | null
-  where?: Prisma.PurchaseOrderWhereInput
-  orderBy?: Prisma.PurchaseOrderOrderByWithRelationInput | Prisma.PurchaseOrderOrderByWithRelationInput[]
-  cursor?: Prisma.PurchaseOrderWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.PurchaseOrderScalarFieldEnum | Prisma.PurchaseOrderScalarFieldEnum[]
 }
 
 /**

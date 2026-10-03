@@ -29,7 +29,7 @@ export type GoodsReceiptMinAggregateOutputType = {
   companyId: string | null
   purchaseOrderId: string | null
   warehouseId: string | null
-  createdbyId: string | null
+  createdById: string | null
   number: string | null
   receivedAt: Date | null
 }
@@ -39,7 +39,7 @@ export type GoodsReceiptMaxAggregateOutputType = {
   companyId: string | null
   purchaseOrderId: string | null
   warehouseId: string | null
-  createdbyId: string | null
+  createdById: string | null
   number: string | null
   receivedAt: Date | null
 }
@@ -49,7 +49,7 @@ export type GoodsReceiptCountAggregateOutputType = {
   companyId: number
   purchaseOrderId: number
   warehouseId: number
-  createdbyId: number
+  createdById: number
   number: number
   receivedAt: number
   _all: number
@@ -61,7 +61,7 @@ export type GoodsReceiptMinAggregateInputType = {
   companyId?: true
   purchaseOrderId?: true
   warehouseId?: true
-  createdbyId?: true
+  createdById?: true
   number?: true
   receivedAt?: true
 }
@@ -71,7 +71,7 @@ export type GoodsReceiptMaxAggregateInputType = {
   companyId?: true
   purchaseOrderId?: true
   warehouseId?: true
-  createdbyId?: true
+  createdById?: true
   number?: true
   receivedAt?: true
 }
@@ -81,7 +81,7 @@ export type GoodsReceiptCountAggregateInputType = {
   companyId?: true
   purchaseOrderId?: true
   warehouseId?: true
-  createdbyId?: true
+  createdById?: true
   number?: true
   receivedAt?: true
   _all?: true
@@ -164,7 +164,7 @@ export type GoodsReceiptGroupByOutputType = {
   companyId: string
   purchaseOrderId: string
   warehouseId: string
-  createdbyId: string
+  createdById: string
   number: string
   receivedAt: Date
   _count: GoodsReceiptCountAggregateOutputType | null
@@ -195,13 +195,13 @@ export type GoodsReceiptWhereInput = {
   companyId?: Prisma.StringFilter<"GoodsReceipt"> | string
   purchaseOrderId?: Prisma.StringFilter<"GoodsReceipt"> | string
   warehouseId?: Prisma.StringFilter<"GoodsReceipt"> | string
-  createdbyId?: Prisma.StringFilter<"GoodsReceipt"> | string
+  createdById?: Prisma.StringFilter<"GoodsReceipt"> | string
   number?: Prisma.StringFilter<"GoodsReceipt"> | string
   receivedAt?: Prisma.DateTimeFilter<"GoodsReceipt"> | Date | string
   company?: Prisma.XOR<Prisma.CompanyScalarRelationFilter, Prisma.CompanyWhereInput>
   purchaseOrder?: Prisma.XOR<Prisma.PurchaseOrderScalarRelationFilter, Prisma.PurchaseOrderWhereInput>
   warehouse?: Prisma.XOR<Prisma.WarehouseScalarRelationFilter, Prisma.WarehouseWhereInput>
-  createBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   lines?: Prisma.GoodsReceiptLineListRelationFilter
 }
 
@@ -210,13 +210,13 @@ export type GoodsReceiptOrderByWithRelationInput = {
   companyId?: Prisma.SortOrder
   purchaseOrderId?: Prisma.SortOrder
   warehouseId?: Prisma.SortOrder
-  createdbyId?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
   number?: Prisma.SortOrder
   receivedAt?: Prisma.SortOrder
   company?: Prisma.CompanyOrderByWithRelationInput
   purchaseOrder?: Prisma.PurchaseOrderOrderByWithRelationInput
   warehouse?: Prisma.WarehouseOrderByWithRelationInput
-  createBy?: Prisma.UserOrderByWithRelationInput
+  createdBy?: Prisma.UserOrderByWithRelationInput
   lines?: Prisma.GoodsReceiptLineOrderByRelationAggregateInput
 }
 
@@ -229,13 +229,13 @@ export type GoodsReceiptWhereUniqueInput = Prisma.AtLeast<{
   companyId?: Prisma.StringFilter<"GoodsReceipt"> | string
   purchaseOrderId?: Prisma.StringFilter<"GoodsReceipt"> | string
   warehouseId?: Prisma.StringFilter<"GoodsReceipt"> | string
-  createdbyId?: Prisma.StringFilter<"GoodsReceipt"> | string
+  createdById?: Prisma.StringFilter<"GoodsReceipt"> | string
   number?: Prisma.StringFilter<"GoodsReceipt"> | string
   receivedAt?: Prisma.DateTimeFilter<"GoodsReceipt"> | Date | string
   company?: Prisma.XOR<Prisma.CompanyScalarRelationFilter, Prisma.CompanyWhereInput>
   purchaseOrder?: Prisma.XOR<Prisma.PurchaseOrderScalarRelationFilter, Prisma.PurchaseOrderWhereInput>
   warehouse?: Prisma.XOR<Prisma.WarehouseScalarRelationFilter, Prisma.WarehouseWhereInput>
-  createBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   lines?: Prisma.GoodsReceiptLineListRelationFilter
 }, "id" | "companyId_number">
 
@@ -244,7 +244,7 @@ export type GoodsReceiptOrderByWithAggregationInput = {
   companyId?: Prisma.SortOrder
   purchaseOrderId?: Prisma.SortOrder
   warehouseId?: Prisma.SortOrder
-  createdbyId?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
   number?: Prisma.SortOrder
   receivedAt?: Prisma.SortOrder
   _count?: Prisma.GoodsReceiptCountOrderByAggregateInput
@@ -260,7 +260,7 @@ export type GoodsReceiptScalarWhereWithAggregatesInput = {
   companyId?: Prisma.StringWithAggregatesFilter<"GoodsReceipt"> | string
   purchaseOrderId?: Prisma.StringWithAggregatesFilter<"GoodsReceipt"> | string
   warehouseId?: Prisma.StringWithAggregatesFilter<"GoodsReceipt"> | string
-  createdbyId?: Prisma.StringWithAggregatesFilter<"GoodsReceipt"> | string
+  createdById?: Prisma.StringWithAggregatesFilter<"GoodsReceipt"> | string
   number?: Prisma.StringWithAggregatesFilter<"GoodsReceipt"> | string
   receivedAt?: Prisma.DateTimeWithAggregatesFilter<"GoodsReceipt"> | Date | string
 }
@@ -272,7 +272,7 @@ export type GoodsReceiptCreateInput = {
   company: Prisma.CompanyCreateNestedOneWithoutGoodsReceiptsInput
   purchaseOrder: Prisma.PurchaseOrderCreateNestedOneWithoutGoodsReceiptsInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutGoodsReceiptsInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedGoodsReceiptsInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedGoodsReceiptsInput
   lines?: Prisma.GoodsReceiptLineCreateNestedManyWithoutGoodsReceiptInput
 }
 
@@ -281,7 +281,7 @@ export type GoodsReceiptUncheckedCreateInput = {
   companyId: string
   purchaseOrderId: string
   warehouseId: string
-  createdbyId: string
+  createdById: string
   number: string
   receivedAt?: Date | string
   lines?: Prisma.GoodsReceiptLineUncheckedCreateNestedManyWithoutGoodsReceiptInput
@@ -294,7 +294,7 @@ export type GoodsReceiptUpdateInput = {
   company?: Prisma.CompanyUpdateOneRequiredWithoutGoodsReceiptsNestedInput
   purchaseOrder?: Prisma.PurchaseOrderUpdateOneRequiredWithoutGoodsReceiptsNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutGoodsReceiptsNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedGoodsReceiptsNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedGoodsReceiptsNestedInput
   lines?: Prisma.GoodsReceiptLineUpdateManyWithoutGoodsReceiptNestedInput
 }
 
@@ -303,7 +303,7 @@ export type GoodsReceiptUncheckedUpdateInput = {
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   purchaseOrderId?: Prisma.StringFieldUpdateOperationsInput | string
   warehouseId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   lines?: Prisma.GoodsReceiptLineUncheckedUpdateManyWithoutGoodsReceiptNestedInput
@@ -314,7 +314,7 @@ export type GoodsReceiptCreateManyInput = {
   companyId: string
   purchaseOrderId: string
   warehouseId: string
-  createdbyId: string
+  createdById: string
   number: string
   receivedAt?: Date | string
 }
@@ -330,7 +330,7 @@ export type GoodsReceiptUncheckedUpdateManyInput = {
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   purchaseOrderId?: Prisma.StringFieldUpdateOperationsInput | string
   warehouseId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -355,7 +355,7 @@ export type GoodsReceiptCountOrderByAggregateInput = {
   companyId?: Prisma.SortOrder
   purchaseOrderId?: Prisma.SortOrder
   warehouseId?: Prisma.SortOrder
-  createdbyId?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
   number?: Prisma.SortOrder
   receivedAt?: Prisma.SortOrder
 }
@@ -365,7 +365,7 @@ export type GoodsReceiptMaxOrderByAggregateInput = {
   companyId?: Prisma.SortOrder
   purchaseOrderId?: Prisma.SortOrder
   warehouseId?: Prisma.SortOrder
-  createdbyId?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
   number?: Prisma.SortOrder
   receivedAt?: Prisma.SortOrder
 }
@@ -375,7 +375,7 @@ export type GoodsReceiptMinOrderByAggregateInput = {
   companyId?: Prisma.SortOrder
   purchaseOrderId?: Prisma.SortOrder
   warehouseId?: Prisma.SortOrder
-  createdbyId?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
   number?: Prisma.SortOrder
   receivedAt?: Prisma.SortOrder
 }
@@ -427,45 +427,45 @@ export type GoodsReceiptUncheckedUpdateManyWithoutCompanyNestedInput = {
   deleteMany?: Prisma.GoodsReceiptScalarWhereInput | Prisma.GoodsReceiptScalarWhereInput[]
 }
 
-export type GoodsReceiptCreateNestedManyWithoutCreateByInput = {
-  create?: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreateByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreateByInput> | Prisma.GoodsReceiptCreateWithoutCreateByInput[] | Prisma.GoodsReceiptUncheckedCreateWithoutCreateByInput[]
-  connectOrCreate?: Prisma.GoodsReceiptCreateOrConnectWithoutCreateByInput | Prisma.GoodsReceiptCreateOrConnectWithoutCreateByInput[]
-  createMany?: Prisma.GoodsReceiptCreateManyCreateByInputEnvelope
+export type GoodsReceiptCreateNestedManyWithoutCreatedByInput = {
+  create?: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreatedByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreatedByInput> | Prisma.GoodsReceiptCreateWithoutCreatedByInput[] | Prisma.GoodsReceiptUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.GoodsReceiptCreateOrConnectWithoutCreatedByInput | Prisma.GoodsReceiptCreateOrConnectWithoutCreatedByInput[]
+  createMany?: Prisma.GoodsReceiptCreateManyCreatedByInputEnvelope
   connect?: Prisma.GoodsReceiptWhereUniqueInput | Prisma.GoodsReceiptWhereUniqueInput[]
 }
 
-export type GoodsReceiptUncheckedCreateNestedManyWithoutCreateByInput = {
-  create?: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreateByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreateByInput> | Prisma.GoodsReceiptCreateWithoutCreateByInput[] | Prisma.GoodsReceiptUncheckedCreateWithoutCreateByInput[]
-  connectOrCreate?: Prisma.GoodsReceiptCreateOrConnectWithoutCreateByInput | Prisma.GoodsReceiptCreateOrConnectWithoutCreateByInput[]
-  createMany?: Prisma.GoodsReceiptCreateManyCreateByInputEnvelope
+export type GoodsReceiptUncheckedCreateNestedManyWithoutCreatedByInput = {
+  create?: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreatedByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreatedByInput> | Prisma.GoodsReceiptCreateWithoutCreatedByInput[] | Prisma.GoodsReceiptUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.GoodsReceiptCreateOrConnectWithoutCreatedByInput | Prisma.GoodsReceiptCreateOrConnectWithoutCreatedByInput[]
+  createMany?: Prisma.GoodsReceiptCreateManyCreatedByInputEnvelope
   connect?: Prisma.GoodsReceiptWhereUniqueInput | Prisma.GoodsReceiptWhereUniqueInput[]
 }
 
-export type GoodsReceiptUpdateManyWithoutCreateByNestedInput = {
-  create?: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreateByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreateByInput> | Prisma.GoodsReceiptCreateWithoutCreateByInput[] | Prisma.GoodsReceiptUncheckedCreateWithoutCreateByInput[]
-  connectOrCreate?: Prisma.GoodsReceiptCreateOrConnectWithoutCreateByInput | Prisma.GoodsReceiptCreateOrConnectWithoutCreateByInput[]
-  upsert?: Prisma.GoodsReceiptUpsertWithWhereUniqueWithoutCreateByInput | Prisma.GoodsReceiptUpsertWithWhereUniqueWithoutCreateByInput[]
-  createMany?: Prisma.GoodsReceiptCreateManyCreateByInputEnvelope
+export type GoodsReceiptUpdateManyWithoutCreatedByNestedInput = {
+  create?: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreatedByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreatedByInput> | Prisma.GoodsReceiptCreateWithoutCreatedByInput[] | Prisma.GoodsReceiptUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.GoodsReceiptCreateOrConnectWithoutCreatedByInput | Prisma.GoodsReceiptCreateOrConnectWithoutCreatedByInput[]
+  upsert?: Prisma.GoodsReceiptUpsertWithWhereUniqueWithoutCreatedByInput | Prisma.GoodsReceiptUpsertWithWhereUniqueWithoutCreatedByInput[]
+  createMany?: Prisma.GoodsReceiptCreateManyCreatedByInputEnvelope
   set?: Prisma.GoodsReceiptWhereUniqueInput | Prisma.GoodsReceiptWhereUniqueInput[]
   disconnect?: Prisma.GoodsReceiptWhereUniqueInput | Prisma.GoodsReceiptWhereUniqueInput[]
   delete?: Prisma.GoodsReceiptWhereUniqueInput | Prisma.GoodsReceiptWhereUniqueInput[]
   connect?: Prisma.GoodsReceiptWhereUniqueInput | Prisma.GoodsReceiptWhereUniqueInput[]
-  update?: Prisma.GoodsReceiptUpdateWithWhereUniqueWithoutCreateByInput | Prisma.GoodsReceiptUpdateWithWhereUniqueWithoutCreateByInput[]
-  updateMany?: Prisma.GoodsReceiptUpdateManyWithWhereWithoutCreateByInput | Prisma.GoodsReceiptUpdateManyWithWhereWithoutCreateByInput[]
+  update?: Prisma.GoodsReceiptUpdateWithWhereUniqueWithoutCreatedByInput | Prisma.GoodsReceiptUpdateWithWhereUniqueWithoutCreatedByInput[]
+  updateMany?: Prisma.GoodsReceiptUpdateManyWithWhereWithoutCreatedByInput | Prisma.GoodsReceiptUpdateManyWithWhereWithoutCreatedByInput[]
   deleteMany?: Prisma.GoodsReceiptScalarWhereInput | Prisma.GoodsReceiptScalarWhereInput[]
 }
 
-export type GoodsReceiptUncheckedUpdateManyWithoutCreateByNestedInput = {
-  create?: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreateByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreateByInput> | Prisma.GoodsReceiptCreateWithoutCreateByInput[] | Prisma.GoodsReceiptUncheckedCreateWithoutCreateByInput[]
-  connectOrCreate?: Prisma.GoodsReceiptCreateOrConnectWithoutCreateByInput | Prisma.GoodsReceiptCreateOrConnectWithoutCreateByInput[]
-  upsert?: Prisma.GoodsReceiptUpsertWithWhereUniqueWithoutCreateByInput | Prisma.GoodsReceiptUpsertWithWhereUniqueWithoutCreateByInput[]
-  createMany?: Prisma.GoodsReceiptCreateManyCreateByInputEnvelope
+export type GoodsReceiptUncheckedUpdateManyWithoutCreatedByNestedInput = {
+  create?: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreatedByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreatedByInput> | Prisma.GoodsReceiptCreateWithoutCreatedByInput[] | Prisma.GoodsReceiptUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.GoodsReceiptCreateOrConnectWithoutCreatedByInput | Prisma.GoodsReceiptCreateOrConnectWithoutCreatedByInput[]
+  upsert?: Prisma.GoodsReceiptUpsertWithWhereUniqueWithoutCreatedByInput | Prisma.GoodsReceiptUpsertWithWhereUniqueWithoutCreatedByInput[]
+  createMany?: Prisma.GoodsReceiptCreateManyCreatedByInputEnvelope
   set?: Prisma.GoodsReceiptWhereUniqueInput | Prisma.GoodsReceiptWhereUniqueInput[]
   disconnect?: Prisma.GoodsReceiptWhereUniqueInput | Prisma.GoodsReceiptWhereUniqueInput[]
   delete?: Prisma.GoodsReceiptWhereUniqueInput | Prisma.GoodsReceiptWhereUniqueInput[]
   connect?: Prisma.GoodsReceiptWhereUniqueInput | Prisma.GoodsReceiptWhereUniqueInput[]
-  update?: Prisma.GoodsReceiptUpdateWithWhereUniqueWithoutCreateByInput | Prisma.GoodsReceiptUpdateWithWhereUniqueWithoutCreateByInput[]
-  updateMany?: Prisma.GoodsReceiptUpdateManyWithWhereWithoutCreateByInput | Prisma.GoodsReceiptUpdateManyWithWhereWithoutCreateByInput[]
+  update?: Prisma.GoodsReceiptUpdateWithWhereUniqueWithoutCreatedByInput | Prisma.GoodsReceiptUpdateWithWhereUniqueWithoutCreatedByInput[]
+  updateMany?: Prisma.GoodsReceiptUpdateManyWithWhereWithoutCreatedByInput | Prisma.GoodsReceiptUpdateManyWithWhereWithoutCreatedByInput[]
   deleteMany?: Prisma.GoodsReceiptScalarWhereInput | Prisma.GoodsReceiptScalarWhereInput[]
 }
 
@@ -573,7 +573,7 @@ export type GoodsReceiptCreateWithoutCompanyInput = {
   receivedAt?: Date | string
   purchaseOrder: Prisma.PurchaseOrderCreateNestedOneWithoutGoodsReceiptsInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutGoodsReceiptsInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedGoodsReceiptsInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedGoodsReceiptsInput
   lines?: Prisma.GoodsReceiptLineCreateNestedManyWithoutGoodsReceiptInput
 }
 
@@ -581,7 +581,7 @@ export type GoodsReceiptUncheckedCreateWithoutCompanyInput = {
   id?: string
   purchaseOrderId: string
   warehouseId: string
-  createdbyId: string
+  createdById: string
   number: string
   receivedAt?: Date | string
   lines?: Prisma.GoodsReceiptLineUncheckedCreateNestedManyWithoutGoodsReceiptInput
@@ -621,12 +621,12 @@ export type GoodsReceiptScalarWhereInput = {
   companyId?: Prisma.StringFilter<"GoodsReceipt"> | string
   purchaseOrderId?: Prisma.StringFilter<"GoodsReceipt"> | string
   warehouseId?: Prisma.StringFilter<"GoodsReceipt"> | string
-  createdbyId?: Prisma.StringFilter<"GoodsReceipt"> | string
+  createdById?: Prisma.StringFilter<"GoodsReceipt"> | string
   number?: Prisma.StringFilter<"GoodsReceipt"> | string
   receivedAt?: Prisma.DateTimeFilter<"GoodsReceipt"> | Date | string
 }
 
-export type GoodsReceiptCreateWithoutCreateByInput = {
+export type GoodsReceiptCreateWithoutCreatedByInput = {
   id?: string
   number: string
   receivedAt?: Date | string
@@ -636,7 +636,7 @@ export type GoodsReceiptCreateWithoutCreateByInput = {
   lines?: Prisma.GoodsReceiptLineCreateNestedManyWithoutGoodsReceiptInput
 }
 
-export type GoodsReceiptUncheckedCreateWithoutCreateByInput = {
+export type GoodsReceiptUncheckedCreateWithoutCreatedByInput = {
   id?: string
   companyId: string
   purchaseOrderId: string
@@ -646,30 +646,30 @@ export type GoodsReceiptUncheckedCreateWithoutCreateByInput = {
   lines?: Prisma.GoodsReceiptLineUncheckedCreateNestedManyWithoutGoodsReceiptInput
 }
 
-export type GoodsReceiptCreateOrConnectWithoutCreateByInput = {
+export type GoodsReceiptCreateOrConnectWithoutCreatedByInput = {
   where: Prisma.GoodsReceiptWhereUniqueInput
-  create: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreateByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreateByInput>
+  create: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreatedByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreatedByInput>
 }
 
-export type GoodsReceiptCreateManyCreateByInputEnvelope = {
-  data: Prisma.GoodsReceiptCreateManyCreateByInput | Prisma.GoodsReceiptCreateManyCreateByInput[]
+export type GoodsReceiptCreateManyCreatedByInputEnvelope = {
+  data: Prisma.GoodsReceiptCreateManyCreatedByInput | Prisma.GoodsReceiptCreateManyCreatedByInput[]
   skipDuplicates?: boolean
 }
 
-export type GoodsReceiptUpsertWithWhereUniqueWithoutCreateByInput = {
+export type GoodsReceiptUpsertWithWhereUniqueWithoutCreatedByInput = {
   where: Prisma.GoodsReceiptWhereUniqueInput
-  update: Prisma.XOR<Prisma.GoodsReceiptUpdateWithoutCreateByInput, Prisma.GoodsReceiptUncheckedUpdateWithoutCreateByInput>
-  create: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreateByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreateByInput>
+  update: Prisma.XOR<Prisma.GoodsReceiptUpdateWithoutCreatedByInput, Prisma.GoodsReceiptUncheckedUpdateWithoutCreatedByInput>
+  create: Prisma.XOR<Prisma.GoodsReceiptCreateWithoutCreatedByInput, Prisma.GoodsReceiptUncheckedCreateWithoutCreatedByInput>
 }
 
-export type GoodsReceiptUpdateWithWhereUniqueWithoutCreateByInput = {
+export type GoodsReceiptUpdateWithWhereUniqueWithoutCreatedByInput = {
   where: Prisma.GoodsReceiptWhereUniqueInput
-  data: Prisma.XOR<Prisma.GoodsReceiptUpdateWithoutCreateByInput, Prisma.GoodsReceiptUncheckedUpdateWithoutCreateByInput>
+  data: Prisma.XOR<Prisma.GoodsReceiptUpdateWithoutCreatedByInput, Prisma.GoodsReceiptUncheckedUpdateWithoutCreatedByInput>
 }
 
-export type GoodsReceiptUpdateManyWithWhereWithoutCreateByInput = {
+export type GoodsReceiptUpdateManyWithWhereWithoutCreatedByInput = {
   where: Prisma.GoodsReceiptScalarWhereInput
-  data: Prisma.XOR<Prisma.GoodsReceiptUpdateManyMutationInput, Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreateByInput>
+  data: Prisma.XOR<Prisma.GoodsReceiptUpdateManyMutationInput, Prisma.GoodsReceiptUncheckedUpdateManyWithoutCreatedByInput>
 }
 
 export type GoodsReceiptCreateWithoutWarehouseInput = {
@@ -678,7 +678,7 @@ export type GoodsReceiptCreateWithoutWarehouseInput = {
   receivedAt?: Date | string
   company: Prisma.CompanyCreateNestedOneWithoutGoodsReceiptsInput
   purchaseOrder: Prisma.PurchaseOrderCreateNestedOneWithoutGoodsReceiptsInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedGoodsReceiptsInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedGoodsReceiptsInput
   lines?: Prisma.GoodsReceiptLineCreateNestedManyWithoutGoodsReceiptInput
 }
 
@@ -686,7 +686,7 @@ export type GoodsReceiptUncheckedCreateWithoutWarehouseInput = {
   id?: string
   companyId: string
   purchaseOrderId: string
-  createdbyId: string
+  createdById: string
   number: string
   receivedAt?: Date | string
   lines?: Prisma.GoodsReceiptLineUncheckedCreateNestedManyWithoutGoodsReceiptInput
@@ -724,7 +724,7 @@ export type GoodsReceiptCreateWithoutPurchaseOrderInput = {
   receivedAt?: Date | string
   company: Prisma.CompanyCreateNestedOneWithoutGoodsReceiptsInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutGoodsReceiptsInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedGoodsReceiptsInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedGoodsReceiptsInput
   lines?: Prisma.GoodsReceiptLineCreateNestedManyWithoutGoodsReceiptInput
 }
 
@@ -732,7 +732,7 @@ export type GoodsReceiptUncheckedCreateWithoutPurchaseOrderInput = {
   id?: string
   companyId: string
   warehouseId: string
-  createdbyId: string
+  createdById: string
   number: string
   receivedAt?: Date | string
   lines?: Prisma.GoodsReceiptLineUncheckedCreateNestedManyWithoutGoodsReceiptInput
@@ -771,7 +771,7 @@ export type GoodsReceiptCreateWithoutLinesInput = {
   company: Prisma.CompanyCreateNestedOneWithoutGoodsReceiptsInput
   purchaseOrder: Prisma.PurchaseOrderCreateNestedOneWithoutGoodsReceiptsInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutGoodsReceiptsInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedGoodsReceiptsInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedGoodsReceiptsInput
 }
 
 export type GoodsReceiptUncheckedCreateWithoutLinesInput = {
@@ -779,7 +779,7 @@ export type GoodsReceiptUncheckedCreateWithoutLinesInput = {
   companyId: string
   purchaseOrderId: string
   warehouseId: string
-  createdbyId: string
+  createdById: string
   number: string
   receivedAt?: Date | string
 }
@@ -807,7 +807,7 @@ export type GoodsReceiptUpdateWithoutLinesInput = {
   company?: Prisma.CompanyUpdateOneRequiredWithoutGoodsReceiptsNestedInput
   purchaseOrder?: Prisma.PurchaseOrderUpdateOneRequiredWithoutGoodsReceiptsNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutGoodsReceiptsNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedGoodsReceiptsNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedGoodsReceiptsNestedInput
 }
 
 export type GoodsReceiptUncheckedUpdateWithoutLinesInput = {
@@ -815,7 +815,7 @@ export type GoodsReceiptUncheckedUpdateWithoutLinesInput = {
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   purchaseOrderId?: Prisma.StringFieldUpdateOperationsInput | string
   warehouseId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -824,7 +824,7 @@ export type GoodsReceiptCreateManyCompanyInput = {
   id?: string
   purchaseOrderId: string
   warehouseId: string
-  createdbyId: string
+  createdById: string
   number: string
   receivedAt?: Date | string
 }
@@ -835,7 +835,7 @@ export type GoodsReceiptUpdateWithoutCompanyInput = {
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   purchaseOrder?: Prisma.PurchaseOrderUpdateOneRequiredWithoutGoodsReceiptsNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutGoodsReceiptsNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedGoodsReceiptsNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedGoodsReceiptsNestedInput
   lines?: Prisma.GoodsReceiptLineUpdateManyWithoutGoodsReceiptNestedInput
 }
 
@@ -843,7 +843,7 @@ export type GoodsReceiptUncheckedUpdateWithoutCompanyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   purchaseOrderId?: Prisma.StringFieldUpdateOperationsInput | string
   warehouseId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   lines?: Prisma.GoodsReceiptLineUncheckedUpdateManyWithoutGoodsReceiptNestedInput
@@ -853,12 +853,12 @@ export type GoodsReceiptUncheckedUpdateManyWithoutCompanyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   purchaseOrderId?: Prisma.StringFieldUpdateOperationsInput | string
   warehouseId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type GoodsReceiptCreateManyCreateByInput = {
+export type GoodsReceiptCreateManyCreatedByInput = {
   id?: string
   companyId: string
   purchaseOrderId: string
@@ -867,7 +867,7 @@ export type GoodsReceiptCreateManyCreateByInput = {
   receivedAt?: Date | string
 }
 
-export type GoodsReceiptUpdateWithoutCreateByInput = {
+export type GoodsReceiptUpdateWithoutCreatedByInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -877,7 +877,7 @@ export type GoodsReceiptUpdateWithoutCreateByInput = {
   lines?: Prisma.GoodsReceiptLineUpdateManyWithoutGoodsReceiptNestedInput
 }
 
-export type GoodsReceiptUncheckedUpdateWithoutCreateByInput = {
+export type GoodsReceiptUncheckedUpdateWithoutCreatedByInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   purchaseOrderId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -887,7 +887,7 @@ export type GoodsReceiptUncheckedUpdateWithoutCreateByInput = {
   lines?: Prisma.GoodsReceiptLineUncheckedUpdateManyWithoutGoodsReceiptNestedInput
 }
 
-export type GoodsReceiptUncheckedUpdateManyWithoutCreateByInput = {
+export type GoodsReceiptUncheckedUpdateManyWithoutCreatedByInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   purchaseOrderId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -900,7 +900,7 @@ export type GoodsReceiptCreateManyWarehouseInput = {
   id?: string
   companyId: string
   purchaseOrderId: string
-  createdbyId: string
+  createdById: string
   number: string
   receivedAt?: Date | string
 }
@@ -911,7 +911,7 @@ export type GoodsReceiptUpdateWithoutWarehouseInput = {
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   company?: Prisma.CompanyUpdateOneRequiredWithoutGoodsReceiptsNestedInput
   purchaseOrder?: Prisma.PurchaseOrderUpdateOneRequiredWithoutGoodsReceiptsNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedGoodsReceiptsNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedGoodsReceiptsNestedInput
   lines?: Prisma.GoodsReceiptLineUpdateManyWithoutGoodsReceiptNestedInput
 }
 
@@ -919,7 +919,7 @@ export type GoodsReceiptUncheckedUpdateWithoutWarehouseInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   purchaseOrderId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   lines?: Prisma.GoodsReceiptLineUncheckedUpdateManyWithoutGoodsReceiptNestedInput
@@ -929,7 +929,7 @@ export type GoodsReceiptUncheckedUpdateManyWithoutWarehouseInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   purchaseOrderId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -938,7 +938,7 @@ export type GoodsReceiptCreateManyPurchaseOrderInput = {
   id?: string
   companyId: string
   warehouseId: string
-  createdbyId: string
+  createdById: string
   number: string
   receivedAt?: Date | string
 }
@@ -949,7 +949,7 @@ export type GoodsReceiptUpdateWithoutPurchaseOrderInput = {
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   company?: Prisma.CompanyUpdateOneRequiredWithoutGoodsReceiptsNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutGoodsReceiptsNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedGoodsReceiptsNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedGoodsReceiptsNestedInput
   lines?: Prisma.GoodsReceiptLineUpdateManyWithoutGoodsReceiptNestedInput
 }
 
@@ -957,7 +957,7 @@ export type GoodsReceiptUncheckedUpdateWithoutPurchaseOrderInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   warehouseId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   lines?: Prisma.GoodsReceiptLineUncheckedUpdateManyWithoutGoodsReceiptNestedInput
@@ -967,7 +967,7 @@ export type GoodsReceiptUncheckedUpdateManyWithoutPurchaseOrderInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   warehouseId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdbyId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   receivedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -1008,13 +1008,13 @@ export type GoodsReceiptSelect<ExtArgs extends runtime.Types.Extensions.Internal
   companyId?: boolean
   purchaseOrderId?: boolean
   warehouseId?: boolean
-  createdbyId?: boolean
+  createdById?: boolean
   number?: boolean
   receivedAt?: boolean
   company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
   purchaseOrder?: boolean | Prisma.PurchaseOrderDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   lines?: boolean | Prisma.GoodsReceipt$linesArgs<ExtArgs>
   _count?: boolean | Prisma.GoodsReceiptCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["goodsReceipt"]>
@@ -1024,13 +1024,13 @@ export type GoodsReceiptSelectCreateManyAndReturn<ExtArgs extends runtime.Types.
   companyId?: boolean
   purchaseOrderId?: boolean
   warehouseId?: boolean
-  createdbyId?: boolean
+  createdById?: boolean
   number?: boolean
   receivedAt?: boolean
   company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
   purchaseOrder?: boolean | Prisma.PurchaseOrderDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["goodsReceipt"]>
 
 export type GoodsReceiptSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1038,13 +1038,13 @@ export type GoodsReceiptSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.
   companyId?: boolean
   purchaseOrderId?: boolean
   warehouseId?: boolean
-  createdbyId?: boolean
+  createdById?: boolean
   number?: boolean
   receivedAt?: boolean
   company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
   purchaseOrder?: boolean | Prisma.PurchaseOrderDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["goodsReceipt"]>
 
 export type GoodsReceiptSelectScalar = {
@@ -1052,17 +1052,17 @@ export type GoodsReceiptSelectScalar = {
   companyId?: boolean
   purchaseOrderId?: boolean
   warehouseId?: boolean
-  createdbyId?: boolean
+  createdById?: boolean
   number?: boolean
   receivedAt?: boolean
 }
 
-export type GoodsReceiptOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "companyId" | "purchaseOrderId" | "warehouseId" | "createdbyId" | "number" | "receivedAt", ExtArgs["result"]["goodsReceipt"]>
+export type GoodsReceiptOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "companyId" | "purchaseOrderId" | "warehouseId" | "createdById" | "number" | "receivedAt", ExtArgs["result"]["goodsReceipt"]>
 export type GoodsReceiptInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
   purchaseOrder?: boolean | Prisma.PurchaseOrderDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   lines?: boolean | Prisma.GoodsReceipt$linesArgs<ExtArgs>
   _count?: boolean | Prisma.GoodsReceiptCountOutputTypeDefaultArgs<ExtArgs>
 }
@@ -1070,13 +1070,13 @@ export type GoodsReceiptIncludeCreateManyAndReturn<ExtArgs extends runtime.Types
   company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
   purchaseOrder?: boolean | Prisma.PurchaseOrderDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 export type GoodsReceiptIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
   purchaseOrder?: boolean | Prisma.PurchaseOrderDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 
 export type $GoodsReceiptPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1085,7 +1085,7 @@ export type $GoodsReceiptPayload<ExtArgs extends runtime.Types.Extensions.Intern
     company: Prisma.$CompanyPayload<ExtArgs>
     purchaseOrder: Prisma.$PurchaseOrderPayload<ExtArgs>
     warehouse: Prisma.$WarehousePayload<ExtArgs>
-    createBy: Prisma.$UserPayload<ExtArgs>
+    createdBy: Prisma.$UserPayload<ExtArgs>
     lines: Prisma.$GoodsReceiptLinePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1093,7 +1093,7 @@ export type $GoodsReceiptPayload<ExtArgs extends runtime.Types.Extensions.Intern
     companyId: string
     purchaseOrderId: string
     warehouseId: string
-    createdbyId: string
+    createdById: string
     number: string
     receivedAt: Date
   }, ExtArgs["result"]["goodsReceipt"]>
@@ -1493,7 +1493,7 @@ export interface Prisma__GoodsReceiptClient<T, Null = never, ExtArgs extends run
   company<T extends Prisma.CompanyDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CompanyDefaultArgs<ExtArgs>>): Prisma.Prisma__CompanyClient<runtime.Types.Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   purchaseOrder<T extends Prisma.PurchaseOrderDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PurchaseOrderDefaultArgs<ExtArgs>>): Prisma.Prisma__PurchaseOrderClient<runtime.Types.Result.GetResult<Prisma.$PurchaseOrderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   warehouse<T extends Prisma.WarehouseDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.WarehouseDefaultArgs<ExtArgs>>): Prisma.Prisma__WarehouseClient<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  createBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   lines<T extends Prisma.GoodsReceipt$linesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.GoodsReceipt$linesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GoodsReceiptLinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1528,7 +1528,7 @@ export interface GoodsReceiptFieldRefs {
   readonly companyId: Prisma.FieldRef<"GoodsReceipt", 'String'>
   readonly purchaseOrderId: Prisma.FieldRef<"GoodsReceipt", 'String'>
   readonly warehouseId: Prisma.FieldRef<"GoodsReceipt", 'String'>
-  readonly createdbyId: Prisma.FieldRef<"GoodsReceipt", 'String'>
+  readonly createdById: Prisma.FieldRef<"GoodsReceipt", 'String'>
   readonly number: Prisma.FieldRef<"GoodsReceipt", 'String'>
   readonly receivedAt: Prisma.FieldRef<"GoodsReceipt", 'DateTime'>
 }

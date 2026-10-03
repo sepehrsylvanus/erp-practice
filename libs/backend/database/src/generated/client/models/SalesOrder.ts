@@ -27,13 +27,13 @@ export type AggregateSalesOrder = {
 }
 
 export type SalesOrderAvgAggregateOutputType = {
-  netAmoint: runtime.Decimal | null
+  netAmount: runtime.Decimal | null
   taxAmount: runtime.Decimal | null
   totalAmount: runtime.Decimal | null
 }
 
 export type SalesOrderSumAggregateOutputType = {
-  netAmoint: runtime.Decimal | null
+  netAmount: runtime.Decimal | null
   taxAmount: runtime.Decimal | null
   totalAmount: runtime.Decimal | null
 }
@@ -48,7 +48,7 @@ export type SalesOrderMinAggregateOutputType = {
   number: string | null
   status: $Enums.SalesOrderStatus | null
   currency: string | null
-  netAmoint: runtime.Decimal | null
+  netAmount: runtime.Decimal | null
   taxAmount: runtime.Decimal | null
   totalAmount: runtime.Decimal | null
   orderDate: Date | null
@@ -66,7 +66,7 @@ export type SalesOrderMaxAggregateOutputType = {
   number: string | null
   status: $Enums.SalesOrderStatus | null
   currency: string | null
-  netAmoint: runtime.Decimal | null
+  netAmount: runtime.Decimal | null
   taxAmount: runtime.Decimal | null
   totalAmount: runtime.Decimal | null
   orderDate: Date | null
@@ -84,7 +84,7 @@ export type SalesOrderCountAggregateOutputType = {
   number: number
   status: number
   currency: number
-  netAmoint: number
+  netAmount: number
   taxAmount: number
   totalAmount: number
   orderDate: number
@@ -95,13 +95,13 @@ export type SalesOrderCountAggregateOutputType = {
 
 
 export type SalesOrderAvgAggregateInputType = {
-  netAmoint?: true
+  netAmount?: true
   taxAmount?: true
   totalAmount?: true
 }
 
 export type SalesOrderSumAggregateInputType = {
-  netAmoint?: true
+  netAmount?: true
   taxAmount?: true
   totalAmount?: true
 }
@@ -116,7 +116,7 @@ export type SalesOrderMinAggregateInputType = {
   number?: true
   status?: true
   currency?: true
-  netAmoint?: true
+  netAmount?: true
   taxAmount?: true
   totalAmount?: true
   orderDate?: true
@@ -134,7 +134,7 @@ export type SalesOrderMaxAggregateInputType = {
   number?: true
   status?: true
   currency?: true
-  netAmoint?: true
+  netAmount?: true
   taxAmount?: true
   totalAmount?: true
   orderDate?: true
@@ -152,7 +152,7 @@ export type SalesOrderCountAggregateInputType = {
   number?: true
   status?: true
   currency?: true
-  netAmoint?: true
+  netAmount?: true
   taxAmount?: true
   totalAmount?: true
   orderDate?: true
@@ -257,7 +257,7 @@ export type SalesOrderGroupByOutputType = {
   number: string
   status: $Enums.SalesOrderStatus
   currency: string
-  netAmoint: runtime.Decimal
+  netAmount: runtime.Decimal
   taxAmount: runtime.Decimal
   totalAmount: runtime.Decimal
   orderDate: Date
@@ -298,7 +298,7 @@ export type SalesOrderWhereInput = {
   number?: Prisma.StringFilter<"SalesOrder"> | string
   status?: Prisma.EnumSalesOrderStatusFilter<"SalesOrder"> | $Enums.SalesOrderStatus
   currency?: Prisma.StringFilter<"SalesOrder"> | string
-  netAmoint?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFilter<"SalesOrder"> | Date | string
@@ -308,7 +308,7 @@ export type SalesOrderWhereInput = {
   branch?: Prisma.XOR<Prisma.BranchScalarRelationFilter, Prisma.BranchWhereInput>
   warehouse?: Prisma.XOR<Prisma.WarehouseScalarRelationFilter, Prisma.WarehouseWhereInput>
   customer?: Prisma.XOR<Prisma.CustomerScalarRelationFilter, Prisma.CustomerWhereInput>
-  createBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   lines?: Prisma.SalesOrderLineListRelationFilter
   shipments?: Prisma.SalesShipmentListRelationFilter
   invoices?: Prisma.InvoiceListRelationFilter
@@ -324,7 +324,7 @@ export type SalesOrderOrderByWithRelationInput = {
   number?: Prisma.SortOrder
   status?: Prisma.SortOrder
   currency?: Prisma.SortOrder
-  netAmoint?: Prisma.SortOrder
+  netAmount?: Prisma.SortOrder
   taxAmount?: Prisma.SortOrder
   totalAmount?: Prisma.SortOrder
   orderDate?: Prisma.SortOrder
@@ -334,7 +334,7 @@ export type SalesOrderOrderByWithRelationInput = {
   branch?: Prisma.BranchOrderByWithRelationInput
   warehouse?: Prisma.WarehouseOrderByWithRelationInput
   customer?: Prisma.CustomerOrderByWithRelationInput
-  createBy?: Prisma.UserOrderByWithRelationInput
+  createdBy?: Prisma.UserOrderByWithRelationInput
   lines?: Prisma.SalesOrderLineOrderByRelationAggregateInput
   shipments?: Prisma.SalesShipmentOrderByRelationAggregateInput
   invoices?: Prisma.InvoiceOrderByRelationAggregateInput
@@ -354,7 +354,7 @@ export type SalesOrderWhereUniqueInput = Prisma.AtLeast<{
   number?: Prisma.StringFilter<"SalesOrder"> | string
   status?: Prisma.EnumSalesOrderStatusFilter<"SalesOrder"> | $Enums.SalesOrderStatus
   currency?: Prisma.StringFilter<"SalesOrder"> | string
-  netAmoint?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFilter<"SalesOrder"> | Date | string
@@ -364,7 +364,7 @@ export type SalesOrderWhereUniqueInput = Prisma.AtLeast<{
   branch?: Prisma.XOR<Prisma.BranchScalarRelationFilter, Prisma.BranchWhereInput>
   warehouse?: Prisma.XOR<Prisma.WarehouseScalarRelationFilter, Prisma.WarehouseWhereInput>
   customer?: Prisma.XOR<Prisma.CustomerScalarRelationFilter, Prisma.CustomerWhereInput>
-  createBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   lines?: Prisma.SalesOrderLineListRelationFilter
   shipments?: Prisma.SalesShipmentListRelationFilter
   invoices?: Prisma.InvoiceListRelationFilter
@@ -380,7 +380,7 @@ export type SalesOrderOrderByWithAggregationInput = {
   number?: Prisma.SortOrder
   status?: Prisma.SortOrder
   currency?: Prisma.SortOrder
-  netAmoint?: Prisma.SortOrder
+  netAmount?: Prisma.SortOrder
   taxAmount?: Prisma.SortOrder
   totalAmount?: Prisma.SortOrder
   orderDate?: Prisma.SortOrder
@@ -406,7 +406,7 @@ export type SalesOrderScalarWhereWithAggregatesInput = {
   number?: Prisma.StringWithAggregatesFilter<"SalesOrder"> | string
   status?: Prisma.EnumSalesOrderStatusWithAggregatesFilter<"SalesOrder"> | $Enums.SalesOrderStatus
   currency?: Prisma.StringWithAggregatesFilter<"SalesOrder"> | string
-  netAmoint?: Prisma.DecimalWithAggregatesFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalWithAggregatesFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalWithAggregatesFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalWithAggregatesFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeWithAggregatesFilter<"SalesOrder"> | Date | string
@@ -419,7 +419,7 @@ export type SalesOrderCreateInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -429,7 +429,7 @@ export type SalesOrderCreateInput = {
   branch: Prisma.BranchCreateNestedOneWithoutSalesOrdersInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutSalesOrdersInput
   customer: Prisma.CustomerCreateNestedOneWithoutSalesOrdersInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
   lines?: Prisma.SalesOrderLineCreateNestedManyWithoutSalesOrderInput
   shipments?: Prisma.SalesShipmentCreateNestedManyWithoutSalesOrderInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutSalesOrderInput
@@ -445,7 +445,7 @@ export type SalesOrderUncheckedCreateInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -461,7 +461,7 @@ export type SalesOrderUpdateInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -471,7 +471,7 @@ export type SalesOrderUpdateInput = {
   branch?: Prisma.BranchUpdateOneRequiredWithoutSalesOrdersNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutSalesOrdersNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutSalesOrdersNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
   lines?: Prisma.SalesOrderLineUpdateManyWithoutSalesOrderNestedInput
   shipments?: Prisma.SalesShipmentUpdateManyWithoutSalesOrderNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutSalesOrderNestedInput
@@ -487,7 +487,7 @@ export type SalesOrderUncheckedUpdateInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -508,7 +508,7 @@ export type SalesOrderCreateManyInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -521,7 +521,7 @@ export type SalesOrderUpdateManyMutationInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -539,7 +539,7 @@ export type SalesOrderUncheckedUpdateManyInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -572,7 +572,7 @@ export type SalesOrderCountOrderByAggregateInput = {
   number?: Prisma.SortOrder
   status?: Prisma.SortOrder
   currency?: Prisma.SortOrder
-  netAmoint?: Prisma.SortOrder
+  netAmount?: Prisma.SortOrder
   taxAmount?: Prisma.SortOrder
   totalAmount?: Prisma.SortOrder
   orderDate?: Prisma.SortOrder
@@ -581,7 +581,7 @@ export type SalesOrderCountOrderByAggregateInput = {
 }
 
 export type SalesOrderAvgOrderByAggregateInput = {
-  netAmoint?: Prisma.SortOrder
+  netAmount?: Prisma.SortOrder
   taxAmount?: Prisma.SortOrder
   totalAmount?: Prisma.SortOrder
 }
@@ -596,7 +596,7 @@ export type SalesOrderMaxOrderByAggregateInput = {
   number?: Prisma.SortOrder
   status?: Prisma.SortOrder
   currency?: Prisma.SortOrder
-  netAmoint?: Prisma.SortOrder
+  netAmount?: Prisma.SortOrder
   taxAmount?: Prisma.SortOrder
   totalAmount?: Prisma.SortOrder
   orderDate?: Prisma.SortOrder
@@ -614,7 +614,7 @@ export type SalesOrderMinOrderByAggregateInput = {
   number?: Prisma.SortOrder
   status?: Prisma.SortOrder
   currency?: Prisma.SortOrder
-  netAmoint?: Prisma.SortOrder
+  netAmount?: Prisma.SortOrder
   taxAmount?: Prisma.SortOrder
   totalAmount?: Prisma.SortOrder
   orderDate?: Prisma.SortOrder
@@ -623,7 +623,7 @@ export type SalesOrderMinOrderByAggregateInput = {
 }
 
 export type SalesOrderSumOrderByAggregateInput = {
-  netAmoint?: Prisma.SortOrder
+  netAmount?: Prisma.SortOrder
   taxAmount?: Prisma.SortOrder
   totalAmount?: Prisma.SortOrder
 }
@@ -680,45 +680,45 @@ export type SalesOrderUncheckedUpdateManyWithoutCompanyNestedInput = {
   deleteMany?: Prisma.SalesOrderScalarWhereInput | Prisma.SalesOrderScalarWhereInput[]
 }
 
-export type SalesOrderCreateNestedManyWithoutCreateByInput = {
-  create?: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreateByInput, Prisma.SalesOrderUncheckedCreateWithoutCreateByInput> | Prisma.SalesOrderCreateWithoutCreateByInput[] | Prisma.SalesOrderUncheckedCreateWithoutCreateByInput[]
-  connectOrCreate?: Prisma.SalesOrderCreateOrConnectWithoutCreateByInput | Prisma.SalesOrderCreateOrConnectWithoutCreateByInput[]
-  createMany?: Prisma.SalesOrderCreateManyCreateByInputEnvelope
+export type SalesOrderCreateNestedManyWithoutCreatedByInput = {
+  create?: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreatedByInput, Prisma.SalesOrderUncheckedCreateWithoutCreatedByInput> | Prisma.SalesOrderCreateWithoutCreatedByInput[] | Prisma.SalesOrderUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.SalesOrderCreateOrConnectWithoutCreatedByInput | Prisma.SalesOrderCreateOrConnectWithoutCreatedByInput[]
+  createMany?: Prisma.SalesOrderCreateManyCreatedByInputEnvelope
   connect?: Prisma.SalesOrderWhereUniqueInput | Prisma.SalesOrderWhereUniqueInput[]
 }
 
-export type SalesOrderUncheckedCreateNestedManyWithoutCreateByInput = {
-  create?: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreateByInput, Prisma.SalesOrderUncheckedCreateWithoutCreateByInput> | Prisma.SalesOrderCreateWithoutCreateByInput[] | Prisma.SalesOrderUncheckedCreateWithoutCreateByInput[]
-  connectOrCreate?: Prisma.SalesOrderCreateOrConnectWithoutCreateByInput | Prisma.SalesOrderCreateOrConnectWithoutCreateByInput[]
-  createMany?: Prisma.SalesOrderCreateManyCreateByInputEnvelope
+export type SalesOrderUncheckedCreateNestedManyWithoutCreatedByInput = {
+  create?: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreatedByInput, Prisma.SalesOrderUncheckedCreateWithoutCreatedByInput> | Prisma.SalesOrderCreateWithoutCreatedByInput[] | Prisma.SalesOrderUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.SalesOrderCreateOrConnectWithoutCreatedByInput | Prisma.SalesOrderCreateOrConnectWithoutCreatedByInput[]
+  createMany?: Prisma.SalesOrderCreateManyCreatedByInputEnvelope
   connect?: Prisma.SalesOrderWhereUniqueInput | Prisma.SalesOrderWhereUniqueInput[]
 }
 
-export type SalesOrderUpdateManyWithoutCreateByNestedInput = {
-  create?: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreateByInput, Prisma.SalesOrderUncheckedCreateWithoutCreateByInput> | Prisma.SalesOrderCreateWithoutCreateByInput[] | Prisma.SalesOrderUncheckedCreateWithoutCreateByInput[]
-  connectOrCreate?: Prisma.SalesOrderCreateOrConnectWithoutCreateByInput | Prisma.SalesOrderCreateOrConnectWithoutCreateByInput[]
-  upsert?: Prisma.SalesOrderUpsertWithWhereUniqueWithoutCreateByInput | Prisma.SalesOrderUpsertWithWhereUniqueWithoutCreateByInput[]
-  createMany?: Prisma.SalesOrderCreateManyCreateByInputEnvelope
+export type SalesOrderUpdateManyWithoutCreatedByNestedInput = {
+  create?: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreatedByInput, Prisma.SalesOrderUncheckedCreateWithoutCreatedByInput> | Prisma.SalesOrderCreateWithoutCreatedByInput[] | Prisma.SalesOrderUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.SalesOrderCreateOrConnectWithoutCreatedByInput | Prisma.SalesOrderCreateOrConnectWithoutCreatedByInput[]
+  upsert?: Prisma.SalesOrderUpsertWithWhereUniqueWithoutCreatedByInput | Prisma.SalesOrderUpsertWithWhereUniqueWithoutCreatedByInput[]
+  createMany?: Prisma.SalesOrderCreateManyCreatedByInputEnvelope
   set?: Prisma.SalesOrderWhereUniqueInput | Prisma.SalesOrderWhereUniqueInput[]
   disconnect?: Prisma.SalesOrderWhereUniqueInput | Prisma.SalesOrderWhereUniqueInput[]
   delete?: Prisma.SalesOrderWhereUniqueInput | Prisma.SalesOrderWhereUniqueInput[]
   connect?: Prisma.SalesOrderWhereUniqueInput | Prisma.SalesOrderWhereUniqueInput[]
-  update?: Prisma.SalesOrderUpdateWithWhereUniqueWithoutCreateByInput | Prisma.SalesOrderUpdateWithWhereUniqueWithoutCreateByInput[]
-  updateMany?: Prisma.SalesOrderUpdateManyWithWhereWithoutCreateByInput | Prisma.SalesOrderUpdateManyWithWhereWithoutCreateByInput[]
+  update?: Prisma.SalesOrderUpdateWithWhereUniqueWithoutCreatedByInput | Prisma.SalesOrderUpdateWithWhereUniqueWithoutCreatedByInput[]
+  updateMany?: Prisma.SalesOrderUpdateManyWithWhereWithoutCreatedByInput | Prisma.SalesOrderUpdateManyWithWhereWithoutCreatedByInput[]
   deleteMany?: Prisma.SalesOrderScalarWhereInput | Prisma.SalesOrderScalarWhereInput[]
 }
 
-export type SalesOrderUncheckedUpdateManyWithoutCreateByNestedInput = {
-  create?: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreateByInput, Prisma.SalesOrderUncheckedCreateWithoutCreateByInput> | Prisma.SalesOrderCreateWithoutCreateByInput[] | Prisma.SalesOrderUncheckedCreateWithoutCreateByInput[]
-  connectOrCreate?: Prisma.SalesOrderCreateOrConnectWithoutCreateByInput | Prisma.SalesOrderCreateOrConnectWithoutCreateByInput[]
-  upsert?: Prisma.SalesOrderUpsertWithWhereUniqueWithoutCreateByInput | Prisma.SalesOrderUpsertWithWhereUniqueWithoutCreateByInput[]
-  createMany?: Prisma.SalesOrderCreateManyCreateByInputEnvelope
+export type SalesOrderUncheckedUpdateManyWithoutCreatedByNestedInput = {
+  create?: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreatedByInput, Prisma.SalesOrderUncheckedCreateWithoutCreatedByInput> | Prisma.SalesOrderCreateWithoutCreatedByInput[] | Prisma.SalesOrderUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.SalesOrderCreateOrConnectWithoutCreatedByInput | Prisma.SalesOrderCreateOrConnectWithoutCreatedByInput[]
+  upsert?: Prisma.SalesOrderUpsertWithWhereUniqueWithoutCreatedByInput | Prisma.SalesOrderUpsertWithWhereUniqueWithoutCreatedByInput[]
+  createMany?: Prisma.SalesOrderCreateManyCreatedByInputEnvelope
   set?: Prisma.SalesOrderWhereUniqueInput | Prisma.SalesOrderWhereUniqueInput[]
   disconnect?: Prisma.SalesOrderWhereUniqueInput | Prisma.SalesOrderWhereUniqueInput[]
   delete?: Prisma.SalesOrderWhereUniqueInput | Prisma.SalesOrderWhereUniqueInput[]
   connect?: Prisma.SalesOrderWhereUniqueInput | Prisma.SalesOrderWhereUniqueInput[]
-  update?: Prisma.SalesOrderUpdateWithWhereUniqueWithoutCreateByInput | Prisma.SalesOrderUpdateWithWhereUniqueWithoutCreateByInput[]
-  updateMany?: Prisma.SalesOrderUpdateManyWithWhereWithoutCreateByInput | Prisma.SalesOrderUpdateManyWithWhereWithoutCreateByInput[]
+  update?: Prisma.SalesOrderUpdateWithWhereUniqueWithoutCreatedByInput | Prisma.SalesOrderUpdateWithWhereUniqueWithoutCreatedByInput[]
+  updateMany?: Prisma.SalesOrderUpdateManyWithWhereWithoutCreatedByInput | Prisma.SalesOrderUpdateManyWithWhereWithoutCreatedByInput[]
   deleteMany?: Prisma.SalesOrderScalarWhereInput | Prisma.SalesOrderScalarWhereInput[]
 }
 
@@ -901,7 +901,7 @@ export type SalesOrderCreateWithoutCompanyInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -910,7 +910,7 @@ export type SalesOrderCreateWithoutCompanyInput = {
   branch: Prisma.BranchCreateNestedOneWithoutSalesOrdersInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutSalesOrdersInput
   customer: Prisma.CustomerCreateNestedOneWithoutSalesOrdersInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
   lines?: Prisma.SalesOrderLineCreateNestedManyWithoutSalesOrderInput
   shipments?: Prisma.SalesShipmentCreateNestedManyWithoutSalesOrderInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutSalesOrderInput
@@ -925,7 +925,7 @@ export type SalesOrderUncheckedCreateWithoutCompanyInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -975,7 +975,7 @@ export type SalesOrderScalarWhereInput = {
   number?: Prisma.StringFilter<"SalesOrder"> | string
   status?: Prisma.EnumSalesOrderStatusFilter<"SalesOrder"> | $Enums.SalesOrderStatus
   currency?: Prisma.StringFilter<"SalesOrder"> | string
-  netAmoint?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFilter<"SalesOrder"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFilter<"SalesOrder"> | Date | string
@@ -983,12 +983,12 @@ export type SalesOrderScalarWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"SalesOrder"> | Date | string
 }
 
-export type SalesOrderCreateWithoutCreateByInput = {
+export type SalesOrderCreateWithoutCreatedByInput = {
   id?: string
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1003,7 +1003,7 @@ export type SalesOrderCreateWithoutCreateByInput = {
   invoices?: Prisma.InvoiceCreateNestedManyWithoutSalesOrderInput
 }
 
-export type SalesOrderUncheckedCreateWithoutCreateByInput = {
+export type SalesOrderUncheckedCreateWithoutCreatedByInput = {
   id?: string
   companyId: string
   branchId: string
@@ -1012,7 +1012,7 @@ export type SalesOrderUncheckedCreateWithoutCreateByInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1023,30 +1023,30 @@ export type SalesOrderUncheckedCreateWithoutCreateByInput = {
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutSalesOrderInput
 }
 
-export type SalesOrderCreateOrConnectWithoutCreateByInput = {
+export type SalesOrderCreateOrConnectWithoutCreatedByInput = {
   where: Prisma.SalesOrderWhereUniqueInput
-  create: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreateByInput, Prisma.SalesOrderUncheckedCreateWithoutCreateByInput>
+  create: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreatedByInput, Prisma.SalesOrderUncheckedCreateWithoutCreatedByInput>
 }
 
-export type SalesOrderCreateManyCreateByInputEnvelope = {
-  data: Prisma.SalesOrderCreateManyCreateByInput | Prisma.SalesOrderCreateManyCreateByInput[]
+export type SalesOrderCreateManyCreatedByInputEnvelope = {
+  data: Prisma.SalesOrderCreateManyCreatedByInput | Prisma.SalesOrderCreateManyCreatedByInput[]
   skipDuplicates?: boolean
 }
 
-export type SalesOrderUpsertWithWhereUniqueWithoutCreateByInput = {
+export type SalesOrderUpsertWithWhereUniqueWithoutCreatedByInput = {
   where: Prisma.SalesOrderWhereUniqueInput
-  update: Prisma.XOR<Prisma.SalesOrderUpdateWithoutCreateByInput, Prisma.SalesOrderUncheckedUpdateWithoutCreateByInput>
-  create: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreateByInput, Prisma.SalesOrderUncheckedCreateWithoutCreateByInput>
+  update: Prisma.XOR<Prisma.SalesOrderUpdateWithoutCreatedByInput, Prisma.SalesOrderUncheckedUpdateWithoutCreatedByInput>
+  create: Prisma.XOR<Prisma.SalesOrderCreateWithoutCreatedByInput, Prisma.SalesOrderUncheckedCreateWithoutCreatedByInput>
 }
 
-export type SalesOrderUpdateWithWhereUniqueWithoutCreateByInput = {
+export type SalesOrderUpdateWithWhereUniqueWithoutCreatedByInput = {
   where: Prisma.SalesOrderWhereUniqueInput
-  data: Prisma.XOR<Prisma.SalesOrderUpdateWithoutCreateByInput, Prisma.SalesOrderUncheckedUpdateWithoutCreateByInput>
+  data: Prisma.XOR<Prisma.SalesOrderUpdateWithoutCreatedByInput, Prisma.SalesOrderUncheckedUpdateWithoutCreatedByInput>
 }
 
-export type SalesOrderUpdateManyWithWhereWithoutCreateByInput = {
+export type SalesOrderUpdateManyWithWhereWithoutCreatedByInput = {
   where: Prisma.SalesOrderScalarWhereInput
-  data: Prisma.XOR<Prisma.SalesOrderUpdateManyMutationInput, Prisma.SalesOrderUncheckedUpdateManyWithoutCreateByInput>
+  data: Prisma.XOR<Prisma.SalesOrderUpdateManyMutationInput, Prisma.SalesOrderUncheckedUpdateManyWithoutCreatedByInput>
 }
 
 export type SalesOrderCreateWithoutBranchInput = {
@@ -1054,7 +1054,7 @@ export type SalesOrderCreateWithoutBranchInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1063,7 +1063,7 @@ export type SalesOrderCreateWithoutBranchInput = {
   company: Prisma.CompanyCreateNestedOneWithoutSalesOrdersInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutSalesOrdersInput
   customer: Prisma.CustomerCreateNestedOneWithoutSalesOrdersInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
   lines?: Prisma.SalesOrderLineCreateNestedManyWithoutSalesOrderInput
   shipments?: Prisma.SalesShipmentCreateNestedManyWithoutSalesOrderInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutSalesOrderInput
@@ -1078,7 +1078,7 @@ export type SalesOrderUncheckedCreateWithoutBranchInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1120,7 +1120,7 @@ export type SalesOrderCreateWithoutWarehouseInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1129,7 +1129,7 @@ export type SalesOrderCreateWithoutWarehouseInput = {
   company: Prisma.CompanyCreateNestedOneWithoutSalesOrdersInput
   branch: Prisma.BranchCreateNestedOneWithoutSalesOrdersInput
   customer: Prisma.CustomerCreateNestedOneWithoutSalesOrdersInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
   lines?: Prisma.SalesOrderLineCreateNestedManyWithoutSalesOrderInput
   shipments?: Prisma.SalesShipmentCreateNestedManyWithoutSalesOrderInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutSalesOrderInput
@@ -1144,7 +1144,7 @@ export type SalesOrderUncheckedCreateWithoutWarehouseInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1186,7 +1186,7 @@ export type SalesOrderCreateWithoutCustomerInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1195,7 +1195,7 @@ export type SalesOrderCreateWithoutCustomerInput = {
   company: Prisma.CompanyCreateNestedOneWithoutSalesOrdersInput
   branch: Prisma.BranchCreateNestedOneWithoutSalesOrdersInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutSalesOrdersInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
   lines?: Prisma.SalesOrderLineCreateNestedManyWithoutSalesOrderInput
   shipments?: Prisma.SalesShipmentCreateNestedManyWithoutSalesOrderInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutSalesOrderInput
@@ -1210,7 +1210,7 @@ export type SalesOrderUncheckedCreateWithoutCustomerInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1252,7 +1252,7 @@ export type SalesOrderCreateWithoutLinesInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1262,7 +1262,7 @@ export type SalesOrderCreateWithoutLinesInput = {
   branch: Prisma.BranchCreateNestedOneWithoutSalesOrdersInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutSalesOrdersInput
   customer: Prisma.CustomerCreateNestedOneWithoutSalesOrdersInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
   shipments?: Prisma.SalesShipmentCreateNestedManyWithoutSalesOrderInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutSalesOrderInput
 }
@@ -1277,7 +1277,7 @@ export type SalesOrderUncheckedCreateWithoutLinesInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1308,7 +1308,7 @@ export type SalesOrderUpdateWithoutLinesInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1318,7 +1318,7 @@ export type SalesOrderUpdateWithoutLinesInput = {
   branch?: Prisma.BranchUpdateOneRequiredWithoutSalesOrdersNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutSalesOrdersNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutSalesOrdersNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
   shipments?: Prisma.SalesShipmentUpdateManyWithoutSalesOrderNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutSalesOrderNestedInput
 }
@@ -1333,7 +1333,7 @@ export type SalesOrderUncheckedUpdateWithoutLinesInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1348,7 +1348,7 @@ export type SalesOrderCreateWithoutShipmentsInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1358,7 +1358,7 @@ export type SalesOrderCreateWithoutShipmentsInput = {
   branch: Prisma.BranchCreateNestedOneWithoutSalesOrdersInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutSalesOrdersInput
   customer: Prisma.CustomerCreateNestedOneWithoutSalesOrdersInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
   lines?: Prisma.SalesOrderLineCreateNestedManyWithoutSalesOrderInput
   invoices?: Prisma.InvoiceCreateNestedManyWithoutSalesOrderInput
 }
@@ -1373,7 +1373,7 @@ export type SalesOrderUncheckedCreateWithoutShipmentsInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1404,7 +1404,7 @@ export type SalesOrderUpdateWithoutShipmentsInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1414,7 +1414,7 @@ export type SalesOrderUpdateWithoutShipmentsInput = {
   branch?: Prisma.BranchUpdateOneRequiredWithoutSalesOrdersNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutSalesOrdersNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutSalesOrdersNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
   lines?: Prisma.SalesOrderLineUpdateManyWithoutSalesOrderNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutSalesOrderNestedInput
 }
@@ -1429,7 +1429,7 @@ export type SalesOrderUncheckedUpdateWithoutShipmentsInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1444,7 +1444,7 @@ export type SalesOrderCreateWithoutInvoicesInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1454,7 +1454,7 @@ export type SalesOrderCreateWithoutInvoicesInput = {
   branch: Prisma.BranchCreateNestedOneWithoutSalesOrdersInput
   warehouse: Prisma.WarehouseCreateNestedOneWithoutSalesOrdersInput
   customer: Prisma.CustomerCreateNestedOneWithoutSalesOrdersInput
-  createBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCreatedSalesOrdersInput
   lines?: Prisma.SalesOrderLineCreateNestedManyWithoutSalesOrderInput
   shipments?: Prisma.SalesShipmentCreateNestedManyWithoutSalesOrderInput
 }
@@ -1469,7 +1469,7 @@ export type SalesOrderUncheckedCreateWithoutInvoicesInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1500,7 +1500,7 @@ export type SalesOrderUpdateWithoutInvoicesInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1510,7 +1510,7 @@ export type SalesOrderUpdateWithoutInvoicesInput = {
   branch?: Prisma.BranchUpdateOneRequiredWithoutSalesOrdersNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutSalesOrdersNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutSalesOrdersNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
   lines?: Prisma.SalesOrderLineUpdateManyWithoutSalesOrderNestedInput
   shipments?: Prisma.SalesShipmentUpdateManyWithoutSalesOrderNestedInput
 }
@@ -1525,7 +1525,7 @@ export type SalesOrderUncheckedUpdateWithoutInvoicesInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1544,7 +1544,7 @@ export type SalesOrderCreateManyCompanyInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1557,7 +1557,7 @@ export type SalesOrderUpdateWithoutCompanyInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1566,7 +1566,7 @@ export type SalesOrderUpdateWithoutCompanyInput = {
   branch?: Prisma.BranchUpdateOneRequiredWithoutSalesOrdersNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutSalesOrdersNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutSalesOrdersNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
   lines?: Prisma.SalesOrderLineUpdateManyWithoutSalesOrderNestedInput
   shipments?: Prisma.SalesShipmentUpdateManyWithoutSalesOrderNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutSalesOrderNestedInput
@@ -1581,7 +1581,7 @@ export type SalesOrderUncheckedUpdateWithoutCompanyInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1601,7 +1601,7 @@ export type SalesOrderUncheckedUpdateManyWithoutCompanyInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1609,7 +1609,7 @@ export type SalesOrderUncheckedUpdateManyWithoutCompanyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type SalesOrderCreateManyCreateByInput = {
+export type SalesOrderCreateManyCreatedByInput = {
   id?: string
   companyId: string
   branchId: string
@@ -1618,7 +1618,7 @@ export type SalesOrderCreateManyCreateByInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1626,12 +1626,12 @@ export type SalesOrderCreateManyCreateByInput = {
   updatedAt?: Date | string
 }
 
-export type SalesOrderUpdateWithoutCreateByInput = {
+export type SalesOrderUpdateWithoutCreatedByInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1646,7 +1646,7 @@ export type SalesOrderUpdateWithoutCreateByInput = {
   invoices?: Prisma.InvoiceUpdateManyWithoutSalesOrderNestedInput
 }
 
-export type SalesOrderUncheckedUpdateWithoutCreateByInput = {
+export type SalesOrderUncheckedUpdateWithoutCreatedByInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1655,7 +1655,7 @@ export type SalesOrderUncheckedUpdateWithoutCreateByInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1666,7 +1666,7 @@ export type SalesOrderUncheckedUpdateWithoutCreateByInput = {
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutSalesOrderNestedInput
 }
 
-export type SalesOrderUncheckedUpdateManyWithoutCreateByInput = {
+export type SalesOrderUncheckedUpdateManyWithoutCreatedByInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1675,7 +1675,7 @@ export type SalesOrderUncheckedUpdateManyWithoutCreateByInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1692,7 +1692,7 @@ export type SalesOrderCreateManyBranchInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1705,7 +1705,7 @@ export type SalesOrderUpdateWithoutBranchInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1714,7 +1714,7 @@ export type SalesOrderUpdateWithoutBranchInput = {
   company?: Prisma.CompanyUpdateOneRequiredWithoutSalesOrdersNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutSalesOrdersNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutSalesOrdersNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
   lines?: Prisma.SalesOrderLineUpdateManyWithoutSalesOrderNestedInput
   shipments?: Prisma.SalesShipmentUpdateManyWithoutSalesOrderNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutSalesOrderNestedInput
@@ -1729,7 +1729,7 @@ export type SalesOrderUncheckedUpdateWithoutBranchInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1749,7 +1749,7 @@ export type SalesOrderUncheckedUpdateManyWithoutBranchInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1766,7 +1766,7 @@ export type SalesOrderCreateManyWarehouseInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1779,7 +1779,7 @@ export type SalesOrderUpdateWithoutWarehouseInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1788,7 +1788,7 @@ export type SalesOrderUpdateWithoutWarehouseInput = {
   company?: Prisma.CompanyUpdateOneRequiredWithoutSalesOrdersNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutSalesOrdersNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutSalesOrdersNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
   lines?: Prisma.SalesOrderLineUpdateManyWithoutSalesOrderNestedInput
   shipments?: Prisma.SalesShipmentUpdateManyWithoutSalesOrderNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutSalesOrderNestedInput
@@ -1803,7 +1803,7 @@ export type SalesOrderUncheckedUpdateWithoutWarehouseInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1823,7 +1823,7 @@ export type SalesOrderUncheckedUpdateManyWithoutWarehouseInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1840,7 +1840,7 @@ export type SalesOrderCreateManyCustomerInput = {
   number: string
   status?: $Enums.SalesOrderStatus
   currency: string
-  netAmoint?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Date | string
@@ -1853,7 +1853,7 @@ export type SalesOrderUpdateWithoutCustomerInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1862,7 +1862,7 @@ export type SalesOrderUpdateWithoutCustomerInput = {
   company?: Prisma.CompanyUpdateOneRequiredWithoutSalesOrdersNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutSalesOrdersNestedInput
   warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutSalesOrdersNestedInput
-  createBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCreatedSalesOrdersNestedInput
   lines?: Prisma.SalesOrderLineUpdateManyWithoutSalesOrderNestedInput
   shipments?: Prisma.SalesShipmentUpdateManyWithoutSalesOrderNestedInput
   invoices?: Prisma.InvoiceUpdateManyWithoutSalesOrderNestedInput
@@ -1877,7 +1877,7 @@ export type SalesOrderUncheckedUpdateWithoutCustomerInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1897,7 +1897,7 @@ export type SalesOrderUncheckedUpdateManyWithoutCustomerInput = {
   number?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumSalesOrderStatusFieldUpdateOperationsInput | $Enums.SalesOrderStatus
   currency?: Prisma.StringFieldUpdateOperationsInput | string
-  netAmoint?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  netAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   taxAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   totalAmount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   orderDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1964,7 +1964,7 @@ export type SalesOrderSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   number?: boolean
   status?: boolean
   currency?: boolean
-  netAmoint?: boolean
+  netAmount?: boolean
   taxAmount?: boolean
   totalAmount?: boolean
   orderDate?: boolean
@@ -1974,7 +1974,7 @@ export type SalesOrderSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   lines?: boolean | Prisma.SalesOrder$linesArgs<ExtArgs>
   shipments?: boolean | Prisma.SalesOrder$shipmentsArgs<ExtArgs>
   invoices?: boolean | Prisma.SalesOrder$invoicesArgs<ExtArgs>
@@ -1991,7 +1991,7 @@ export type SalesOrderSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   number?: boolean
   status?: boolean
   currency?: boolean
-  netAmoint?: boolean
+  netAmount?: boolean
   taxAmount?: boolean
   totalAmount?: boolean
   orderDate?: boolean
@@ -2001,7 +2001,7 @@ export type SalesOrderSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["salesOrder"]>
 
 export type SalesOrderSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -2014,7 +2014,7 @@ export type SalesOrderSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   number?: boolean
   status?: boolean
   currency?: boolean
-  netAmoint?: boolean
+  netAmount?: boolean
   taxAmount?: boolean
   totalAmount?: boolean
   orderDate?: boolean
@@ -2024,7 +2024,7 @@ export type SalesOrderSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["salesOrder"]>
 
 export type SalesOrderSelectScalar = {
@@ -2037,7 +2037,7 @@ export type SalesOrderSelectScalar = {
   number?: boolean
   status?: boolean
   currency?: boolean
-  netAmoint?: boolean
+  netAmount?: boolean
   taxAmount?: boolean
   totalAmount?: boolean
   orderDate?: boolean
@@ -2045,13 +2045,13 @@ export type SalesOrderSelectScalar = {
   updatedAt?: boolean
 }
 
-export type SalesOrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "companyId" | "branchId" | "warehouseId" | "customerId" | "createdById" | "number" | "status" | "currency" | "netAmoint" | "taxAmount" | "totalAmount" | "orderDate" | "createdAt" | "updatedAt", ExtArgs["result"]["salesOrder"]>
+export type SalesOrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "companyId" | "branchId" | "warehouseId" | "customerId" | "createdById" | "number" | "status" | "currency" | "netAmount" | "taxAmount" | "totalAmount" | "orderDate" | "createdAt" | "updatedAt", ExtArgs["result"]["salesOrder"]>
 export type SalesOrderInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   lines?: boolean | Prisma.SalesOrder$linesArgs<ExtArgs>
   shipments?: boolean | Prisma.SalesOrder$shipmentsArgs<ExtArgs>
   invoices?: boolean | Prisma.SalesOrder$invoicesArgs<ExtArgs>
@@ -2062,14 +2062,14 @@ export type SalesOrderIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.E
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 export type SalesOrderIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
   warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
-  createBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 
 export type $SalesOrderPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2079,7 +2079,7 @@ export type $SalesOrderPayload<ExtArgs extends runtime.Types.Extensions.Internal
     branch: Prisma.$BranchPayload<ExtArgs>
     warehouse: Prisma.$WarehousePayload<ExtArgs>
     customer: Prisma.$CustomerPayload<ExtArgs>
-    createBy: Prisma.$UserPayload<ExtArgs>
+    createdBy: Prisma.$UserPayload<ExtArgs>
     lines: Prisma.$SalesOrderLinePayload<ExtArgs>[]
     shipments: Prisma.$SalesShipmentPayload<ExtArgs>[]
     invoices: Prisma.$InvoicePayload<ExtArgs>[]
@@ -2094,7 +2094,7 @@ export type $SalesOrderPayload<ExtArgs extends runtime.Types.Extensions.Internal
     number: string
     status: $Enums.SalesOrderStatus
     currency: string
-    netAmoint: runtime.Decimal
+    netAmount: runtime.Decimal
     taxAmount: runtime.Decimal
     totalAmount: runtime.Decimal
     orderDate: Date
@@ -2498,7 +2498,7 @@ export interface Prisma__SalesOrderClient<T, Null = never, ExtArgs extends runti
   branch<T extends Prisma.BranchDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.BranchDefaultArgs<ExtArgs>>): Prisma.Prisma__BranchClient<runtime.Types.Result.GetResult<Prisma.$BranchPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   warehouse<T extends Prisma.WarehouseDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.WarehouseDefaultArgs<ExtArgs>>): Prisma.Prisma__WarehouseClient<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   customer<T extends Prisma.CustomerDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CustomerDefaultArgs<ExtArgs>>): Prisma.Prisma__CustomerClient<runtime.Types.Result.GetResult<Prisma.$CustomerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  createBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   lines<T extends Prisma.SalesOrder$linesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SalesOrder$linesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SalesOrderLinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   shipments<T extends Prisma.SalesOrder$shipmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SalesOrder$shipmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SalesShipmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   invoices<T extends Prisma.SalesOrder$invoicesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SalesOrder$invoicesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -2540,7 +2540,7 @@ export interface SalesOrderFieldRefs {
   readonly number: Prisma.FieldRef<"SalesOrder", 'String'>
   readonly status: Prisma.FieldRef<"SalesOrder", 'SalesOrderStatus'>
   readonly currency: Prisma.FieldRef<"SalesOrder", 'String'>
-  readonly netAmoint: Prisma.FieldRef<"SalesOrder", 'Decimal'>
+  readonly netAmount: Prisma.FieldRef<"SalesOrder", 'Decimal'>
   readonly taxAmount: Prisma.FieldRef<"SalesOrder", 'Decimal'>
   readonly totalAmount: Prisma.FieldRef<"SalesOrder", 'Decimal'>
   readonly orderDate: Prisma.FieldRef<"SalesOrder", 'DateTime'>

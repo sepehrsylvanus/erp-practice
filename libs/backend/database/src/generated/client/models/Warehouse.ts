@@ -271,7 +271,7 @@ export type WarehouseCreateInput = {
   name: string
   isActive?: boolean
   company: Prisma.CompanyCreateNestedOneWithoutWarehousesInput
-  branch: Prisma.BranchCreateNestedOneWithoutWarehouseInput
+  branch: Prisma.BranchCreateNestedOneWithoutWarehousesInput
   balances?: Prisma.StockBalanceCreateNestedManyWithoutWarehouseInput
   reservations?: Prisma.StockReservationCreateNestedManyWithoutWarehouseInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutWarehouseInput
@@ -303,7 +303,7 @@ export type WarehouseUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   company?: Prisma.CompanyUpdateOneRequiredWithoutWarehousesNestedInput
-  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehouseNestedInput
+  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehousesNestedInput
   balances?: Prisma.StockBalanceUpdateManyWithoutWarehouseNestedInput
   reservations?: Prisma.StockReservationUpdateManyWithoutWarehouseNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutWarehouseNestedInput
@@ -588,7 +588,7 @@ export type WarehouseCreateWithoutCompanyInput = {
   code: string
   name: string
   isActive?: boolean
-  branch: Prisma.BranchCreateNestedOneWithoutWarehouseInput
+  branch: Prisma.BranchCreateNestedOneWithoutWarehousesInput
   balances?: Prisma.StockBalanceCreateNestedManyWithoutWarehouseInput
   reservations?: Prisma.StockReservationCreateNestedManyWithoutWarehouseInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutWarehouseInput
@@ -713,7 +713,7 @@ export type WarehouseCreateWithoutBalancesInput = {
   name: string
   isActive?: boolean
   company: Prisma.CompanyCreateNestedOneWithoutWarehousesInput
-  branch: Prisma.BranchCreateNestedOneWithoutWarehouseInput
+  branch: Prisma.BranchCreateNestedOneWithoutWarehousesInput
   reservations?: Prisma.StockReservationCreateNestedManyWithoutWarehouseInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutWarehouseInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutWarehouseInput
@@ -759,7 +759,7 @@ export type WarehouseUpdateWithoutBalancesInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   company?: Prisma.CompanyUpdateOneRequiredWithoutWarehousesNestedInput
-  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehouseNestedInput
+  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehousesNestedInput
   reservations?: Prisma.StockReservationUpdateManyWithoutWarehouseNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutWarehouseNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutWarehouseNestedInput
@@ -789,7 +789,7 @@ export type WarehouseCreateWithoutReservationsInput = {
   name: string
   isActive?: boolean
   company: Prisma.CompanyCreateNestedOneWithoutWarehousesInput
-  branch: Prisma.BranchCreateNestedOneWithoutWarehouseInput
+  branch: Prisma.BranchCreateNestedOneWithoutWarehousesInput
   balances?: Prisma.StockBalanceCreateNestedManyWithoutWarehouseInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutWarehouseInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutWarehouseInput
@@ -835,7 +835,7 @@ export type WarehouseUpdateWithoutReservationsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   company?: Prisma.CompanyUpdateOneRequiredWithoutWarehousesNestedInput
-  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehouseNestedInput
+  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehousesNestedInput
   balances?: Prisma.StockBalanceUpdateManyWithoutWarehouseNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutWarehouseNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutWarehouseNestedInput
@@ -865,7 +865,7 @@ export type WarehouseCreateWithoutMovementsInput = {
   name: string
   isActive?: boolean
   company: Prisma.CompanyCreateNestedOneWithoutWarehousesInput
-  branch: Prisma.BranchCreateNestedOneWithoutWarehouseInput
+  branch: Prisma.BranchCreateNestedOneWithoutWarehousesInput
   balances?: Prisma.StockBalanceCreateNestedManyWithoutWarehouseInput
   reservations?: Prisma.StockReservationCreateNestedManyWithoutWarehouseInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutWarehouseInput
@@ -911,7 +911,7 @@ export type WarehouseUpdateWithoutMovementsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   company?: Prisma.CompanyUpdateOneRequiredWithoutWarehousesNestedInput
-  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehouseNestedInput
+  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehousesNestedInput
   balances?: Prisma.StockBalanceUpdateManyWithoutWarehouseNestedInput
   reservations?: Prisma.StockReservationUpdateManyWithoutWarehouseNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutWarehouseNestedInput
@@ -941,7 +941,7 @@ export type WarehouseCreateWithoutSalesOrdersInput = {
   name: string
   isActive?: boolean
   company: Prisma.CompanyCreateNestedOneWithoutWarehousesInput
-  branch: Prisma.BranchCreateNestedOneWithoutWarehouseInput
+  branch: Prisma.BranchCreateNestedOneWithoutWarehousesInput
   balances?: Prisma.StockBalanceCreateNestedManyWithoutWarehouseInput
   reservations?: Prisma.StockReservationCreateNestedManyWithoutWarehouseInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutWarehouseInput
@@ -987,7 +987,7 @@ export type WarehouseUpdateWithoutSalesOrdersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   company?: Prisma.CompanyUpdateOneRequiredWithoutWarehousesNestedInput
-  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehouseNestedInput
+  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehousesNestedInput
   balances?: Prisma.StockBalanceUpdateManyWithoutWarehouseNestedInput
   reservations?: Prisma.StockReservationUpdateManyWithoutWarehouseNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutWarehouseNestedInput
@@ -1017,7 +1017,7 @@ export type WarehouseCreateWithoutShipmentsInput = {
   name: string
   isActive?: boolean
   company: Prisma.CompanyCreateNestedOneWithoutWarehousesInput
-  branch: Prisma.BranchCreateNestedOneWithoutWarehouseInput
+  branch: Prisma.BranchCreateNestedOneWithoutWarehousesInput
   balances?: Prisma.StockBalanceCreateNestedManyWithoutWarehouseInput
   reservations?: Prisma.StockReservationCreateNestedManyWithoutWarehouseInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutWarehouseInput
@@ -1063,7 +1063,7 @@ export type WarehouseUpdateWithoutShipmentsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   company?: Prisma.CompanyUpdateOneRequiredWithoutWarehousesNestedInput
-  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehouseNestedInput
+  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehousesNestedInput
   balances?: Prisma.StockBalanceUpdateManyWithoutWarehouseNestedInput
   reservations?: Prisma.StockReservationUpdateManyWithoutWarehouseNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutWarehouseNestedInput
@@ -1093,7 +1093,7 @@ export type WarehouseCreateWithoutPurchaseOrdersInput = {
   name: string
   isActive?: boolean
   company: Prisma.CompanyCreateNestedOneWithoutWarehousesInput
-  branch: Prisma.BranchCreateNestedOneWithoutWarehouseInput
+  branch: Prisma.BranchCreateNestedOneWithoutWarehousesInput
   balances?: Prisma.StockBalanceCreateNestedManyWithoutWarehouseInput
   reservations?: Prisma.StockReservationCreateNestedManyWithoutWarehouseInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutWarehouseInput
@@ -1139,7 +1139,7 @@ export type WarehouseUpdateWithoutPurchaseOrdersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   company?: Prisma.CompanyUpdateOneRequiredWithoutWarehousesNestedInput
-  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehouseNestedInput
+  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehousesNestedInput
   balances?: Prisma.StockBalanceUpdateManyWithoutWarehouseNestedInput
   reservations?: Prisma.StockReservationUpdateManyWithoutWarehouseNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutWarehouseNestedInput
@@ -1169,7 +1169,7 @@ export type WarehouseCreateWithoutGoodsReceiptsInput = {
   name: string
   isActive?: boolean
   company: Prisma.CompanyCreateNestedOneWithoutWarehousesInput
-  branch: Prisma.BranchCreateNestedOneWithoutWarehouseInput
+  branch: Prisma.BranchCreateNestedOneWithoutWarehousesInput
   balances?: Prisma.StockBalanceCreateNestedManyWithoutWarehouseInput
   reservations?: Prisma.StockReservationCreateNestedManyWithoutWarehouseInput
   movements?: Prisma.InventoryMovementCreateNestedManyWithoutWarehouseInput
@@ -1215,7 +1215,7 @@ export type WarehouseUpdateWithoutGoodsReceiptsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   company?: Prisma.CompanyUpdateOneRequiredWithoutWarehousesNestedInput
-  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehouseNestedInput
+  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehousesNestedInput
   balances?: Prisma.StockBalanceUpdateManyWithoutWarehouseNestedInput
   reservations?: Prisma.StockReservationUpdateManyWithoutWarehouseNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutWarehouseNestedInput
@@ -1252,7 +1252,7 @@ export type WarehouseUpdateWithoutCompanyInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehouseNestedInput
+  branch?: Prisma.BranchUpdateOneRequiredWithoutWarehousesNestedInput
   balances?: Prisma.StockBalanceUpdateManyWithoutWarehouseNestedInput
   reservations?: Prisma.StockReservationUpdateManyWithoutWarehouseNestedInput
   movements?: Prisma.InventoryMovementUpdateManyWithoutWarehouseNestedInput

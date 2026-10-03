@@ -175,7 +175,7 @@ export type BranchWhereInput = {
   code?: Prisma.StringFilter<"Branch"> | string
   name?: Prisma.StringFilter<"Branch"> | string
   company?: Prisma.XOR<Prisma.CompanyScalarRelationFilter, Prisma.CompanyWhereInput>
-  warehouse?: Prisma.WarehouseListRelationFilter
+  warehouses?: Prisma.WarehouseListRelationFilter
   salesOrders?: Prisma.SalesOrderListRelationFilter
   purchaseOrders?: Prisma.PurchaseOrderListRelationFilter
 }
@@ -186,7 +186,7 @@ export type BranchOrderByWithRelationInput = {
   code?: Prisma.SortOrder
   name?: Prisma.SortOrder
   company?: Prisma.CompanyOrderByWithRelationInput
-  warehouse?: Prisma.WarehouseOrderByRelationAggregateInput
+  warehouses?: Prisma.WarehouseOrderByRelationAggregateInput
   salesOrders?: Prisma.SalesOrderOrderByRelationAggregateInput
   purchaseOrders?: Prisma.PurchaseOrderOrderByRelationAggregateInput
 }
@@ -201,7 +201,7 @@ export type BranchWhereUniqueInput = Prisma.AtLeast<{
   code?: Prisma.StringFilter<"Branch"> | string
   name?: Prisma.StringFilter<"Branch"> | string
   company?: Prisma.XOR<Prisma.CompanyScalarRelationFilter, Prisma.CompanyWhereInput>
-  warehouse?: Prisma.WarehouseListRelationFilter
+  warehouses?: Prisma.WarehouseListRelationFilter
   salesOrders?: Prisma.SalesOrderListRelationFilter
   purchaseOrders?: Prisma.PurchaseOrderListRelationFilter
 }, "id" | "companyId_code">
@@ -231,7 +231,7 @@ export type BranchCreateInput = {
   code: string
   name: string
   company: Prisma.CompanyCreateNestedOneWithoutBranchesInput
-  warehouse?: Prisma.WarehouseCreateNestedManyWithoutBranchInput
+  warehouses?: Prisma.WarehouseCreateNestedManyWithoutBranchInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutBranchInput
   purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutBranchInput
 }
@@ -241,7 +241,7 @@ export type BranchUncheckedCreateInput = {
   companyId: string
   code: string
   name: string
-  warehouse?: Prisma.WarehouseUncheckedCreateNestedManyWithoutBranchInput
+  warehouses?: Prisma.WarehouseUncheckedCreateNestedManyWithoutBranchInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutBranchInput
   purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutBranchInput
 }
@@ -251,7 +251,7 @@ export type BranchUpdateInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   company?: Prisma.CompanyUpdateOneRequiredWithoutBranchesNestedInput
-  warehouse?: Prisma.WarehouseUpdateManyWithoutBranchNestedInput
+  warehouses?: Prisma.WarehouseUpdateManyWithoutBranchNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutBranchNestedInput
   purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutBranchNestedInput
 }
@@ -261,7 +261,7 @@ export type BranchUncheckedUpdateInput = {
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  warehouse?: Prisma.WarehouseUncheckedUpdateManyWithoutBranchNestedInput
+  warehouses?: Prisma.WarehouseUncheckedUpdateManyWithoutBranchNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutBranchNestedInput
   purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutBranchNestedInput
 }
@@ -369,18 +369,18 @@ export type BranchUncheckedUpdateManyWithoutCompanyNestedInput = {
   deleteMany?: Prisma.BranchScalarWhereInput | Prisma.BranchScalarWhereInput[]
 }
 
-export type BranchCreateNestedOneWithoutWarehouseInput = {
-  create?: Prisma.XOR<Prisma.BranchCreateWithoutWarehouseInput, Prisma.BranchUncheckedCreateWithoutWarehouseInput>
-  connectOrCreate?: Prisma.BranchCreateOrConnectWithoutWarehouseInput
+export type BranchCreateNestedOneWithoutWarehousesInput = {
+  create?: Prisma.XOR<Prisma.BranchCreateWithoutWarehousesInput, Prisma.BranchUncheckedCreateWithoutWarehousesInput>
+  connectOrCreate?: Prisma.BranchCreateOrConnectWithoutWarehousesInput
   connect?: Prisma.BranchWhereUniqueInput
 }
 
-export type BranchUpdateOneRequiredWithoutWarehouseNestedInput = {
-  create?: Prisma.XOR<Prisma.BranchCreateWithoutWarehouseInput, Prisma.BranchUncheckedCreateWithoutWarehouseInput>
-  connectOrCreate?: Prisma.BranchCreateOrConnectWithoutWarehouseInput
-  upsert?: Prisma.BranchUpsertWithoutWarehouseInput
+export type BranchUpdateOneRequiredWithoutWarehousesNestedInput = {
+  create?: Prisma.XOR<Prisma.BranchCreateWithoutWarehousesInput, Prisma.BranchUncheckedCreateWithoutWarehousesInput>
+  connectOrCreate?: Prisma.BranchCreateOrConnectWithoutWarehousesInput
+  upsert?: Prisma.BranchUpsertWithoutWarehousesInput
   connect?: Prisma.BranchWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.BranchUpdateToOneWithWhereWithoutWarehouseInput, Prisma.BranchUpdateWithoutWarehouseInput>, Prisma.BranchUncheckedUpdateWithoutWarehouseInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.BranchUpdateToOneWithWhereWithoutWarehousesInput, Prisma.BranchUpdateWithoutWarehousesInput>, Prisma.BranchUncheckedUpdateWithoutWarehousesInput>
 }
 
 export type BranchCreateNestedOneWithoutSalesOrdersInput = {
@@ -415,7 +415,7 @@ export type BranchCreateWithoutCompanyInput = {
   id?: string
   code: string
   name: string
-  warehouse?: Prisma.WarehouseCreateNestedManyWithoutBranchInput
+  warehouses?: Prisma.WarehouseCreateNestedManyWithoutBranchInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutBranchInput
   purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutBranchInput
 }
@@ -424,7 +424,7 @@ export type BranchUncheckedCreateWithoutCompanyInput = {
   id?: string
   code: string
   name: string
-  warehouse?: Prisma.WarehouseUncheckedCreateNestedManyWithoutBranchInput
+  warehouses?: Prisma.WarehouseUncheckedCreateNestedManyWithoutBranchInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutBranchInput
   purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutBranchInput
 }
@@ -465,7 +465,7 @@ export type BranchScalarWhereInput = {
   name?: Prisma.StringFilter<"Branch"> | string
 }
 
-export type BranchCreateWithoutWarehouseInput = {
+export type BranchCreateWithoutWarehousesInput = {
   id?: string
   code: string
   name: string
@@ -474,7 +474,7 @@ export type BranchCreateWithoutWarehouseInput = {
   purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutBranchInput
 }
 
-export type BranchUncheckedCreateWithoutWarehouseInput = {
+export type BranchUncheckedCreateWithoutWarehousesInput = {
   id?: string
   companyId: string
   code: string
@@ -483,23 +483,23 @@ export type BranchUncheckedCreateWithoutWarehouseInput = {
   purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutBranchInput
 }
 
-export type BranchCreateOrConnectWithoutWarehouseInput = {
+export type BranchCreateOrConnectWithoutWarehousesInput = {
   where: Prisma.BranchWhereUniqueInput
-  create: Prisma.XOR<Prisma.BranchCreateWithoutWarehouseInput, Prisma.BranchUncheckedCreateWithoutWarehouseInput>
+  create: Prisma.XOR<Prisma.BranchCreateWithoutWarehousesInput, Prisma.BranchUncheckedCreateWithoutWarehousesInput>
 }
 
-export type BranchUpsertWithoutWarehouseInput = {
-  update: Prisma.XOR<Prisma.BranchUpdateWithoutWarehouseInput, Prisma.BranchUncheckedUpdateWithoutWarehouseInput>
-  create: Prisma.XOR<Prisma.BranchCreateWithoutWarehouseInput, Prisma.BranchUncheckedCreateWithoutWarehouseInput>
+export type BranchUpsertWithoutWarehousesInput = {
+  update: Prisma.XOR<Prisma.BranchUpdateWithoutWarehousesInput, Prisma.BranchUncheckedUpdateWithoutWarehousesInput>
+  create: Prisma.XOR<Prisma.BranchCreateWithoutWarehousesInput, Prisma.BranchUncheckedCreateWithoutWarehousesInput>
   where?: Prisma.BranchWhereInput
 }
 
-export type BranchUpdateToOneWithWhereWithoutWarehouseInput = {
+export type BranchUpdateToOneWithWhereWithoutWarehousesInput = {
   where?: Prisma.BranchWhereInput
-  data: Prisma.XOR<Prisma.BranchUpdateWithoutWarehouseInput, Prisma.BranchUncheckedUpdateWithoutWarehouseInput>
+  data: Prisma.XOR<Prisma.BranchUpdateWithoutWarehousesInput, Prisma.BranchUncheckedUpdateWithoutWarehousesInput>
 }
 
-export type BranchUpdateWithoutWarehouseInput = {
+export type BranchUpdateWithoutWarehousesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
@@ -508,7 +508,7 @@ export type BranchUpdateWithoutWarehouseInput = {
   purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutBranchNestedInput
 }
 
-export type BranchUncheckedUpdateWithoutWarehouseInput = {
+export type BranchUncheckedUpdateWithoutWarehousesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
@@ -522,7 +522,7 @@ export type BranchCreateWithoutSalesOrdersInput = {
   code: string
   name: string
   company: Prisma.CompanyCreateNestedOneWithoutBranchesInput
-  warehouse?: Prisma.WarehouseCreateNestedManyWithoutBranchInput
+  warehouses?: Prisma.WarehouseCreateNestedManyWithoutBranchInput
   purchaseOrders?: Prisma.PurchaseOrderCreateNestedManyWithoutBranchInput
 }
 
@@ -531,7 +531,7 @@ export type BranchUncheckedCreateWithoutSalesOrdersInput = {
   companyId: string
   code: string
   name: string
-  warehouse?: Prisma.WarehouseUncheckedCreateNestedManyWithoutBranchInput
+  warehouses?: Prisma.WarehouseUncheckedCreateNestedManyWithoutBranchInput
   purchaseOrders?: Prisma.PurchaseOrderUncheckedCreateNestedManyWithoutBranchInput
 }
 
@@ -556,7 +556,7 @@ export type BranchUpdateWithoutSalesOrdersInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   company?: Prisma.CompanyUpdateOneRequiredWithoutBranchesNestedInput
-  warehouse?: Prisma.WarehouseUpdateManyWithoutBranchNestedInput
+  warehouses?: Prisma.WarehouseUpdateManyWithoutBranchNestedInput
   purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutBranchNestedInput
 }
 
@@ -565,7 +565,7 @@ export type BranchUncheckedUpdateWithoutSalesOrdersInput = {
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  warehouse?: Prisma.WarehouseUncheckedUpdateManyWithoutBranchNestedInput
+  warehouses?: Prisma.WarehouseUncheckedUpdateManyWithoutBranchNestedInput
   purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutBranchNestedInput
 }
 
@@ -574,7 +574,7 @@ export type BranchCreateWithoutPurchaseOrdersInput = {
   code: string
   name: string
   company: Prisma.CompanyCreateNestedOneWithoutBranchesInput
-  warehouse?: Prisma.WarehouseCreateNestedManyWithoutBranchInput
+  warehouses?: Prisma.WarehouseCreateNestedManyWithoutBranchInput
   salesOrders?: Prisma.SalesOrderCreateNestedManyWithoutBranchInput
 }
 
@@ -583,7 +583,7 @@ export type BranchUncheckedCreateWithoutPurchaseOrdersInput = {
   companyId: string
   code: string
   name: string
-  warehouse?: Prisma.WarehouseUncheckedCreateNestedManyWithoutBranchInput
+  warehouses?: Prisma.WarehouseUncheckedCreateNestedManyWithoutBranchInput
   salesOrders?: Prisma.SalesOrderUncheckedCreateNestedManyWithoutBranchInput
 }
 
@@ -608,7 +608,7 @@ export type BranchUpdateWithoutPurchaseOrdersInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   company?: Prisma.CompanyUpdateOneRequiredWithoutBranchesNestedInput
-  warehouse?: Prisma.WarehouseUpdateManyWithoutBranchNestedInput
+  warehouses?: Prisma.WarehouseUpdateManyWithoutBranchNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutBranchNestedInput
 }
 
@@ -617,7 +617,7 @@ export type BranchUncheckedUpdateWithoutPurchaseOrdersInput = {
   companyId?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  warehouse?: Prisma.WarehouseUncheckedUpdateManyWithoutBranchNestedInput
+  warehouses?: Prisma.WarehouseUncheckedUpdateManyWithoutBranchNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutBranchNestedInput
 }
 
@@ -631,7 +631,7 @@ export type BranchUpdateWithoutCompanyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  warehouse?: Prisma.WarehouseUpdateManyWithoutBranchNestedInput
+  warehouses?: Prisma.WarehouseUpdateManyWithoutBranchNestedInput
   salesOrders?: Prisma.SalesOrderUpdateManyWithoutBranchNestedInput
   purchaseOrders?: Prisma.PurchaseOrderUpdateManyWithoutBranchNestedInput
 }
@@ -640,7 +640,7 @@ export type BranchUncheckedUpdateWithoutCompanyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  warehouse?: Prisma.WarehouseUncheckedUpdateManyWithoutBranchNestedInput
+  warehouses?: Prisma.WarehouseUncheckedUpdateManyWithoutBranchNestedInput
   salesOrders?: Prisma.SalesOrderUncheckedUpdateManyWithoutBranchNestedInput
   purchaseOrders?: Prisma.PurchaseOrderUncheckedUpdateManyWithoutBranchNestedInput
 }
@@ -657,13 +657,13 @@ export type BranchUncheckedUpdateManyWithoutCompanyInput = {
  */
 
 export type BranchCountOutputType = {
-  warehouse: number
+  warehouses: number
   salesOrders: number
   purchaseOrders: number
 }
 
 export type BranchCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  warehouse?: boolean | BranchCountOutputTypeCountWarehouseArgs
+  warehouses?: boolean | BranchCountOutputTypeCountWarehousesArgs
   salesOrders?: boolean | BranchCountOutputTypeCountSalesOrdersArgs
   purchaseOrders?: boolean | BranchCountOutputTypeCountPurchaseOrdersArgs
 }
@@ -681,7 +681,7 @@ export type BranchCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exten
 /**
  * BranchCountOutputType without action
  */
-export type BranchCountOutputTypeCountWarehouseArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type BranchCountOutputTypeCountWarehousesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.WarehouseWhereInput
 }
 
@@ -706,7 +706,7 @@ export type BranchSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   code?: boolean
   name?: boolean
   company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
-  warehouse?: boolean | Prisma.Branch$warehouseArgs<ExtArgs>
+  warehouses?: boolean | Prisma.Branch$warehousesArgs<ExtArgs>
   salesOrders?: boolean | Prisma.Branch$salesOrdersArgs<ExtArgs>
   purchaseOrders?: boolean | Prisma.Branch$purchaseOrdersArgs<ExtArgs>
   _count?: boolean | Prisma.BranchCountOutputTypeDefaultArgs<ExtArgs>
@@ -738,7 +738,7 @@ export type BranchSelectScalar = {
 export type BranchOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "companyId" | "code" | "name", ExtArgs["result"]["branch"]>
 export type BranchInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   company?: boolean | Prisma.CompanyDefaultArgs<ExtArgs>
-  warehouse?: boolean | Prisma.Branch$warehouseArgs<ExtArgs>
+  warehouses?: boolean | Prisma.Branch$warehousesArgs<ExtArgs>
   salesOrders?: boolean | Prisma.Branch$salesOrdersArgs<ExtArgs>
   purchaseOrders?: boolean | Prisma.Branch$purchaseOrdersArgs<ExtArgs>
   _count?: boolean | Prisma.BranchCountOutputTypeDefaultArgs<ExtArgs>
@@ -754,7 +754,7 @@ export type $BranchPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
   name: "Branch"
   objects: {
     company: Prisma.$CompanyPayload<ExtArgs>
-    warehouse: Prisma.$WarehousePayload<ExtArgs>[]
+    warehouses: Prisma.$WarehousePayload<ExtArgs>[]
     salesOrders: Prisma.$SalesOrderPayload<ExtArgs>[]
     purchaseOrders: Prisma.$PurchaseOrderPayload<ExtArgs>[]
   }
@@ -1158,7 +1158,7 @@ readonly fields: BranchFieldRefs;
 export interface Prisma__BranchClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   company<T extends Prisma.CompanyDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CompanyDefaultArgs<ExtArgs>>): Prisma.Prisma__CompanyClient<runtime.Types.Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  warehouse<T extends Prisma.Branch$warehouseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Branch$warehouseArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  warehouses<T extends Prisma.Branch$warehousesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Branch$warehousesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   salesOrders<T extends Prisma.Branch$salesOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Branch$salesOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SalesOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   purchaseOrders<T extends Prisma.Branch$purchaseOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Branch$purchaseOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PurchaseOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
@@ -1595,9 +1595,9 @@ export type BranchDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Intern
 }
 
 /**
- * Branch.warehouse
+ * Branch.warehouses
  */
-export type Branch$warehouseArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Branch$warehousesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the Warehouse
    */
