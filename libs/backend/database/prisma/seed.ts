@@ -112,7 +112,9 @@ async function main() {
     },
   });
 
-  const email = process.env.SEED_ADMIN_EMAIL ?? "admin@erp.local";
+  const email = (process.env.SEED_ADMIN_EMAIL ?? "admin@erp.local")
+    .trim()
+    .toLowerCase();
   const existingAdmin = await prisma.user.findUnique({ where: { email } });
   if (!existingAdmin && !process.env.SEED_ADMIN_PASSWORD) {
     throw new Error(

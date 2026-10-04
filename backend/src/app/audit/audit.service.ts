@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { PrismaService } from "../../../../libs/backend/database/src/lib/prisma.service";
+import { PrismaService } from "@erp/backend-database";
 import { getPagination } from "../common/pagination";
 
 export interface AuditWriteInput {
@@ -7,7 +7,7 @@ export interface AuditWriteInput {
   actorId?: string;
   action: string;
   entityType: string;
-  entityid: string;
+  entityId: string;
   ipAddress?: string;
 }
 
@@ -22,7 +22,7 @@ export class AuditService {
         ...(input.actorId ? { actorId: input.actorId } : {}),
         action: input.action,
         entityType: input.entityType,
-        entityId: input.entityid,
+        entityId: input.entityId,
         ...(input.ipAddress ? { ipAddress: input.ipAddress } : {}),
       },
     });

@@ -50,7 +50,7 @@ export class AuthController {
     @Body() dto: LoginDto,
     @Res({ passthrough: true }) response: Response,
   ) {
-    const result = await await this.auth.login(dto);
+    const result = await this.auth.login(dto);
     response.cookie(REFRESH_COOKIE_NAME, result.refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",

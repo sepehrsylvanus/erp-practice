@@ -11,7 +11,7 @@ export class AuditController {
   constructor(private readonly audit: AuditService) {}
 
   @Get()
-  @Permissions("admin.user.manage")
+  @Permissions("admin.users.manage")
   list(
     @Req() request: AuthenticatedRequest,
     @Query("entityType") entityType?: string,

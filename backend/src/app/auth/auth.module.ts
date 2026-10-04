@@ -30,6 +30,6 @@ if (!refreshSecret || refreshSecret.length < 32) {
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtAuthGuard, ThrottlerGuard],
-  exports: [JwtAuthGuard],
+  exports: [JwtAuthGuard, JwtModule],
 })
 export class AuthModule {}

@@ -5,7 +5,7 @@ import {
   UnauthorizedException,
 } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
-import { PrismaService } from "../../../../libs/backend/database/src/lib/prisma.service";
+import { PrismaService } from "@erp/backend-database";
 import type { Request } from "express";
 import type { AccessTokenPayload, AuthenticatedUser } from "./auth.types";
 
