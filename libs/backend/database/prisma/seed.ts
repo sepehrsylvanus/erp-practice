@@ -18,6 +18,7 @@ const permissions = [
   { code: "catalog.products.read", description: "خواندن کالاها" },
   { code: "catalog.products.write", description: "ساخت و ویرایش کالاها" },
   { code: "catalog.parties.read", description: "خواندن مشتری و تأمین‌کننده" },
+  { code: "catalog.parties.write", description: "ساخت و ویرایش مشتری و تأمین‌کننده" },
   { code: "catalog.locations.read", description: "خواندن شعب و انبارها" },
   { code: "inventory.balances.read", description: "خواندن مانده‌ی انبار" },
   { code: "inventory.adjust", description: "اصلاح موجودی" },
