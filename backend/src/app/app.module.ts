@@ -6,6 +6,8 @@ import { AuthModule } from "./auth/auth.module";
 import { AuditModule } from "./audit/audit.module";
 import { CatalogModule } from "./catalog/catalog.module";
 import { InventoryModule } from "./inventory/inventory.module";
+import { PurchasingModule } from "./purchasing/purchasing.module";
+import { SalesModule } from "./sales/sales.module";
 @Module({
   imports: [
     PrismaModule,
@@ -13,6 +15,8 @@ import { InventoryModule } from "./inventory/inventory.module";
     AuditModule,
     CatalogModule,
     InventoryModule,
+    PurchasingModule,
+    SalesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
