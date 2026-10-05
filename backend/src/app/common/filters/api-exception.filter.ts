@@ -30,8 +30,12 @@ export class ApiExceptionFilter implements ExceptionFilter {
     const message = isInternal
       ? "Internal server error"
       : typeof raw === "string"
-        ? body.code
-        : `HTTP_${status}`;
+        ? raw
+        : Array.isArray(rawMessage)
+          ? rawMessage.join(",")
+          : typeof rawMessage === "string"
+            ? rawMessage
+            : "Request failed";
 
     const code = isInternal
       ? "INTERNAL_ERROR"
