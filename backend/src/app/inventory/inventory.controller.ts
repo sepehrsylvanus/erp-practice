@@ -21,7 +21,7 @@ export class InventoryController {
   constructor(private readonly inventory: InventoryService) {}
 
   @Get("balances")
-  @Permissions("inventory.balance.read")
+  @Permissions("inventory.balances.read")
   balances(
     @Req() request: AuthenticatedRequest,
     @Query("warehouseId") warehouseId?: string,
@@ -38,7 +38,7 @@ export class InventoryController {
   }
 
   @Get("movements")
-  @Permissions("inventory.balance.read")
+  @Permissions("inventory.balances.read")
   movements(
     @Req() request: AuthenticatedRequest,
     @Query("warehouseId") warehouseId?: string,
@@ -46,7 +46,7 @@ export class InventoryController {
     @Query("page") page?: string,
     @Query("pageSize") pageSize?: string,
   ) {
-    this.inventory.movements(request.user.companyId, {
+    return this.inventory.movements(request.user.companyId, {
       warehouseId,
       productId,
       page,
