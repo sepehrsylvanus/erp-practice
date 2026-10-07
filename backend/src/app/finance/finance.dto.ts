@@ -54,7 +54,7 @@ export class PaymentAllocationDto {
 
 export class CreatePaymentDto {
   @IsIn(["INCOMING", "OUTGOING"])
-  directional!: "INCOMING" | "OUTGOING";
+  direction!: "INCOMING" | "OUTGOING";
 
   @Matches(MONEY)
   amount!: string;
