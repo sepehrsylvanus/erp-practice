@@ -499,7 +499,7 @@ export class FinanceService {
         for (const allocation of dto.allocations) {
           const invoice = invoiceById.get(allocation.invoiceId)!;
           const expectedType =
-            dto.direction === "INCOMING" ? "SALES " : "PURCHASE";
+            dto.direction === "INCOMING" ? "SALES" : "PURCHASE";
           if (
             invoice.type !== expectedType ||
             !["ISSUED", "PARTIALLY_PAID"].includes(invoice.status)
@@ -529,7 +529,7 @@ export class FinanceService {
               : invoice.supplierId;
           if (!currentPartyId || (partyId && partyId !== currentPartyId)) {
             throw new BadRequestException(
-              "All allocated invoices must belong to the same customer or supllier",
+              "All allocated invoices must belong to the same customer or supplier",
             );
           }
           partyId = currentPartyId;
@@ -558,7 +558,9 @@ export class FinanceService {
 
         for (const allocation of dto.allocations) {
           const invoice = invoiceById.get(allocation.invoiceId)!;
-          const paidAmount = new Decimal(invoice.paidAmount.toString());
+          const paidAmount = new Decimal(invoice.paidAmount.toString()).plus(
+            allocation.amount,
+          );
           const fullyPaid = paidAmount.greaterThanOrEqualTo(
             invoice.totalAmount.toString(),
           );
