@@ -248,7 +248,7 @@ export class SalesService {
             const unshipped = new Decimal(line.quantity.toString()).minus(
               line.shippedQuantity.toString(),
             );
-            if (!quantity.greaterThan(0) || !quantity.greaterThan(unshipped)) {
+            if (!quantity.greaterThan(0) || quantity.greaterThan(unshipped)) {
               throw new ConflictException(
                 "Shipment quantity exceeds the unshipped order quantity",
               );
@@ -311,7 +311,7 @@ export class SalesService {
                   quantity: remainingReservation.toFixed(3),
                   status: remainingReservation.isZero() ? "CONSUMED" : "ACTIVE",
                   ...(remainingReservation.isZero()
-                    ? { relaaseedAt: new Date() }
+                    ? { releasedAt: new Date() }
                     : {}),
                 },
               });
