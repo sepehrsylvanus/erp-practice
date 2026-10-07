@@ -11,7 +11,7 @@ import { AuditService } from "../audit/audit.service";
 import { getPagination } from "../common/pagination";
 import { CreateInvoiceDto, CreatePaymentDto } from "./finance.dto";
 
-function isUniqueErrpr(error: unknown): boolean {
+function isUniqueError(error: unknown): boolean {
   return (
     typeof error === "object" &&
     error !== null &&
@@ -112,7 +112,7 @@ export class FinanceService {
       unitPrice: string;
       taxRate: string;
       netAmount: string;
-      taxAmont: string;
+      taxAmount: string;
       totalAmount: string;
     }>;
     let netAmount: string;
@@ -155,7 +155,7 @@ export class FinanceService {
         unitPrice: line.unitPrice.toString(),
         taxRate: line.taxRate.toString(),
         netAmount: line.netAmount.toString(),
-        taxAmont: line.taxAmount.toString(),
+        taxAmount: line.taxAmount.toString(),
         totalAmount: line.totalAmount.toString(),
       }));
       netAmount = order.netAmount.toString();
@@ -164,7 +164,7 @@ export class FinanceService {
     } else {
       if (!dto.purchaseOrderId || dto.salesOrderId) {
         throw new BadRequestException(
-          "A purchase invoice required purchaseOrderId only",
+          "A purchase invoice requires purchaseOrderId only",
         );
       }
       const order = await this.prisma.purchaseOrder.findFirst({
@@ -182,7 +182,7 @@ export class FinanceService {
         (dto.supplierId && dto.supplierId !== order.supplierId)
       ) {
         throw new BadRequestException(
-          "Invpice supplier/currenct must match the purchase order",
+          "Invoice supplier/currency must match the purchase order",
         );
       }
 
@@ -196,7 +196,7 @@ export class FinanceService {
         unitPrice: line.unitCost.toString(),
         taxRate: line.taxRate.toString(),
         netAmount: line.netAmount.toString(),
-        taxAmont: line.taxAmount.toString(),
+        taxAmount: line.taxAmount.toString(),
         totalAmount: line.totalAmount.toString(),
       }));
       netAmount = order.netAmount.toString();
@@ -227,7 +227,7 @@ export class FinanceService {
               unitPrice: new Decimal(line.unitPrice).toFixed(2),
               taxRate: new Decimal(line.taxRate).toFixed(2),
               netAmount: new Decimal(line.netAmount).toFixed(2),
-              taxAmount: new Decimal(line.taxAmont).toFixed(2),
+              taxAmount: new Decimal(line.taxAmount).toFixed(2),
               totalAmount: new Decimal(line.totalAmount).toFixed(2),
             })),
           },
@@ -244,7 +244,7 @@ export class FinanceService {
       });
       return { data: invoice };
     } catch (error) {
-      if (isUniqueErrpr(error))
+      if (isUniqueError(error))
         throw new ConflictException("Invoice number already exists");
       throw error;
     }
@@ -274,14 +274,14 @@ export class FinanceService {
           accounts.map((account) => [account.code, account]),
         );
 
-        const requireCodes = new Decimal(invoice.taxAmount.toString()).isZero()
+        const requiredCodes = new Decimal(invoice.taxAmount.toString()).isZero()
           ? accountCodes.filter((code) => code !== (isSales ? "2100" : "1300"))
           : accountCodes;
 
-        for (const code of requireCodes) {
+        for (const code of requiredCodes) {
           if (!accountByCode.has(code)) {
             throw new BadRequestException(
-              `Required actove ledger account ${code} is missing`,
+              `Required active ledger account ${code} is missing`,
             );
           }
         }
@@ -308,8 +308,18 @@ export class FinanceService {
                 code: "4000",
                 description: "Sales revenue",
                 debit: new Decimal(0),
-                credit: tax,
+                credit: net,
               },
+              ...(tax.isZero()
+                ? []
+                : [
+                    {
+                      code: "2100",
+                      description: "Output VAT payable",
+                      debit: new Decimal(0),
+                      credit: tax,
+                    },
+                  ]),
             ]
           : [
               {
@@ -489,10 +499,10 @@ export class FinanceService {
         for (const allocation of dto.allocations) {
           const invoice = invoiceById.get(allocation.invoiceId)!;
           const expectedType =
-            dto.direction === "INCOMING" ? "SLAES " : "PURCHASE";
+            dto.direction === "INCOMING" ? "SALES " : "PURCHASE";
           if (
             invoice.type !== expectedType ||
-            !["ISSUED", "PARTIALLY_PAIED"].includes(invoice.status)
+            !["ISSUED", "PARTIALLY_PAID"].includes(invoice.status)
           ) {
             throw new ConflictException(
               "Payment direction or invoice status does not match",
@@ -513,16 +523,16 @@ export class FinanceService {
               "Allocation exceeds the invoice outstanding amount",
             );
           }
-          const currentPatyId =
+          const currentPartyId =
             dto.direction === "INCOMING"
               ? invoice.customerId
               : invoice.supplierId;
-          if (!currentPatyId || (partyId && partyId !== currentPatyId)) {
+          if (!currentPartyId || (partyId && partyId !== currentPartyId)) {
             throw new BadRequestException(
               "All allocated invoices must belong to the same customer or supllier",
             );
           }
-          partyId = currentPatyId;
+          partyId = currentPartyId;
         }
         const payment = await tx.payment.create({
           data: {
@@ -567,7 +577,7 @@ export class FinanceService {
           where: {
             companyId,
             code: { in: [debitCode, creditCode] },
-            isActove: true,
+            isActive: true,
           },
         });
 
@@ -610,7 +620,7 @@ export class FinanceService {
                       ? "Accounts receivable"
                       : "Cash paid",
                   debit: "0.00",
-                  creadit: amount.toFixed(2),
+                  credit: amount.toFixed(2),
                 },
               ],
             },

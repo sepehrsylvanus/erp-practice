@@ -20,7 +20,7 @@ import { FinanceService } from "./finance.service";
 export class FinanceController {
   constructor(private readonly finance: FinanceService) {}
 
-  @Get("invpices")
+  @Get("invoices")
   @Permissions("finance.invoices.read")
   listInvoices(
     @Req() request: AuthenticatedRequest,
@@ -35,8 +35,8 @@ export class FinanceController {
     });
   }
 
-  @Post("invpices")
-  @Permissions("finance.invoices.post")
+  @Post("invoices")
+  @Permissions("finance.invoice.post")
   createInvoice(
     @Req() request: AuthenticatedRequest,
     @Body() dto: CreateInvoiceDto,
