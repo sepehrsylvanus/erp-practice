@@ -58,7 +58,7 @@ describe("ReportingService", () => {
   it("rejects an unsupported groupBy before querying the database", async () => {
     await expect(
       service.sales("company-1", "2026-06-01", "2026-06-30", "year"),
-    ).rejects.not.toHaveBeenCalled();
+    ).rejects.toBeInstanceOf(BadRequestException);
 
     expect(findMany).not.toHaveBeenCalled();
   });
