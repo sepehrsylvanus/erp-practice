@@ -26,6 +26,15 @@
       ],
       "@erp/backend-sales": [
         "./libs/backend/sales/src/index.ts"
+      ],
+      "@erp/shared-ui": [
+        "./libs/shared/ui/src/index.ts"
+      ],
+      "@erp/shared-api": [
+        "./libs/shared/api/src/index.ts"
+      ],
+      "@erp/shared-auth": [
+        "./libs/shared/authlib/src/index.ts"
       ]
     }
   },

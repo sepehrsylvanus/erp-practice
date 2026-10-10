@@ -1,0 +1,23 @@
+{
+  "name": "shell",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "shell/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "continuous": true,
+      "options": {
+        "command": "vite",
+        "cwd": "shell"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vite build",
+        "cwd": "shell"
+      }
+    }
+  }
+}

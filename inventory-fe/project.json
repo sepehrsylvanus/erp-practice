@@ -1,0 +1,26 @@
+{
+  "name": "inventory-fe",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "inventory-fe/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "continuous": true,
+      "options": {
+        "command": "vite",
+        "cwd": "inventory-fe"
+      },
+      "dependsOn": [
+        "shell:serve"
+      ]
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vite build",
+        "cwd": "inventory-fe"
+      }
+    }
+  }
+}
