@@ -9,6 +9,7 @@ import { InventoryModule } from "./inventory/inventory.module";
 import { PurchasingModule } from "./purchasing/purchasing.module";
 import { SalesModule } from "./sales/sales.module";
 import { FinanceModule } from "./finance/finance.module";
+import { ReportsModule } from "./reports/reports.module";
 @Module({
   imports: [
     PrismaModule,
@@ -19,6 +20,7 @@ import { FinanceModule } from "./finance/finance.module";
     PurchasingModule,
     SalesModule,
     FinanceModule,
+    ReportsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
