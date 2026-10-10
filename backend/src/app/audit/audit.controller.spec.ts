@@ -1,18 +1,23 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { AuditController } from './audit.controller';
+import { describe, expect, it, vi } from "vitest";
+import type { AuthenticatedRequest } from "../auth/auth.types";
+import { AuditController } from "./audit.controller";
+import { AuditService } from "./audit.service";
 
-describe('AuditController', () => {
-  let controller: AuditController;
+describe("AuditController", () => {
+  it("uses the authenticated user companyId instead of a client-supplied value", () => {
+    const list = vi.fn();
+    const controller = new AuditController({ list } as unknown as AuditService);
+    const request = {
+      user: { companyId: "company-1" },
+    } as AuthenticatedRequest;
 
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      controllers: [AuditController],
-    }).compile();
+    controller.list(request, "User", undefined, "2", "10");
 
-    controller = module.get<AuditController>(AuditController);
-  });
-
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
+    expect(list).toHaveBeenCalledWith("company-1", {
+      entityType: "User",
+      entityId: undefined,
+      page: "2",
+      pageSize: "10",
+    });
   });
 });
