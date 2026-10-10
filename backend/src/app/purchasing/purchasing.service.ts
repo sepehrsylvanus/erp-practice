@@ -159,6 +159,7 @@ export class PurchasingService {
           currency: dto.currency,
           netAmount: netAmount.toFixed(2),
           taxAmount: taxAmount.toFixed(2),
+          totalAmount: netAmount.plus(taxAmount).toFixed(2),
           lines: {
             create: lines.map(({ _net, _tax, ...line }) => line),
           },
