@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --port 5100 --strictPort",
+    "dev": "vite --port 4300 --strictPort",
     "build": "vite build",
-    "preview": "vite preview --port 5100 --strictPort"
+    "preview": "vite preview --port 4300 --strictPort"
   },
   "dependencies": {
     "@module-federation/runtime": "^2.4.0",

@@ -5,47 +5,47 @@ const PROVIDERS: Array<{ alias: string; name: string; entry: string }> = [
   {
     alias: "auth",
     name: "auth",
-    entry: "http://localhost:5101/remoteEntry.js",
+    entry: "http://localhost:4301/remoteEntry.js",
   },
   {
     alias: "dashboard",
     name: "dashboard",
-    entry: "http://localhost:5102/remoteEntry.js",
+    entry: "http://localhost:4302/remoteEntry.js",
   },
   {
     alias: "catalog",
     name: "catalog",
-    entry: "http://localhost:5103/remoteEntry.js",
+    entry: "http://localhost:4303/remoteEntry.js",
   },
   {
     alias: "inventory",
     name: "inventory_fe",
-    entry: "http://localhost:5104/remoteEntry.js",
+    entry: "http://localhost:4304/remoteEntry.js",
   },
   {
     alias: "purchasing",
     name: "purchasing",
-    entry: "http://localhost:5105/remoteEntry.js",
+    entry: "http://localhost:4305/remoteEntry.js",
   },
   {
     alias: "sales",
     name: "sales_fe",
-    entry: "http://localhost:5106/remoteEntry.js",
+    entry: "http://localhost:4306/remoteEntry.js",
   },
   {
     alias: "finance",
     name: "finance",
-    entry: "http://localhost:5107/remoteEntry.js",
+    entry: "http://localhost:4307/remoteEntry.js",
   },
   {
     alias: "reports",
     name: "reports",
-    entry: "http://localhost:5108/remoteEntry.js",
+    entry: "http://localhost:4308/remoteEntry.js",
   },
   {
     alias: "admin",
     name: "admin",
-    entry: "http://localhost:5109/remoteEntry.js",
+    entry: "http://localhost:4309/remoteEntry.js",
   },
 ];
 
