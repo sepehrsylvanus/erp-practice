@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
 import { federation } from "@module-federation/vite";
+import { erpAlias } from "../vite.shared.mts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
@@ -20,16 +21,8 @@ export default defineConfig({
   },
   preview: { port: PORT, strictPort: true },
   build: { target: "chrome89" },
-  resolve: {
-    alias: {
-      "@erp/shared-ui": path.join(rootDir, "libs/shared/ui/src/index.ts"),
-      "@erp/shared-api": path.join(rootDir, "libs/shared/api/src/index.ts"),
-      "@erp/shared-auth": path.join(
-        rootDir,
-        "libs/shared/authlib/src/index.ts",
-      ),
-    },
-  },
+  resolve: { alias: erpAlias },
+
   plugins: [
     federation({
       name: "shell",

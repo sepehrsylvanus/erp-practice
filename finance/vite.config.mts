@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { federation } from "@module-federation/vite";
+import { erpAlias } from "../vite.shared.mts";
 
 // Port deliberately avoids 5000 (macOS AirTunes binds it on 0.0.0.0, leading
 // to silent EADDRINUSE on 127.0.0.1). Override `--port` only if 5000+ is free.
@@ -20,6 +21,8 @@ export default defineConfig({
   },
   preview: { port: PORT, strictPort: true, cors: true },
   build: { target: "chrome89" },
+  resolve: { alias: erpAlias },
+
   plugins: [
     federation({
       name: "finance",
