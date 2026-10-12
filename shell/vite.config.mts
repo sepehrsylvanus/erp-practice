@@ -14,6 +14,9 @@ export default defineConfig({
     port: PORT,
     strictPort: true,
     host: "127.0.0.1",
+    proxy: {
+      "/api": { target: "http://localhost:3000", changeOrigin: true },
+    },
   },
   preview: { port: PORT, strictPort: true },
   build: { target: "chrome89" },

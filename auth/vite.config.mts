@@ -1,6 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { federation } from "@module-federation/vite";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = path.resolve(__dirname, "..");
 
 // Port deliberately avoids 5000 (macOS AirTunes binds it on 0.0.0.0, leading
 // to silent EADDRINUSE on 127.0.0.1). Override `--port` only if 5000+ is free.
@@ -20,6 +25,16 @@ export default defineConfig({
   },
   preview: { port: PORT, strictPort: true, cors: true },
   build: { target: "chrome89" },
+  resolve: {
+    alias: {
+      "@erp/shared-ui": path.join(rootDir, "libs/shared/ui/src/index.ts"),
+      "@erp/shared-api": path.join(rootDir, "libs/shared/api/src/index.ts"),
+      "@erp/shared-auth": path.join(
+        rootDir,
+        "libs/shared/authlib/src/index.ts",
+      ),
+    },
+  },
   plugins: [
     federation({
       name: "auth",
