@@ -1,2 +1,2 @@
-export * from './compiled-types/App';
-export { default } from './compiled-types/App';
+export * from './compiled-types/finance/src/App';
+export { default } from './compiled-types/finance/src/App';

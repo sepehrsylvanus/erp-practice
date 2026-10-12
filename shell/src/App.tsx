@@ -1,4 +1,4 @@
-import { Component, Suspense, type ReactNode } from "react";
+import { Component, Suspense, useEffect, useState, type ReactNode } from "react";
 import {
   BrowserRouter,
   Navigate,
@@ -158,47 +158,116 @@ const MENU = [
 
 function ShellLayout() {
   const { user, logout } = useSession();
+  const [navOpen, setNavOpen] = useState(false);
+  const [dark, setDark] = useState(
+    () => document.documentElement.dataset.theme === "dark",
+  );
+  const location = useLocation();
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = dark ? "dark" : "";
+    try {
+      localStorage.setItem("erp-theme", dark ? "dark" : "light");
+    } catch {
+      /* ignore */
+    }
+  }, [dark]);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("erp-theme");
+      if (saved === "dark") setDark(true);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  useEffect(() => {
+    setNavOpen(false);
+  }, [location.pathname]);
+
+  const initial =
+    (user?.displayName?.trim()?.charAt(0) ||
+      user?.email?.trim()?.charAt(0) ||
+      "؟").toUpperCase();
+
   return (
-    <div className="app-layout">
+    <div className={`app-layout ${navOpen ? "nav-open" : ""}`}>
+      <button
+        className="sidebar-overlay"
+        aria-label="بستن منو"
+        onClick={() => setNavOpen(false)}
+      />
       <aside className="sidebar">
         <div className="brand">
           <span className="logo">⚡</span>
           <span>ERP Platform</span>
         </div>
-        {MENU.map((group) => (
-          <div key={group.label}>
-            <div className="nav-group-label">{group.label}</div>
-            {group.items
-              .filter(
-                (item) =>
-                  !("permission" in item) ||
-                  user?.permissions.includes(item.permission),
-              )
-              .map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  className={({ isActive }) =>
-                    `nav-item ${isActive ? "active" : ""}`
-                  }
-                >
-                  <span>{item.icon}</span> {item.text}
-                </NavLink>
-              ))}
+        <nav style={{ display: "flex", flexDirection: "column", gap: 4, flex: 1 }}>
+          {MENU.map((group) => {
+            const visible = group.items.filter(
+              (item) =>
+                !("permission" in item) ||
+                user?.permissions.includes(item.permission),
+            );
+            if (visible.length === 0) return null;
+            return (
+              <div key={group.label}>
+                <div className="nav-group-label">{group.label}</div>
+                {visible.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    className={({ isActive }) =>
+                      `nav-item ${isActive ? "active" : ""}`
+                    }
+                  >
+                    <span>{item.icon}</span> {item.text}
+                  </NavLink>
+                ))}
+              </div>
+            );
+          })}
+        </nav>
+        <div className="sidebar-foot">
+          <div className="sidebar-user">
+            <span className="avatar">{initial}</span>
+            <span className="who">
+              <b>{user?.displayName}</b>
+              <span>{user?.companyName}</span>
+            </span>
           </div>
-        ))}
+          <button
+            className="theme-toggle"
+            onClick={() => setDark((d) => !d)}
+            aria-label="تغییر تم"
+          >
+            {dark ? "☀️ حالت روشن" : "🌙 حالت تیره"}
+          </button>
+        </div>
       </aside>
       <div className="main">
         <header className="topbar">
-          <div>
-            <b>{user?.companyName}</b>
-            <span style={{ color: "var(--muted)", marginInlineStart: 10 }}>
-              {user?.displayName}
-            </span>
+          <div className="topbar-user">
+            <button
+              className="burger"
+              onClick={() => setNavOpen((o) => !o)}
+              aria-label="بازکردن منو"
+            >
+              ☰
+            </button>
+            <span className="avatar">{initial}</span>
+            <div className="who">
+              <b>{user?.companyName}</b>
+              <span>{user?.displayName}</span>
+            </div>
           </div>
-          <button className="btn btn-ghost btn-sm" onClick={() => logout()}>
-            خروج
-          </button>
+          <div className="topbar-actions">
+            <span className="badge green">● آنلاین</span>
+            <button className="btn btn-ghost btn-sm" onClick={() => logout()}>
+              خروج ←
+            </button>
+          </div>
         </header>
         <main className="content">
           <Outlet />

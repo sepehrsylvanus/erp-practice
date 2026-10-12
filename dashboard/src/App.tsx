@@ -1,7 +1,13 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { ApiError } from "@erp/shared-api";
 import { reportsApi } from "@erp/shared-api";
 import type { Overview, SalesPoint } from "@erp/shared-api";
-import { LoadingRows, money } from "@erp/shared-ui";
+import {
+  ErrorState,
+  LoadingRows,
+  PageHeader,
+  money,
+} from "@erp/shared-ui";
 
 function monthRange() {
   const now = new Date();
@@ -18,9 +24,12 @@ export default function DashboardPage() {
   const [overview, setOverview] = useState<Overview | null>(null);
   const [sales, setSales] = useState<SalesPoint[]>([]);
   const [loading, setLoading] = useState(true);
-
+  const [error, setError] = useState("");
+  const [reloadKey, setReloadKey] = useState(0);
   useEffect(() => {
     let alive = true;
+    setError("");
+    setLoading(true);
     Promise.all([
       reportsApi.overview(from, to),
       reportsApi.sales(from, to, "day"),
@@ -30,52 +39,88 @@ export default function DashboardPage() {
         setOverview(o.data);
         setSales(s.data);
       })
+      .catch((e: unknown) => {
+        if (!alive) return;
+        const status = e instanceof ApiError ? e.status : 0;
+        setError(
+          status === 401
+            ? "نشست شما منقضی شده است. لطفاً دوباره وارد شوید."
+            : e instanceof Error
+              ? e.message
+              : "خطا در دریافت اطلاعات داشبورد.",
+        );
+      })
       .finally(() => alive && setLoading(false));
+
     return () => {
       alive = false;
     };
-  }, [from, to]);
+  }, [from, to, reloadKey]);
 
-  if (loading || !overview) return <LoadingRows rows={8} />;
+  if (loading) return <LoadingRows rows={8} />;
+
+  if (error || !overview) {
+    return (
+      <>
+        <PageHeader title="داشبورد" sub={`بازه‌ی ${from} تا ${to}`} />
+        <ErrorState
+          title="داشبورد بارگذاری نشد"
+          message={error}
+          onRetry={() => setReloadKey((k) => k + 1)}
+          loginHref="/login"
+        />
+      </>
+    );
+  }
 
   const max = Math.max(...sales.map((p) => Number(p.total)), 1);
   const stats = [
     {
       label: "سفارش فروش (این بازه)",
-      value: overview.salesOrderCount,
+      value: new Intl.NumberFormat("fa-IR").format(overview.salesOrderCount),
       hint: money(overview.salesOrderTotal),
+      icon: "🧾",
+      tint: "",
     },
     {
       label: "سفارش خرید",
-      value: overview.purchaseOrderCount,
+      value: new Intl.NumberFormat("fa-IR").format(overview.purchaseOrderCount),
       hint: "تعداد تأییدشده",
+      icon: "🛒",
+      tint: "tint-orange",
     },
     {
       label: "فاکتورها",
-      value: overview.invoiceCount,
+      value: new Intl.NumberFormat("fa-IR").format(overview.invoiceCount),
       hint: money(overview.invoiceTotal),
+      icon: "📄",
+      tint: "tint-blue",
     },
     {
       label: "پرداخت‌ها",
-      value: overview.paymentCount,
+      value: new Intl.NumberFormat("fa-IR").format(overview.paymentCount),
       hint: money(overview.paymentTotal),
+      icon: "💰",
+      tint: "tint-green",
     },
   ];
 
   return (
     <>
-      <h1 className="page-title">داشبورد</h1>
-      <p className="page-sub">
-        بازه‌ی {from} تا {to}
-      </p>
+      <PageHeader
+        title="داشبورد"
+        sub={`بازه‌ی ${from} تا ${to}`}
+        actions={<span className="badge green">● به‌روز</span>}
+      />
 
       <div className="stats-grid">
         {stats.map((s) => (
-          <div className="card stat-card" key={s.label}>
-            <div className="label">{s.label} </div>
-            <div className="valu">
-              {new Intl.NumberFormat("fa-IR").format(s.value)}
+          <div className={`card stat-card ${s.tint}`} key={s.label}>
+            <div className="top">
+              <div className="label">{s.label}</div>
+              <span className="ic">{s.icon}</span>
             </div>
+            <div className="value-big num">{s.value}</div>
             <div className="hint">{s.hint}</div>
           </div>
         ))}
@@ -84,14 +129,14 @@ export default function DashboardPage() {
         <h3 style={{ marginTop: 0 }}>روند فروش روزانه</h3>
         {sales.length === 0 ? (
           <div className="empty">
-            {" "}
-            <div className="empty">در این بازه فروشی ثبت نشده است.</div>
+            <div className="icon">📭</div>
+            <div>در این بازه فروشی ثبت نشده است.</div>
           </div>
         ) : (
           <div className="bars">
             {sales.map((point) => (
               <div
-                className="bard"
+                className="bar"
                 key={point.period}
                 style={{ height: `${(Number(point.total) / max) * 100}%` }}
               >

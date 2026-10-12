@@ -26,7 +26,7 @@ async function request<T>(
 ): Promise<T> {
   const response = await fetch(`${BASE}${path}`, {
     ...init,
-    credentials: "include",
+    credentials: "include", // refresh cookie همراه هر درخواست
     headers: {
       "Content-Type": "application/json",
       ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
@@ -35,7 +35,9 @@ async function request<T>(
   });
 
   if (response.status === 401 && retry) {
-    const refreshed = await tryRefresh();
+    // single-flight: همه‌ی 401های همزمان فقط از یک refresh مشترک استفاده می‌کنند
+    // (بدون این قفل، توکن چرخشی بک‌اند باعث ابطال همه‌ی سشن‌ها می‌شود)
+    const refreshed = await refreshOnce();
     if (refreshed) return request<T>(path, init, false);
   }
 
@@ -43,7 +45,6 @@ async function request<T>(
     const body = await response.json().catch(() => null);
     throw new ApiError(response.status, body);
   }
-
   if (response.status === 204) return undefined as T;
   return response.json() as Promise<T>;
 }
@@ -61,6 +62,17 @@ export async function tryRefresh(): Promise<boolean> {
   } catch {
     return false;
   }
+}
+
+/* ---------- single-flight: قفل refresh همزمان (فاز دوم) ---------- */
+let refreshPromise: Promise<boolean> | null = null;
+export async function refreshOnce(): Promise<boolean> {
+  if (!refreshPromise) {
+    refreshPromise = tryRefresh().finally(() => {
+      refreshPromise = null;
+    });
+  }
+  return refreshPromise;
 }
 
 export const api = {

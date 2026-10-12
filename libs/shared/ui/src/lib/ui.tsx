@@ -3,7 +3,6 @@ import {
   useCallback,
   useContext,
   useEffect,
-  useMemo,
   useState,
   type CSSProperties,
   type ReactNode,
@@ -144,11 +143,106 @@ export function Empty({ icon = "📭", text }: { icon?: string; text: string }) 
 
 export function LoadingRows({ rows = 6 }: { rows?: number }) {
   return (
-    <>
+    <div className="loading-block">
+      <div className="loading-head">
+        <div className="skeleton" style={{ width: 180, height: 22 }} />
+        <div className="skeleton" style={{ width: 260, height: 14 }} />
+      </div>
       {Array.from({ length: rows }).map((_, i) => (
         <div className="skeleton" key={i} style={{ margin: "10px 14px" }} />
       ))}
-    </>
+    </div>
+  );
+}
+
+/* ---------- Page header (تیتر + زیرتیتر + اکشن) — فاز دوم ریدیزاین ---------- */
+export function PageHeader({
+  title,
+  sub,
+  actions,
+}: {
+  title: string;
+  sub?: string;
+  actions?: ReactNode;
+}) {
+  return (
+    <div className="page-head">
+      <div>
+        <h1 className="page-title">{title}</h1>
+        {sub ? <p className="page-sub">{sub}</p> : null}
+      </div>
+      {actions ? <div className="page-actions">{actions}</div> : null}
+    </div>
+  );
+}
+
+/* ---------- Error state (کارت خطای استاندارد + تلاش مجدد) ---------- */
+export function ErrorState({
+  title,
+  message,
+  onRetry,
+  retryLabel = "تلاش مجدد ↻",
+  loginHref,
+}: {
+  title: string;
+  message?: string;
+  onRetry?: () => void;
+  retryLabel?: string;
+  loginHref?: string;
+}) {
+  return (
+    <div className="card state-card" role="alert">
+      <div className="state-icon">⚠️</div>
+      <b>{title}</b>
+      {message ? <p style={{ color: "var(--muted)" }}>{message}</p> : null}
+      <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
+        {onRetry ? (
+          <button className="btn btn-primary btn-sm" onClick={onRetry}>
+            {retryLabel}
+          </button>
+        ) : null}
+        {loginHref ? (
+          <a className="btn btn-ghost btn-sm" href={loginHref}>
+            رفتن به ورود ←
+          </a>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+/* ---------- Search input (جستجو با آیکون + پاک‌کن) ---------- */
+export function SearchInput({
+  value,
+  onChange,
+  placeholder = "جستجو…",
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  placeholder?: string;
+}) {
+  return (
+    <div className="input-wrap search-wrap">
+      <span className="input-icon" aria-hidden="true">
+        🔍
+      </span>
+      <input
+        className="input has-icon"
+        value={value}
+        placeholder={placeholder}
+        onChange={(e) => onChange(e.target.value)}
+      />
+      {value ? (
+        <button
+          type="button"
+          className="eye-btn"
+          aria-label="پاک‌کردن جستجو"
+          onClick={() => onChange("")}
+        >
+          ✕
+        </button>
+      ) : null}
+    </div>
   );
 }
 /* ---------- Table + Pagination ---------- */
