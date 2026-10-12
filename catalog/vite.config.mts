@@ -28,7 +28,9 @@ export default defineConfig({
       name: "catalog",
       filename: "remoteEntry.js",
       exposes: {
-        "./App": "./src/App.tsx",
+        "./Products": "./src/pages/Products.tsx",
+        // "./Customers": "./src/pages/Customers.tsx",
+        // "./Suppliers": "./src/pages/Suppliers.tsx",
       },
       shared: {
         react: { singleton: true },

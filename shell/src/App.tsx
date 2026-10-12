@@ -1,4 +1,10 @@
-import { Component, Suspense, useEffect, useState, type ReactNode } from "react";
+import {
+  Component,
+  Suspense,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
 import {
   BrowserRouter,
   Navigate,
@@ -38,6 +44,15 @@ class RemoteBoundary extends Component<
   state = { error: null as Error | null };
   static getDerivedStateFromError(error: Error) {
     return { error };
+  }
+  componentDidUpdate(
+    prevProps: Readonly<{ name: string; children: ReactNode }>,
+    prevState: Readonly<{ error: Error | null }>,
+    snapshot?: any,
+  ): void {
+    if (prevProps.name !== this.props.name && this.state.error) {
+      this.setState({ error: null });
+    }
   }
   render() {
     if (this.state.error) {
@@ -186,10 +201,11 @@ function ShellLayout() {
     setNavOpen(false);
   }, [location.pathname]);
 
-  const initial =
-    (user?.displayName?.trim()?.charAt(0) ||
-      user?.email?.trim()?.charAt(0) ||
-      "؟").toUpperCase();
+  const initial = (
+    user?.displayName?.trim()?.charAt(0) ||
+    user?.email?.trim()?.charAt(0) ||
+    "؟"
+  ).toUpperCase();
 
   return (
     <div className={`app-layout ${navOpen ? "nav-open" : ""}`}>
@@ -203,7 +219,9 @@ function ShellLayout() {
           <span className="logo">⚡</span>
           <span>ERP Platform</span>
         </div>
-        <nav style={{ display: "flex", flexDirection: "column", gap: 4, flex: 1 }}>
+        <nav
+          style={{ display: "flex", flexDirection: "column", gap: 4, flex: 1 }}
+        >
           {MENU.map((group) => {
             const visible = group.items.filter(
               (item) =>
@@ -303,7 +321,7 @@ function AppRoutes() {
         <Route
           path="dashboard"
           element={
-            <RemoteBoundary name="داشبورد">
+            <RemoteBoundary key={location.pathname} name="داشبورد">
               <DashboardPage />
             </RemoteBoundary>
           }
@@ -311,7 +329,7 @@ function AppRoutes() {
         <Route
           path="catalog/products"
           element={
-            <RemoteBoundary name="کالاها">
+            <RemoteBoundary key={location.pathname} name="کالاها">
               <ProductsPage />
             </RemoteBoundary>
           }
@@ -319,7 +337,7 @@ function AppRoutes() {
         <Route
           path="catalog/customers"
           element={
-            <RemoteBoundary name="مشتریان">
+            <RemoteBoundary key={location.pathname} name="مشتریان">
               <CustomersPage />
             </RemoteBoundary>
           }
@@ -327,7 +345,7 @@ function AppRoutes() {
         <Route
           path="catalog/suppliers"
           element={
-            <RemoteBoundary name="تأمین‌کنندگان">
+            <RemoteBoundary key={location.pathname} name="تأمین‌کنندگان">
               <SuppliersPage />
             </RemoteBoundary>
           }
@@ -335,7 +353,7 @@ function AppRoutes() {
         <Route
           path="inventory/balances"
           element={
-            <RemoteBoundary name="موجودی">
+            <RemoteBoundary key={location.pathname} name="موجودی">
               <BalancesPage />
             </RemoteBoundary>
           }
@@ -343,7 +361,7 @@ function AppRoutes() {
         <Route
           path="inventory/movements"
           element={
-            <RemoteBoundary name="گردش کالا">
+            <RemoteBoundary key={location.pathname} name="گردش کالا">
               <MovementsPage />
             </RemoteBoundary>
           }
@@ -351,7 +369,7 @@ function AppRoutes() {
         <Route
           path="inventory/adjustments"
           element={
-            <RemoteBoundary name="اصلاح موجودی">
+            <RemoteBoundary key={location.pathname} name="اصلاح موجودی">
               <AdjustPage />
             </RemoteBoundary>
           }
@@ -359,7 +377,7 @@ function AppRoutes() {
         <Route
           path="purchasing/orders"
           element={
-            <RemoteBoundary name="خرید">
+            <RemoteBoundary key={location.pathname} name="خرید">
               <PurchaseOrdersPage />
             </RemoteBoundary>
           }
@@ -367,7 +385,7 @@ function AppRoutes() {
         <Route
           path="sales/orders"
           element={
-            <RemoteBoundary name="فروش">
+            <RemoteBoundary key={location.pathname} name="فروش">
               <SalesOrdersPage />
             </RemoteBoundary>
           }
@@ -375,7 +393,7 @@ function AppRoutes() {
         <Route
           path="finance/invoices"
           element={
-            <RemoteBoundary name="فاکتورها">
+            <RemoteBoundary key={location.pathname} name="فاکتورها">
               <InvoicesPage />
             </RemoteBoundary>
           }
@@ -383,7 +401,7 @@ function AppRoutes() {
         <Route
           path="finance/payments"
           element={
-            <RemoteBoundary name="پرداخت‌ها">
+            <RemoteBoundary key={location.pathname} name="پرداخت‌ها">
               <PaymentsPage />
             </RemoteBoundary>
           }
@@ -391,7 +409,7 @@ function AppRoutes() {
         <Route
           path="finance/trial-balance"
           element={
-            <RemoteBoundary name="تراز">
+            <RemoteBoundary key={location.pathname} name="تراز">
               <TrialBalancePage />
             </RemoteBoundary>
           }
@@ -399,7 +417,7 @@ function AppRoutes() {
         <Route
           path="reports"
           element={
-            <RemoteBoundary name="گزارش‌ها">
+            <RemoteBoundary key={location.pathname} name="گزارش‌ها">
               <ReportsPage />
             </RemoteBoundary>
           }
@@ -407,7 +425,7 @@ function AppRoutes() {
         <Route
           path="admin/audit"
           element={
-            <RemoteBoundary name="ممیزی">
+            <RemoteBoundary key={location.pathname} name="ممیزی">
               <AuditPage />
             </RemoteBoundary>
           }
