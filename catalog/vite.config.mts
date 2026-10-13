@@ -29,7 +29,7 @@ export default defineConfig({
       filename: "remoteEntry.js",
       exposes: {
         "./Products": "./src/pages/Products.tsx",
-        // "./Customers": "./src/pages/Customers.tsx",
+        "./Customers": "./src/pages/Customers.tsx",
         // "./Suppliers": "./src/pages/Suppliers.tsx",
       },
       shared: {

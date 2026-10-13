@@ -1,10 +1,10 @@
 {
   "latestErrorEvent": {
     "code": "TYPE-001",
-    "message": "Failed to generate type declaration. Execute the below cmd to reproduce and fix the error. #TYPE-001\nargs: {\"cmd\":\"\\\"C:\\\\\\\\Program Files\\\\\\\\nodejs\\\\\\\\node.exe\\\" D:\\\\projects\\\\nest\\\\erp-platform\\\\node_modules\\\\typescript\\\\bin\\\\tsc --project D:\\\\projects\\\\nest\\\\erp-platform\\\\dashboard\\\\node_modules\\\\.federation\\\\tsconfig.05fe12bd14f19746b32d76681e5c3e0c.json\"}\nView the docs to see how to solve: https://module-federation.io/guide/troubleshooting/type#type-001",
+    "message": "Failed to generate type declaration. Execute the below cmd to reproduce and fix the error. #TYPE-001\nargs: {\"cmd\":\"\\\"C:\\\\\\\\Program Files\\\\\\\\nodejs\\\\\\\\node.exe\\\" D:\\\\projects\\\\nest\\\\erp-platform\\\\node_modules\\\\typescript\\\\bin\\\\tsc --project D:\\\\projects\\\\nest\\\\erp-platform\\\\dashboard\\\\node_modules\\\\.federation\\\\tsconfig.b8da915986bbcbff28f7e334920a4a4c.json\"}\nView the docs to see how to solve: https://module-federation.io/guide/troubleshooting/type#type-001",
     "args": {
-      "cmd": "\"C:\\\\Program Files\\\\nodejs\\\\node.exe\" D:\\projects\\nest\\erp-platform\\node_modules\\typescript\\bin\\tsc --project D:\\projects\\nest\\erp-platform\\dashboard\\node_modules\\.federation\\tsconfig.05fe12bd14f19746b32d76681e5c3e0c.json"
+      "cmd": "\"C:\\\\Program Files\\\\nodejs\\\\node.exe\" D:\\projects\\nest\\erp-platform\\node_modules\\typescript\\bin\\tsc --project D:\\projects\\nest\\erp-platform\\dashboard\\node_modules\\.federation\\tsconfig.b8da915986bbcbff28f7e334920a4a4c.json"
     },
-    "timestamp": 1791871584468
+    "timestamp": 1791878167751
   }
 }

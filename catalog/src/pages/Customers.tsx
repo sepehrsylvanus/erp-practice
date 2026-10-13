@@ -62,6 +62,7 @@ export default function CustomerPage() {
     { key: "name", title: "نام" },
     { key: "email", title: "ایمیل", render: (r) => r.email ?? "—" },
     { key: "phone", title: "تلفن", render: (r) => r.phone ?? "—" },
+    { key: "taxId", title: "شناسه مالیاتی", render: (r) => r.taxId ?? "—" },
   ];
 
   return (
@@ -146,6 +147,15 @@ export default function CustomerPage() {
                   dir="ltr"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                />
+              </Field>
+              <Field label="شناسه مالیاتی (اختیاری)">
+                <input
+                  className="input"
+                  dir="ltr"
+                  value={form.taxId}
+                  onChange={(e) => setForm({ ...form, taxId: e.target.value })}
+                  maxLength={40}
                 />
               </Field>
             </div>
