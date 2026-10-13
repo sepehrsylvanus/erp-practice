@@ -54,7 +54,11 @@ export default function ProductsPage() {
         await catalogApi.products.create(form);
         toast("کالا ساخته شد ✅", "success");
       } else if (editing) {
-        await catalogApi.products.update(editing.id, form);
+        const { sku: _sku, ...rest } = form;
+        const payload = Object.fromEntries(
+          Object.entries(rest).map(([k, v]) => [k, v === "" ? undefined : v]),
+        );
+        await catalogApi.products.update(editing.id, payload);
         toast("کالا بروزرسانی شد ✅", "success");
       }
       setCreating(false);

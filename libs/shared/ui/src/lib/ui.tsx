@@ -272,7 +272,9 @@ export function DataTable<T>({
         <thead>
           <tr>
             {columns.map((c) => (
-              <th key={c.key}>{c.title}</th>
+              <th key={c.key} className={c.numeric ? "num" : undefined}>
+                {c.title}
+              </th>
             ))}
           </tr>
         </thead>
