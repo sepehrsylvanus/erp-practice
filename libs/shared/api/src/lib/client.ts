@@ -9,12 +9,17 @@ export const getToken = () => accessToken;
 export class ApiError extends Error {
   constructor(
     public status: number,
-    public body: { message?: string | string[] } | null,
+    public body: {
+      code?: string;
+      message?: string;
+      details?: string[] | null;
+      requestId?: string | null;
+    } | null,
   ) {
     super(
-      Array.isArray(body?.message)
-        ? body.message.join("، ")
-        : (body?.message ?? `خطای ${status}`),
+      body?.message ??
+        (Array.isArray(body?.details) ? body.details.join("، ") : null) ??
+        `خطای ${status}`,
     );
   }
 }

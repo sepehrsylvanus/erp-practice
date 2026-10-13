@@ -30,11 +30,15 @@ export default defineConfig({
       exposes: {
         "./Products": "./src/pages/Products.tsx",
         "./Customers": "./src/pages/Customers.tsx",
-        // "./Suppliers": "./src/pages/Suppliers.tsx",
+        "./Suppliers": "./src/pages/Suppliers.tsx",
       },
       shared: {
         react: { singleton: true },
         "react-dom": { singleton: true },
+        "react-toastify": { singleton: true },
+        "@erp/shared-ui": { singleton: true },
+        "@erp/shared-api": { singleton: true },
+        "@erp/shared-auth": { singleton: true },
       },
     }),
     react(),

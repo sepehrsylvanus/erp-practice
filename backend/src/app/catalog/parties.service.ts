@@ -143,6 +143,7 @@ export class PartiesService {
         entityType: "Supplier",
         entityId: supplier.id,
       });
+      return { data: supplier };
     } catch (error) {
       if (isUniqueError(error))
         throw new ConflictException("Supplier code already exists");

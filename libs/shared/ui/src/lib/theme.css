@@ -439,7 +439,8 @@ table.data td.num :where(code, span, bdi) {
   position: fixed;
   inset-block-end: 22px;
   inset-inline-start: 22px;
-  z-index: 90;
+  z-index: 200;
+
   display: flex;
   flex-direction: column;
   gap: 10px;

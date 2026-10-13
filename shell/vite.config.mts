@@ -31,6 +31,10 @@ export default defineConfig({
       shared: {
         react: { singleton: true },
         "react-dom": { singleton: true },
+        "react-toastify": { singleton: true },
+        "@erp/shared-ui": { singleton: true },
+        "@erp/shared-api": { singleton: true },
+        "@erp/shared-auth": { singleton: true },
       },
     }),
     react(),

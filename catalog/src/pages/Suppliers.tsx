@@ -48,6 +48,8 @@ export default function SuppliersPage() {
 
       setCreating(false);
       setForm({ code: "", name: "", email: "", phone: "", taxId: "" });
+      setPage(1);
+      setVersion((v) => v + 1);
     } catch (err) {
       toast(err instanceof Error ? err.message : "خطا", "error");
     }
@@ -115,6 +117,16 @@ export default function SuppliersPage() {
               }}
             >
               <Field label="کد (مثل S-001)">
+                <input
+                  className="input"
+                  dir="ltr"
+                  value={form.code}
+                  onChange={(e) => setForm({ ...form, code: e.target.value })}
+                  pattern="[A-Z0-9._-]{2,32}"
+                  required
+                />
+              </Field>
+              <Field label="نام">
                 <input
                   className="input"
                   value={form.name}

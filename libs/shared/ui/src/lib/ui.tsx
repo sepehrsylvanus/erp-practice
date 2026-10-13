@@ -1,12 +1,11 @@
 import {
-  createContext,
-  useCallback,
-  useContext,
   useEffect,
   useState,
   type CSSProperties,
   type ReactNode,
 } from "react";
+import { ToastContainer, toast as toastify } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 /* ---------- formatting (یکبار در همه‌ی ماژول‌ها) ---------- */
 export const money = (value: string | number, currency = "IRR") =>
@@ -333,37 +332,33 @@ export function Pagination({
   );
 }
 
-/* ---------- Toast ---------- */
-interface ToastItem {
-  id: number;
-  text: string;
-  tone: string;
-}
-const ToastCtx = createContext<(text: string, tone?: string) => void>(
-  () => undefined,
-);
-
+/* ---------- Toast (react-toastify — بدون context، فدراسیون-safe) ---------- */
 export function ToastHost({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<ToastItem[]>([]);
-  const push = useCallback((text: string, tone = "info") => {
-    const id = Date.now() + Math.random();
-    setItems((prev) => [...prev, { id, text, tone }]);
-    setTimeout(() => setItems((prev) => prev.filter((t) => t.id !== id)), 4200);
-  }, []);
   return (
-    <ToastCtx.Provider value={push}>
+    <>
       {children}
-      <div className="toast-stack">
-        {items.map((t) => (
-          <div key={t.id} className={`toast ${t.tone}`}>
-            {t.text}
-          </div>
-        ))}
-      </div>
-    </ToastCtx.Provider>
+      <ToastContainer
+        position="bottom-left"
+        autoClose={4200}
+        rtl
+        closeOnClick
+        pauseOnHover
+        theme="colored"
+      />
+    </>
   );
 }
-export const useToast = () => useContext(ToastCtx);
+
+type ToastTone = "success" | "error" | "info" | "warning";
+
+function pushToast(text: string, tone: ToastTone = "info") {
+  if (tone === "success") toastify.success(text);
+  else if (tone === "error") toastify.error(text);
+  else if (tone === "warning") toastify.warning(text);
+  else toastify.info(text);
+}
+
+export const useToast = () => pushToast;
 
 /* ---------- usePagedQuery: اتصال به envelope استاندارد بک‌اند ---------- */
 export interface PagedResponse<T> {
