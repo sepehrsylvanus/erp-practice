@@ -28,7 +28,7 @@ export default defineConfig({
       name: "inventory_fe",
       filename: "remoteEntry.js",
       exposes: {
-        "./App": "./src/App.tsx",
+        "./Balances": "./src/pages/Balances.tsx",
       },
       shared: {
         react: { singleton: true },
