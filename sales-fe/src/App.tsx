@@ -78,7 +78,8 @@ export default function SalesOrderPage() {
     },
     [version],
   );
-  const { rows, total, loading } = usePagedQuery<SalesOrder>(fetcher, page);
+  const { rows, total, loading, error: listError } =
+    usePagedQuery<SalesOrder>(fetcher, page);
 
   function reload() {
     setVersion((v) => v + 1);
@@ -185,6 +186,29 @@ export default function SalesOrderPage() {
       <button className="btn btn-primary" onClick={() => setCreating(true)}>
         + سفارش جدید
       </button>
+
+      {listError ? (
+        <ErrorState
+          title="سفارش‌ها بارگذاری نشد"
+          message={listError}
+          onRetry={() => setVersion((v) => v + 1)}
+        />
+      ) : (
+        <>
+          <DataTable
+            columns={columns}
+            rows={rows}
+            loading={loading}
+            emptyText="سفارشی ثبت نشده"
+          />
+          <Pagination
+            page={page}
+            pageSize={25}
+            total={total}
+            onPage={setPage}
+          />
+        </>
+      )}
 
       {creating && (
         <Modal title="سفارش فروش جدید" onClose={() => setCreating(false)}>
