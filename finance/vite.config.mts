@@ -30,7 +30,7 @@ export default defineConfig({
       exposes: {
         "./Invoices": "./src/pages/Invoices.tsx",
         "./Payments": "./src/pages/Payments.tsx",
-        // "./TrialBalance": "./src/pages/TrialBalance.tsx",
+        "./TrialBalance": "./src/pages/TrialBalance.tsx",
       },
       shared: {
         react: { singleton: true },
