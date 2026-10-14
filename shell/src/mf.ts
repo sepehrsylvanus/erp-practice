@@ -39,8 +39,8 @@ const PROVIDERS: Array<{ alias: string; name: string; entry: string }> = [
   },
   {
     alias: "reports",
-    name: "reports",
-    entry: "http://localhost:4308/remoteEntry.js",
+    name: "reports_fe",
+    entry: "http://localhost:5108/remoteEntry.js",
   },
   {
     alias: "admin",
