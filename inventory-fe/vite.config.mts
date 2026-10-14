@@ -29,6 +29,7 @@ export default defineConfig({
       filename: "remoteEntry.js",
       exposes: {
         "./Balances": "./src/pages/Balances.tsx",
+        "./Movements": "./src/pages/Movements.tsx",
       },
       shared: {
         react: { singleton: true },
