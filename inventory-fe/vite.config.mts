@@ -30,8 +30,11 @@ export default defineConfig({
       exposes: {
         "./Balances": "./src/pages/Balances.tsx",
         "./Movements": "./src/pages/Movements.tsx",
+        "./Adjust": "./src/pages/Adjust.tsx",
       },
       shared: {
+        "react-toastify": { singleton: true },
+
         react: { singleton: true },
         "react-dom": { singleton: true },
       },

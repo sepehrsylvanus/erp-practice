@@ -1,12 +1,12 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { catalogApi, inventoryApi } from "@erp/shared-api";
 import type { Product, Warehouse } from "@erp/shared-api";
-import { Field, PageHeader, useToast } from "@erp/shared-ui";
+import { Field, PageHeader } from "@erp/shared-ui";
 import { useSession } from "@erp/shared-auth";
+import { toast } from "react-toastify";
 
 export default function AdjustPage() {
   const { can } = useSession();
-  const toast = useToast();
   const [warehouses, setWarehouses] = useState<Warehouse[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [form, setForm] = useState({
@@ -50,7 +50,7 @@ export default function AdjustPage() {
         },
         key,
       );
-      toast("اصلاح موجودی ثبت شد ✅", "success");
+      toast.success("اصلاح موجودی ثبت شد ✅");
       setForm({
         warehouseId: "",
         productId: "",
@@ -61,7 +61,7 @@ export default function AdjustPage() {
     } catch (err) {
       const msg = err instanceof Error ? err.message : "خطا";
       setFormError(msg);
-      toast(msg, "error");
+      toast.error(msg);
     } finally {
       setBusy(false);
     }
