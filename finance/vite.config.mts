@@ -5,7 +5,7 @@ import { erpAlias } from "../vite.shared.mts";
 
 // Port deliberately avoids 5000 (macOS AirTunes binds it on 0.0.0.0, leading
 // to silent EADDRINUSE on 127.0.0.1). Override `--port` only if 5000+ is free.
-const PORT = 4307;
+const PORT = 4507;
 
 export default defineConfig({
   server: {
@@ -28,11 +28,17 @@ export default defineConfig({
       name: "finance",
       filename: "remoteEntry.js",
       exposes: {
-        "./App": "./src/App.tsx",
+        "./Invoices": "./src/pages/Invoices.tsx",
+        // "./Payments": "./src/pages/Payments.tsx",
+        // "./TrialBalance": "./src/pages/TrialBalance.tsx",
       },
       shared: {
         react: { singleton: true },
         "react-dom": { singleton: true },
+        "react-toastify": { singleton: true },
+        "@erp/shared-ui": { singleton: true },
+        "@erp/shared-api": { singleton: true },
+        "@erp/shared-auth": { singleton: true },
       },
     }),
     react(),
