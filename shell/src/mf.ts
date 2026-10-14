@@ -25,7 +25,7 @@ const PROVIDERS: Array<{ alias: string; name: string; entry: string }> = [
   {
     alias: "purchasing",
     name: "purchasing",
-    entry: "http://localhost:4305/remoteEntry.js",
+    entry: "http://localhost:4506/remoteEntry.js",
   },
   {
     alias: "sales",
