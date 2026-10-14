@@ -5,7 +5,7 @@ import { erpAlias } from "../vite.shared.mts";
 
 // Port deliberately avoids 5000 (macOS AirTunes binds it on 0.0.0.0, leading
 // to silent EADDRINUSE on 127.0.0.1). Override `--port` only if 5000+ is free.
-const PORT = 4309;
+const PORT = 5309;
 
 export default defineConfig({
   server: {
