@@ -275,61 +275,69 @@ export default function SalesOrderPage() {
                   marginBottom: 8,
                 }}
               >
-                <select
-                  className="select"
-                  required
-                  value={line.productId}
-                  onChange={(e) => {
-                    const next = [...lines];
-                    next[index] = { ...line, productId: e.target.value };
-                    setLines(next);
-                  }}
-                >
-                  <option value="">کالا…</option>
-                  {products.map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.sku} — {p.name}
-                    </option>
-                  ))}
-                </select>
-                <input
-                  className="input"
-                  dir="ltr"
-                  inputMode="decimal"
-                  placeholder="تعداد"
-                  required
-                  value={line.quantity}
-                  onChange={(e) => {
-                    const next = [...lines];
-                    next[index] = { ...line, quantity: e.target.value };
-                    setLines(next);
-                  }}
-                />
-                <input
-                  className="input"
-                  dir="ltr"
-                  inputMode="decimal"
-                  placeholder="قیمت واحد"
-                  required
-                  value={line.unitPrice}
-                  onChange={(e) => {
-                    const next = [...lines];
-                    next[index] = { ...line, unitPrice: e.target.value };
-                    setLines(next);
-                  }}
-                />
-                <input
-                  className="input"
-                  dir="ltr"
-                  inputMode="decimal"
-                  placeholder="مالیات٪"
-                  value={line.taxRate}
-                  onChange={(e) => {
-                    const next = [...lines];
-                    next[index] = { ...line, taxRate: e.target.value };
-                    setLines(next);
-                  }}
-                />
+                <Field label="کالا">
+                  <select
+                    className="select"
+                    required
+                    value={line.productId}
+                    onChange={(e) => {
+                      const next = [...lines];
+                      next[index] = { ...line, productId: e.target.value };
+                      setLines(next);
+                    }}
+                  >
+                    <option value="">کالا…</option>
+                    {products.map((p) => (
+                      <option key={p.id} value={p.id}>
+                        {p.sku} — {p.name}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+                <Field label="تعداد">
+                  <input
+                    className="input"
+                    dir="ltr"
+                    inputMode="decimal"
+                    placeholder="تعداد"
+                    required
+                    value={line.quantity}
+                    onChange={(e) => {
+                      const next = [...lines];
+                      next[index] = { ...line, quantity: e.target.value };
+                      setLines(next);
+                    }}
+                  />
+                </Field>
+                <Field label="قیمت واحد">
+                  <input
+                    className="input"
+                    dir="ltr"
+                    inputMode="decimal"
+                    placeholder="قیمت واحد"
+                    required
+                    value={line.unitPrice}
+                    onChange={(e) => {
+                      const next = [...lines];
+                      next[index] = { ...line, unitPrice: e.target.value };
+                      setLines(next);
+                    }}
+                  />
+                </Field>
+                <Field label="مالیات٪">
+                  <input
+                    className="input"
+                    dir="ltr"
+                    inputMode="decimal"
+                    placeholder="مالیات٪"
+                    value={line.taxRate}
+                    onChange={(e) => {
+                      const next = [...lines];
+                      next[index] = { ...line, taxRate: e.target.value };
+                      setLines(next);
+                    }}
+                  />
+                </Field>
                 <button
                   type="button"
                   className="btn btn-danger btn-sm"

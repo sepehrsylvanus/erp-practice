@@ -1,5 +1,5 @@
 import { useCallback, useSyncExternalStore } from "react";
-import { authApi, setToken, tryRefresh } from "@erp/shared-api";
+import { authApi, setToken, refreshOnce } from "@erp/shared-api";
 import type { SessionUser } from "@erp/shared-api";
 
 interface SessionState {
@@ -38,7 +38,7 @@ const getState = () => store.state;
 /** در root فقط یک‌بار صدا بزنید (داخل shell) */
 export function initSession() {
   (async () => {
-    const ok = await tryRefresh();
+    const ok = await refreshOnce();
     if (!ok) return store.set({ loading: false });
     try {
       const { data } = await authApi.me();

@@ -5,7 +5,9 @@ import { erpAlias } from "../vite.shared.mts";
 
 // Port deliberately avoids 5000 (macOS AirTunes binds it on 0.0.0.0, leading
 // to silent EADDRINUSE on 127.0.0.1). Override `--port` only if 5000+ is free.
-const PORT = 4306;
+// NOTE: 4305-4504 is reserved by Windows (Docker/Hyper-V winnat exclusion),
+// so sales-fe uses 4505 instead of the sequential 4306.
+const PORT = 4505;
 
 export default defineConfig({
   server: {
@@ -33,6 +35,10 @@ export default defineConfig({
       shared: {
         react: { singleton: true },
         "react-dom": { singleton: true },
+        "react-toastify": { singleton: true },
+        "@erp/shared-ui": { singleton: true },
+        "@erp/shared-api": { singleton: true },
+        "@erp/shared-auth": { singleton: true },
       },
     }),
     react(),
